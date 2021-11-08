@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -17,7 +16,6 @@ using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Cursor;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Online.Chat;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Chat
 {
@@ -168,7 +166,7 @@ namespace osu.Game.Overlays.Chat
 
         private void messageRemoved(Message removed) => Schedule(() =>
         {
-            chatLines.FirstOrDefault(c => c.Message == removed)?.FadeColour(Color4.Red, 400).FadeOut(600).Expire();
+            chatLines.FirstOrDefault(c => c.Message == removed)?.FadeColour(Colour4.Red, 400).FadeOut(600).Expire();
         });
 
         private IEnumerable<ChatLine> chatLines => ChatLineFlow.Children.OfType<ChatLine>();

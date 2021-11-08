@@ -17,7 +17,6 @@ using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.UI.Scrolling;
 using osu.Game.Screens.Edit;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.Edit
 {
@@ -133,7 +132,7 @@ namespace osu.Game.Rulesets.Mania.Edit
                     timingPoint = nextTimingPoint;
                 }
 
-                Color4 colour = BindableBeatDivisor.GetColourFor(
+                Colour4 colour = BindableBeatDivisor.GetColourFor(
                     BindableBeatDivisor.GetDivisorForBeatIndex(Math.Max(1, beat), beatDivisor.Value), colours);
 
                 foreach (var grid in grids)

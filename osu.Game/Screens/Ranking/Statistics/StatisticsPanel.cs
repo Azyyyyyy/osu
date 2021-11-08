@@ -3,6 +3,7 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 using osu.Framework.Allocation;
@@ -15,7 +16,6 @@ using osu.Game.Graphics.UserInterface;
 using osu.Game.Online.Placeholders;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Scoring;
-using osuTK;
 
 namespace osu.Game.Screens.Ranking.Statistics
 {

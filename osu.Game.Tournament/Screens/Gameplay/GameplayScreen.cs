@@ -16,7 +16,6 @@ using osu.Game.Tournament.Models;
 using osu.Game.Tournament.Screens.Gameplay.Components;
 using osu.Game.Tournament.Screens.MapPool;
 using osu.Game.Tournament.Screens.TeamWin;
-using osuTK.Graphics;
 
 namespace osu.Game.Tournament.Screens.Gameplay
 {
@@ -237,7 +236,7 @@ namespace osu.Game.Tournament.Screens.Gameplay
             private void load()
             {
                 // chroma key area for stable gameplay
-                Colour = new Color4(0, 255, 0, 255);
+                Colour = new Colour4(0, 255, 0, 255);
 
                 ladder.PlayersPerTeam.BindValueChanged(performLayout, true);
             }

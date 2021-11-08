@@ -3,12 +3,12 @@
 
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
+using osu.Framework.Graphics;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Osu.Configuration;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.Objects.Drawables;
 using osu.Game.Skinning;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Default
 {
@@ -16,7 +16,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Default
     {
         private IBindable<float> scaleBindable;
         private IBindable<int> pathVersion;
-        private IBindable<Color4> accentColour;
+        private IBindable<Colour4> accentColour;
 
         [Resolved(CanBeNull = true)]
         private OsuRulesetConfigManager config { get; set; }
@@ -43,7 +43,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Default
             SnakingOut.BindTo(configSnakingOut);
 
             BorderSize = skin.GetConfig<OsuSkinConfiguration, float>(OsuSkinConfiguration.SliderBorderSize)?.Value ?? 1;
-            BorderColour = skin.GetConfig<OsuSkinColour, Color4>(OsuSkinColour.SliderBorder)?.Value ?? Color4.White;
+            BorderColour = skin.GetConfig<OsuSkinColour, Colour4>(OsuSkinColour.SliderBorder)?.Value ?? Colour4.White;
 
             drawableObject.HitObjectApplied += onHitObjectApplied;
         }
@@ -62,7 +62,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Default
             }
         }
 
-        protected virtual Color4 GetBodyAccentColour(ISkinSource skin, Color4 hitObjectAccentColour) =>
-            skin.GetConfig<OsuSkinColour, Color4>(OsuSkinColour.SliderTrackOverride)?.Value ?? hitObjectAccentColour;
+        protected virtual Colour4 GetBodyAccentColour(ISkinSource skin, Colour4 hitObjectAccentColour) =>
+            skin.GetConfig<OsuSkinColour, Colour4>(OsuSkinColour.SliderTrackOverride)?.Value ?? hitObjectAccentColour;
     }
 }

@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Extensions.MatrixExtensions;
@@ -13,8 +14,7 @@ using osu.Framework.Input.Handlers.Tablet;
 using osu.Framework.Utils;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
-using osuTK;
-using osuTK.Graphics;
+using Silk.NET.Maths;
 
 namespace osu.Game.Overlays.Settings.Sections.Input
 {
@@ -76,14 +76,14 @@ namespace osu.Game.Overlays.Settings.Sections.Input
                             },
                             new Box
                             {
-                                Colour = Color4.White,
+                                Colour = Colour4.White,
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
                                 Height = 5,
                             },
                             new Box
                             {
-                                Colour = Color4.White,
+                                Colour = Colour4.White,
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
                                 Width = 5,
@@ -92,7 +92,7 @@ namespace osu.Game.Overlays.Settings.Sections.Input
                             {
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
-                                Colour = Color4.White,
+                                Colour = Colour4.White,
                                 Font = OsuFont.Default.With(size: 12),
                                 Y = 10
                             }
@@ -190,7 +190,7 @@ namespace osu.Game.Overlays.Settings.Sections.Input
                 new Vector2(halfUsableArea.X, halfUsableArea.Y)
             );
 
-            var matrix = Matrix3.Identity;
+            var matrix = Matrix3X3<float>.Identity;
 
             MatrixExtensions.TranslateFromLeft(ref matrix, offset);
             MatrixExtensions.RotateFromLeft(ref matrix, MathUtils.DegreesToRadians(rotation.Value));
@@ -213,7 +213,7 @@ namespace osu.Game.Overlays.Settings.Sections.Input
             if (!(tablet.Value?.Size is Vector2 size))
                 return;
 
-            float maxDimension = size.LengthFast;
+            float maxDimension = size.Length();
 
             float fitX = maxDimension / (DrawWidth - Padding.Left - Padding.Right);
             float fitY = maxDimension / DrawHeight;

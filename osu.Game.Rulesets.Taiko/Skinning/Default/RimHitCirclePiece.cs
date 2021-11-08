@@ -1,14 +1,13 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
 using osu.Game.Rulesets.Taiko.Objects;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Taiko.Skinning.Default
 {
@@ -39,7 +38,7 @@ namespace osu.Game.Rulesets.Taiko.Skinning.Default
                 Size = new Vector2(SYMBOL_SIZE);
 
                 BorderThickness = SYMBOL_BORDER;
-                BorderColour = Color4.White;
+                BorderColour = Colour4.White;
                 Masking = true;
                 Children = new[]
                 {

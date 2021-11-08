@@ -3,6 +3,7 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
@@ -18,8 +19,6 @@ using osu.Game.IO.Archives;
 using osu.Game.Overlays;
 using osu.Game.Screens.Backgrounds;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Menu
 {
@@ -192,7 +191,7 @@ namespace osu.Game.Screens.Menu
         {
             base.LogoArriving(logo, resuming);
 
-            logo.Colour = Color4.White;
+            logo.Colour = Colour4.White;
             logo.Triangles = false;
             logo.Ripple = false;
 

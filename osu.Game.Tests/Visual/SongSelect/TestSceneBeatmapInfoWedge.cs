@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Numerics;
 using JetBrains.Annotations;
 using NUnit.Framework;
 using osu.Framework.Allocation;
@@ -24,7 +25,6 @@ using osu.Game.Rulesets.Osu;
 using osu.Game.Rulesets.Osu.Mods;
 using osu.Game.Rulesets.Taiko;
 using osu.Game.Screens.Select;
-using osuTK;
 
 namespace osu.Game.Tests.Visual.SongSelect
 {

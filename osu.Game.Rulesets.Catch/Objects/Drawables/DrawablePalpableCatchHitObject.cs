@@ -1,13 +1,12 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Catch.Objects.Drawables
 {
@@ -16,7 +15,7 @@ namespace osu.Game.Rulesets.Catch.Objects.Drawables
     {
         public new PalpableCatchHitObject HitObject => (PalpableCatchHitObject)base.HitObject;
 
-        Bindable<Color4> IHasCatchObjectState.AccentColour => AccentColour;
+        Bindable<Colour4> IHasCatchObjectState.AccentColour => AccentColour;
 
         public Bindable<bool> HyperDash { get; } = new Bindable<bool>();
 

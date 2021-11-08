@@ -3,6 +3,7 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -13,8 +14,6 @@ using osu.Game.Graphics;
 using osu.Game.Tournament.Components;
 using osu.Game.Tournament.Models;
 using osu.Game.Tournament.Screens.Ladder.Components;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tournament.Screens.Schedule
 {
@@ -71,7 +70,7 @@ namespace osu.Game.Tournament.Screens.Schedule
                                                 {
                                                     new Box
                                                     {
-                                                        Colour = Color4.White,
+                                                        Colour = Colour4.White,
                                                         Size = new Vector2(50, 10),
                                                     },
                                                     new TournamentSpriteTextWithBackground("Schedule")

@@ -1,11 +1,11 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -14,8 +14,6 @@ using osu.Framework.Input.Events;
 using osu.Framework.Utils;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Select.Carousel
 {
@@ -42,7 +40,7 @@ namespace osu.Game.Screens.Select.Carousel
                 RelativeSizeAxes = Axes.Both,
                 Masking = true,
                 CornerRadius = corner_radius,
-                BorderColour = new Color4(221, 255, 255, 255),
+                BorderColour = new Colour4(221, 255, 255, 255),
                 Children = new Drawable[]
                 {
                     Content,
@@ -72,7 +70,7 @@ namespace osu.Game.Screens.Select.Carousel
                         Type = EdgeEffectType.Shadow,
                         Offset = new Vector2(1),
                         Radius = 10,
-                        Colour = Color4.Black.Opacity(100),
+                        Colour = Colour4.Black.Opacity(100),
                     };
                     break;
 
@@ -83,7 +81,7 @@ namespace osu.Game.Screens.Select.Carousel
                     BorderContainer.EdgeEffect = new EdgeEffectParameters
                     {
                         Type = EdgeEffectType.Glow,
-                        Colour = new Color4(130, 204, 255, 150),
+                        Colour = new Colour4(130, 204, 255, 150),
                         Radius = 20,
                         Roundness = 10,
                     };

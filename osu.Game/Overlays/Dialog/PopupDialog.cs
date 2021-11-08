@@ -3,7 +3,8 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using osu.Framework.Extensions.Color4Extensions;
+using System.Numerics;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -13,9 +14,7 @@ using osu.Framework.Input.Events;
 using osu.Framework.Localisation;
 using osu.Game.Graphics.Backgrounds;
 using osu.Game.Graphics.Containers;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Overlays.Dialog
 {
@@ -119,7 +118,7 @@ namespace osu.Game.Overlays.Dialog
                             EdgeEffect = new EdgeEffectParameters
                             {
                                 Type = EdgeEffectType.Shadow,
-                                Colour = Color4.Black.Opacity(0.5f),
+                                Colour = Colour4.Black.Opacity(0.5f),
                                 Radius = 8,
                             },
                             Children = new Drawable[]
@@ -127,13 +126,13 @@ namespace osu.Game.Overlays.Dialog
                                 new Box
                                 {
                                     RelativeSizeAxes = Axes.Both,
-                                    Colour = Color4Extensions.FromHex(@"221a21"),
+                                    Colour = Colour4Extensions.FromHex(@"221a21"),
                                 },
                                 new Triangles
                                 {
                                     RelativeSizeAxes = Axes.Both,
-                                    ColourLight = Color4Extensions.FromHex(@"271e26"),
-                                    ColourDark = Color4Extensions.FromHex(@"1e171e"),
+                                    ColourLight = Colour4Extensions.FromHex(@"271e26"),
+                                    ColourDark = Colour4Extensions.FromHex(@"1e171e"),
                                     TriangleScale = 4,
                                 },
                             },
@@ -161,14 +160,14 @@ namespace osu.Game.Overlays.Dialog
                                             Origin = Anchor.Centre,
                                             Anchor = Anchor.Centre,
                                             Masking = true,
-                                            BorderColour = Color4.White,
+                                            BorderColour = Colour4.White,
                                             BorderThickness = 5f,
                                             Children = new Drawable[]
                                             {
                                                 new Box
                                                 {
                                                     RelativeSizeAxes = Axes.Both,
-                                                    Colour = Color4.Black.Opacity(0),
+                                                    Colour = Colour4.Black.Opacity(0),
                                                 },
                                                 icon = new SpriteIcon
                                                 {

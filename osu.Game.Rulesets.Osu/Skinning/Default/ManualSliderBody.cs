@@ -2,7 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
-using osuTK;
+using System.Numerics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Default
 {

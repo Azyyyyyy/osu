@@ -2,14 +2,13 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Cursor;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play
 {
@@ -60,7 +59,7 @@ namespace osu.Game.Screens.Play
                     Anchor = Anchor.TopCentre,
                     Colour = colours.Yellow,
                     Shadow = true,
-                    ShadowColour = new Color4(0, 0, 0, 0.25f)
+                    ShadowColour = new Colour4(0, 0, 0, 0.25f)
                 }
             });
         }

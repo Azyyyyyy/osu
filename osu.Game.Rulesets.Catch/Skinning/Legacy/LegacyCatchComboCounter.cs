@@ -1,12 +1,11 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Rulesets.Catch.UI;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Catch.Skinning.Legacy
 {
@@ -48,7 +47,7 @@ namespace osu.Game.Rulesets.Catch.Skinning.Legacy
 
         private int lastDisplayedCombo;
 
-        public void UpdateCombo(int combo, Color4? hitObjectColour = null)
+        public void UpdateCombo(int combo, Colour4? hitObjectColour = null)
         {
             if (combo == lastDisplayedCombo)
                 return;
@@ -87,7 +86,7 @@ namespace osu.Game.Rulesets.Catch.Skinning.Legacy
                        .ScaleTo(1f)
                        .ScaleTo(1.1f, 60).Then().ScaleTo(1f, 30);
 
-                explosion.Colour = hitObjectColour ?? Color4.White;
+                explosion.Colour = hitObjectColour ?? Colour4.White;
 
                 explosion.SetCountWithoutRolling(combo);
                 explosion.ScaleTo(1.5f)

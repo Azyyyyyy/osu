@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
@@ -15,8 +16,6 @@ using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Overlays;
 using osu.Game.Overlays.BeatmapSet;
 using osu.Game.Screens.Select.Details;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.Online
 {
@@ -40,7 +39,7 @@ namespace osu.Game.Tests.Visual.Online
                     new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.Gray,
+                        Colour = Colour4.Gray,
                     },
                     successRate = new GraphExposingSuccessRate
                     {

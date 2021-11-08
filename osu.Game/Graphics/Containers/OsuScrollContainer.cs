@@ -3,15 +3,15 @@
 
 #nullable enable
 
+using System.Numerics;
 using osu.Framework.Allocation;
+using osu.Framework.Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Input.Events;
 using osu.Game.Overlays;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Graphics.Containers
 {
@@ -46,7 +46,7 @@ namespace osu.Game.Graphics.Containers
         private bool shouldPerformRightMouseScroll(MouseButtonEvent e) => RightMouseScrollbar && e.Button == MouseButton.Right;
 
         private void scrollFromMouseEvent(MouseEvent e) =>
-            ScrollTo(Clamp(ToLocalSpace(e.ScreenSpaceMousePosition)[ScrollDim] / DrawSize[ScrollDim]) * Content.DrawSize[ScrollDim], true, DistanceDecayOnRightMouseScrollbar);
+            ScrollTo(Clamp(ToLocalSpace(e.ScreenSpaceMousePosition).GetIndex(ScrollDim) / DrawSize.GetIndex(ScrollDim)) * Content.DrawSize.GetIndex(ScrollDim), true, DistanceDecayOnRightMouseScrollbar);
 
         private bool rightMouseDragging;
 
@@ -114,9 +114,9 @@ namespace osu.Game.Graphics.Containers
 
         protected class OsuScrollbar : ScrollbarContainer
         {
-            private Color4 hoverColour;
-            private Color4 defaultColour;
-            private Color4 highlightColour;
+            private Colour4 hoverColour;
+            private Colour4 defaultColour;
+            private Colour4 highlightColour;
 
             private readonly Box box;
 
@@ -154,10 +154,8 @@ namespace osu.Game.Graphics.Containers
 
             public override void ResizeTo(float val, int duration = 0, Easing easing = Easing.None)
             {
-                Vector2 size = new Vector2(SCROLL_BAR_HEIGHT)
-                {
-                    [(int)ScrollDirection] = val
-                };
+                Vector2 size = new Vector2(SCROLL_BAR_HEIGHT);
+                size.SetIndex((int)ScrollDirection, val);
                 this.ResizeTo(size, duration, easing);
             }
 
@@ -185,7 +183,7 @@ namespace osu.Game.Graphics.Containers
             {
                 if (e.Button != MouseButton.Left) return;
 
-                box.FadeColour(Color4.White, 100);
+                box.FadeColour(Colour4.White, 100);
 
                 base.OnMouseUp(e);
             }

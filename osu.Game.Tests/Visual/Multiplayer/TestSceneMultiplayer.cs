@@ -33,7 +33,7 @@ using osu.Game.Screens.Play;
 using osu.Game.Screens.Ranking;
 using osu.Game.Screens.Spectate;
 using osu.Game.Tests.Resources;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Multiplayer
 {

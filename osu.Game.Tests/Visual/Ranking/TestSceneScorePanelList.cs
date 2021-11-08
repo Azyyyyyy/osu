@@ -10,7 +10,7 @@ using osu.Framework.Utils;
 using osu.Game.Rulesets.Osu;
 using osu.Game.Scoring;
 using osu.Game.Screens.Ranking;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Ranking
 {

@@ -24,7 +24,7 @@ using osu.Game.Overlays;
 using osu.Game.Overlays.Chat;
 using osu.Game.Overlays.Chat.Selection;
 using osu.Game.Overlays.Chat.Tabs;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Online
 {

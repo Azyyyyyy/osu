@@ -6,13 +6,13 @@ using osu.Framework.Graphics;
 using JetBrains.Annotations;
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Game.Graphics.Sprites;
 using osu.Framework.Utils;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.LocalisationExtensions;
 using osu.Game.Graphics;
 using osu.Framework.Graphics.Shapes;
-using osuTK;
 using osu.Framework.Localisation;
 using osu.Game.Online.API.Requests.Responses;
 

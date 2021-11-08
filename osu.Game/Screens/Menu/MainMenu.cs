@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -19,8 +20,6 @@ using osu.Game.Screens.Edit;
 using osu.Game.Screens.OnlinePlay.Multiplayer;
 using osu.Game.Screens.OnlinePlay.Playlists;
 using osu.Game.Screens.Select;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Menu
 {
@@ -126,7 +125,7 @@ namespace osu.Game.Screens.Menu
                 {
                     case ButtonSystemState.Initial:
                     case ButtonSystemState.Exit:
-                        ApplyToBackground(b => b.FadeColour(Color4.White, 500, Easing.OutSine));
+                        ApplyToBackground(b => b.FadeColour(Colour4.White, 500, Easing.OutSine));
                         break;
 
                     default:
@@ -200,7 +199,7 @@ namespace osu.Game.Screens.Menu
 
             buttons.SetOsuLogo(logo);
 
-            logo.FadeColour(Color4.White, 100, Easing.OutQuint);
+            logo.FadeColour(Colour4.White, 100, Easing.OutQuint);
             logo.FadeIn(100, Easing.OutQuint);
 
             if (resuming)

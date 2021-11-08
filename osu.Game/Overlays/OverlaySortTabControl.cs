@@ -6,16 +6,15 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Graphics.Sprites;
 using osu.Game.Graphics;
-using osuTK;
 using osu.Game.Graphics.UserInterface;
 using osu.Framework.Input.Events;
 using osu.Framework.Bindables;
 using osu.Framework.Allocation;
 using osu.Game.Graphics.Sprites;
-using osuTK.Graphics;
 using osu.Game.Overlays.Comments;
 using JetBrains.Annotations;
 using System;
+using System.Numerics;
 using osu.Framework.Extensions;
 using osu.Framework.Localisation;
 using osu.Game.Resources.Localisation.Web;
@@ -119,7 +118,7 @@ namespace osu.Game.Overlays
 
             protected override Container<Drawable> Content => content;
 
-            protected virtual Color4 ContentColour
+            protected virtual Colour4 ContentColour
             {
                 set => text.Colour = value;
             }
@@ -173,7 +172,7 @@ namespace osu.Game.Overlays
                 else
                     HideBackground();
 
-                ContentColour = Active.Value && !IsHovered ? colourProvider.Light1 : Color4.White;
+                ContentColour = Active.Value && !IsHovered ? colourProvider.Light1 : Colour4.White;
 
                 text.Font = text.Font.With(weight: Active.Value ? FontWeight.Bold : FontWeight.SemiBold);
             }

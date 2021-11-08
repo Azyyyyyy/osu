@@ -1,9 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -14,6 +12,7 @@ using osu.Framework.Input;
 using osu.Framework.Input.Events;
 using osu.Framework.Localisation;
 using osu.Framework.Platform;
+using Silk.NET.Input;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -88,7 +87,7 @@ namespace osu.Game.Graphics.UserInterface
                         {
                             new Box
                             {
-                                Colour = Color4.White,
+                                Colour = Colour4.White,
                                 RelativeSizeAxes = Axes.Both,
                             }
                         },

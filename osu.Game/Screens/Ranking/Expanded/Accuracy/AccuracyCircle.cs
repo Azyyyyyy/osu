@@ -3,10 +3,11 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -17,7 +18,6 @@ using osu.Game.Graphics;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Scoring;
 using osu.Game.Skinning;
-using osuTK;
 
 namespace osu.Game.Screens.Ranking.Expanded.Accuracy
 {
@@ -125,7 +125,7 @@ namespace osu.Game.Screens.Ranking.Expanded.Accuracy
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
                     RelativeSizeAxes = Axes.Both,
-                    Colour = ColourInfo.GradientVertical(Color4Extensions.FromHex("#7CF6FF"), Color4Extensions.FromHex("#BAFFA9")),
+                    Colour = ColourInfo.GradientVertical(Colour4Extensions.FromHex("#7CF6FF"), Colour4Extensions.FromHex("#BAFFA9")),
                     InnerRadius = accuracy_circle_radius,
                 },
                 new BufferedContainer

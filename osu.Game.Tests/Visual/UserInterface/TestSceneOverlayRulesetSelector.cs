@@ -1,6 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Game.Rulesets.Catch;
 using osu.Game.Rulesets.Mania;
@@ -11,7 +12,6 @@ using osu.Game.Overlays;
 using osu.Game.Rulesets;
 using NUnit.Framework;
 using osu.Framework.Graphics.Containers;
-using osuTK;
 using osu.Framework.Allocation;
 
 namespace osu.Game.Tests.Visual.UserInterface

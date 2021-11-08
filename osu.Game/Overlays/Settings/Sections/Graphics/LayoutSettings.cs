@@ -17,7 +17,6 @@ using osu.Game.Configuration;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Localisation;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Settings.Sections.Graphics
 {
@@ -231,7 +230,7 @@ namespace osu.Game.Overlays.Settings.Sections.Graphics
             {
                 Child = new Box
                 {
-                    Colour = Color4.White,
+                    Colour = Colour4.White,
                     RelativeSizeAxes = Axes.Both,
                     Alpha = 0.5f,
                 };

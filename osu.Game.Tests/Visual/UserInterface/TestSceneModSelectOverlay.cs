@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
@@ -20,8 +21,6 @@ using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Osu;
 using osu.Game.Rulesets.Osu.Mods;
 using osu.Game.Screens.Play.HUD;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.UserInterface
 {
@@ -439,8 +438,8 @@ namespace osu.Game.Tests.Visual.UserInterface
 
             public new TriangleButton DeselectAllButton => base.DeselectAllButton;
 
-            public new Color4 LowMultiplierColour => base.LowMultiplierColour;
-            public new Color4 HighMultiplierColour => base.HighMultiplierColour;
+            public new Colour4 LowMultiplierColour => base.LowMultiplierColour;
+            public new Colour4 HighMultiplierColour => base.HighMultiplierColour;
         }
 
         private class TestNonStackedModSelectOverlay : TestModSelectOverlay

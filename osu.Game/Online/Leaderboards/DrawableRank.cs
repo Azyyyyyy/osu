@@ -1,8 +1,9 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Extensions;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -11,8 +12,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Backgrounds;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Scoring;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Online.Leaderboards
 {
@@ -60,7 +59,7 @@ namespace osu.Game.Online.Leaderboards
                             Colour = getRankNameColour(),
                             Font = OsuFont.Numeric.With(size: 25),
                             Text = GetRankName(rank),
-                            ShadowColour = Color4.Black.Opacity(0.3f),
+                            ShadowColour = Colour4.Black.Opacity(0.3f),
                             ShadowOffset = new Vector2(0, 0.08f),
                             Shadow = true,
                         },
@@ -80,23 +79,23 @@ namespace osu.Game.Online.Leaderboards
             {
                 case ScoreRank.XH:
                 case ScoreRank.SH:
-                    return ColourInfo.GradientVertical(Color4.White, Color4Extensions.FromHex("afdff0"));
+                    return ColourInfo.GradientVertical(Colour4.White, Colour4Extensions.FromHex("afdff0"));
 
                 case ScoreRank.X:
                 case ScoreRank.S:
-                    return ColourInfo.GradientVertical(Color4Extensions.FromHex(@"ffe7a8"), Color4Extensions.FromHex(@"ffb800"));
+                    return ColourInfo.GradientVertical(Colour4Extensions.FromHex(@"ffe7a8"), Colour4Extensions.FromHex(@"ffb800"));
 
                 case ScoreRank.A:
-                    return Color4Extensions.FromHex(@"275227");
+                    return Colour4Extensions.FromHex(@"275227");
 
                 case ScoreRank.B:
-                    return Color4Extensions.FromHex(@"553a2b");
+                    return Colour4Extensions.FromHex(@"553a2b");
 
                 case ScoreRank.C:
-                    return Color4Extensions.FromHex(@"473625");
+                    return Colour4Extensions.FromHex(@"473625");
 
                 default:
-                    return Color4Extensions.FromHex(@"512525");
+                    return Colour4Extensions.FromHex(@"512525");
             }
         }
     }

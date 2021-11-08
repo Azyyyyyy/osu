@@ -2,15 +2,13 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
 using osu.Game.Graphics;
 using osu.Game.Rulesets.Judgements;
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Utils;
 using osu.Game.Skinning;
@@ -44,15 +42,15 @@ namespace osu.Game.Screens.Play.HUD
 
         private readonly Container fill;
 
-        public Color4 AccentColour
+        public Colour4 AccentColour
         {
             get => fill.Colour;
             set => fill.Colour = value;
         }
 
-        private Color4 glowColour;
+        private Colour4 glowColour;
 
-        public Color4 GlowColour
+        public Colour4 GlowColour
         {
             get => glowColour;
             set
@@ -85,7 +83,7 @@ namespace osu.Game.Screens.Play.HUD
                 new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.Black,
+                    Colour = Colour4.Black,
                 },
                 fill = new Container
                 {

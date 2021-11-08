@@ -2,7 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Input.Events;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Screens.Play
 {

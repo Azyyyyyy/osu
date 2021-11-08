@@ -2,10 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using System.Threading.Tasks;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -21,8 +21,6 @@ using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Localisation;
 using osu.Game.Overlays.Music;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays
 {
@@ -92,7 +90,7 @@ namespace osu.Game.Overlays
                             EdgeEffect = new EdgeEffectParameters
                             {
                                 Type = EdgeEffectType.Shadow,
-                                Colour = Color4.Black.Opacity(40),
+                                Colour = Colour4.Black.Opacity(40),
                                 Radius = 5,
                             },
                             Children = new[]
@@ -104,7 +102,7 @@ namespace osu.Game.Overlays
                                     Anchor = Anchor.TopCentre,
                                     Position = new Vector2(0, 40),
                                     Font = OsuFont.GetFont(size: 25, italics: true),
-                                    Colour = Color4.White,
+                                    Colour = Colour4.White,
                                     Text = @"Nothing to play",
                                 },
                                 artist = new OsuSpriteText
@@ -113,7 +111,7 @@ namespace osu.Game.Overlays
                                     Anchor = Anchor.TopCentre,
                                     Position = new Vector2(0, 45),
                                     Font = OsuFont.GetFont(size: 15, weight: FontWeight.Bold, italics: true),
-                                    Colour = Color4.White,
+                                    Colour = Colour4.White,
                                     Text = @"Nothing to play",
                                 },
                                 new Container
@@ -198,7 +196,7 @@ namespace osu.Game.Overlays
                     dragContainer.Add(playlist);
 
                     playlist.BeatmapSets.BindTo(musicController.BeatmapSets);
-                    playlist.State.BindValueChanged(s => playlistButton.FadeColour(s.NewValue == Visibility.Visible ? colours.Yellow : Color4.White, 200, Easing.OutQuint), true);
+                    playlist.State.BindValueChanged(s => playlistButton.FadeColour(s.NewValue == Visibility.Visible ? colours.Yellow : Colour4.White, 200, Easing.OutQuint), true);
 
                     togglePlaylist();
                 });
@@ -387,7 +385,7 @@ namespace osu.Game.Overlays
                         Height = bottom_black_area_height,
                         Origin = Anchor.BottomCentre,
                         Anchor = Anchor.BottomCentre,
-                        Colour = Color4.Black.Opacity(0.5f)
+                        Colour = Colour4.Black.Opacity(0.5f)
                     }
                 };
             }
@@ -411,7 +409,7 @@ namespace osu.Game.Overlays
                 Vector2 change = e.MousePosition - e.MouseDownPosition;
 
                 // Diminish the drag distance as we go further to simulate "rubber band" feeling.
-                change *= change.Length <= 0 ? 0 : MathF.Pow(change.Length, 0.7f) / change.Length;
+                change *= change.Length() <= 0 ? 0 : MathF.Pow(change.Length(), 0.7f) / change.Length();
 
                 this.MoveTo(change);
             }

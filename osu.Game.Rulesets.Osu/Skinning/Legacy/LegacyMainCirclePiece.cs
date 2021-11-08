@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -12,8 +13,6 @@ using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.Objects.Drawables;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 {
@@ -39,7 +38,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
         private Drawable hitCircleOverlay;
         private SkinnableSpriteText hitCircleText;
 
-        private readonly Bindable<Color4> accentColour = new Bindable<Color4>();
+        private readonly Bindable<Colour4> accentColour = new Bindable<Colour4>();
         private readonly IBindable<int> indexInCurrentCombo = new Bindable<int>();
 
         [Resolved]

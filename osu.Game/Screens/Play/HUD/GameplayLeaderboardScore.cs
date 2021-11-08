@@ -1,10 +1,11 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -13,8 +14,6 @@ using osu.Game.Graphics.Sprites;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Users.Drawables;
 using osu.Game.Utils;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play.HUD
 {
@@ -54,9 +53,9 @@ namespace osu.Game.Screens.Play.HUD
         public BindableInt Combo { get; } = new BindableInt();
         public BindableBool HasQuit { get; } = new BindableBool();
 
-        public Color4? BackgroundColour { get; set; }
+        public Colour4? BackgroundColour { get; set; }
 
-        public Color4? TextColour { get; set; }
+        public Colour4? TextColour { get; set; }
 
         private int? scorePosition;
 
@@ -169,7 +168,7 @@ namespace osu.Game.Screens.Play.HUD
                                         Padding = new MarginPadding { Right = SHEAR_WIDTH / 2 },
                                         Anchor = Anchor.Centre,
                                         Origin = Anchor.Centre,
-                                        Colour = Color4.White,
+                                        Colour = Colour4.White,
                                         Font = OsuFont.Torus.With(size: 14, weight: FontWeight.Bold),
                                         Shadow = false,
                                     },
@@ -191,7 +190,7 @@ namespace osu.Game.Screens.Play.HUD
                                                     {
                                                         Alpha = 0.5f,
                                                         RelativeSizeAxes = Axes.Both,
-                                                        Colour = Color4Extensions.FromHex("3399cc"),
+                                                        Colour = Colour4Extensions.FromHex("3399cc"),
                                                     },
                                                 }
                                             },
@@ -228,7 +227,7 @@ namespace osu.Game.Screens.Play.HUD
                                                         Width = 0.6f,
                                                         Anchor = Anchor.CentreLeft,
                                                         Origin = Anchor.CentreLeft,
-                                                        Colour = Color4.White,
+                                                        Colour = Colour4.White,
                                                         Font = OsuFont.Torus.With(size: 14, weight: FontWeight.SemiBold),
                                                         Text = User?.Username,
                                                         Truncate = true,
@@ -246,7 +245,7 @@ namespace osu.Game.Screens.Play.HUD
                                         RelativeSizeAxes = Axes.Y,
                                         Anchor = Anchor.CentreLeft,
                                         Origin = Anchor.CentreLeft,
-                                        Colour = Color4.White,
+                                        Colour = Colour4.White,
                                         Children = new Drawable[]
                                         {
                                             scoreText = new OsuSpriteText
@@ -330,27 +329,27 @@ namespace osu.Game.Screens.Play.HUD
             {
                 // we will probably want to display this in a better way once we have a design.
                 // and also show states other than quit.
-                panelColour = Color4.Gray;
-                textColour = Color4.White;
+                panelColour = Colour4.Gray;
+                textColour = Colour4.White;
                 return;
             }
 
             if (scorePosition == 1)
             {
                 widthExtension = true;
-                panelColour = BackgroundColour ?? Color4Extensions.FromHex("7fcc33");
-                textColour = TextColour ?? Color4.White;
+                panelColour = BackgroundColour ?? Colour4Extensions.FromHex("7fcc33");
+                textColour = TextColour ?? Colour4.White;
             }
             else if (Tracked)
             {
                 widthExtension = true;
-                panelColour = BackgroundColour ?? Color4Extensions.FromHex("ffd966");
-                textColour = TextColour ?? Color4Extensions.FromHex("2e576b");
+                panelColour = BackgroundColour ?? Colour4Extensions.FromHex("ffd966");
+                textColour = TextColour ?? Colour4Extensions.FromHex("2e576b");
             }
             else
             {
-                panelColour = BackgroundColour ?? Color4Extensions.FromHex("3399cc");
-                textColour = TextColour ?? Color4.White;
+                panelColour = BackgroundColour ?? Colour4Extensions.FromHex("3399cc");
+                textColour = TextColour ?? Colour4.White;
             }
 
             this.TransformTo(nameof(SizeContainerLeftPadding), widthExtension ? -top_player_left_width_extension : 0, panel_transition_duration, Easing.OutElastic);
@@ -362,7 +361,7 @@ namespace osu.Game.Screens.Play.HUD
             set => backgroundPaddingAdjustContainer.Padding = new MarginPadding { Left = value };
         }
 
-        private Color4 panelColour
+        private Colour4 panelColour
         {
             set
             {
@@ -371,7 +370,7 @@ namespace osu.Game.Screens.Play.HUD
             }
         }
 
-        private Color4 textColour
+        private Colour4 textColour
         {
             set
             {

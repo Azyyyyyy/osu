@@ -8,7 +8,7 @@ using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -159,7 +159,7 @@ namespace osu.Game.Screens.OnlinePlay.Match
                                                             Child = new Box
                                                             {
                                                                 RelativeSizeAxes = Axes.Both,
-                                                                Colour = Color4Extensions.FromHex(@"3e3a44") // Temporary.
+                                                                Colour = Colour4Extensions.FromHex(@"3e3a44") // Temporary.
                                                             },
                                                         },
                                                         new Container
@@ -206,7 +206,7 @@ namespace osu.Game.Screens.OnlinePlay.Match
                                     new Box
                                     {
                                         RelativeSizeAxes = Axes.Both,
-                                        Colour = Color4Extensions.FromHex(@"28242d") // Temporary.
+                                        Colour = Colour4Extensions.FromHex(@"28242d") // Temporary.
                                     },
                                     new Container
                                     {

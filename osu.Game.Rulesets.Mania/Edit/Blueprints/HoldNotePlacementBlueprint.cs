@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Input.Events;
@@ -9,8 +10,7 @@ using osu.Game.Rulesets.Edit;
 using osu.Game.Rulesets.Mania.Edit.Blueprints.Components;
 using osu.Game.Rulesets.Mania.Objects;
 using osu.Game.Rulesets.UI.Scrolling;
-using osuTK;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Rulesets.Mania.Edit.Blueprints
 {

@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Graphics;
 using osu.Framework.Allocation;
@@ -22,8 +23,7 @@ using osu.Game.Rulesets;
 using osu.Game.Scoring;
 using osu.Game.Screens.Select.Leaderboards;
 using osu.Game.Tests.Resources;
-using osuTK;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.UserInterface
 {

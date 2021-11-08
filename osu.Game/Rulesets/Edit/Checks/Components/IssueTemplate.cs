@@ -3,16 +3,15 @@
 
 using Humanizer;
 using osu.Framework.Graphics;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Edit.Checks.Components
 {
     public class IssueTemplate
     {
-        private static readonly Color4 problem_red = new Colour4(1.0f, 0.4f, 0.4f, 1.0f);
-        private static readonly Color4 warning_yellow = new Colour4(1.0f, 0.8f, 0.2f, 1.0f);
-        private static readonly Color4 negligible_green = new Colour4(0.33f, 0.8f, 0.5f, 1.0f);
-        private static readonly Color4 error_gray = new Colour4(0.5f, 0.5f, 0.5f, 1.0f);
+        private static readonly Colour4 problem_red = new Colour4(1.0f, 0.4f, 0.4f, 1.0f);
+        private static readonly Colour4 warning_yellow = new Colour4(1.0f, 0.8f, 0.2f, 1.0f);
+        private static readonly Colour4 negligible_green = new Colour4(0.33f, 0.8f, 0.5f, 1.0f);
+        private static readonly Colour4 error_gray = new Colour4(0.5f, 0.5f, 0.5f, 1.0f);
 
         /// <summary>
         /// The check that this template originates from.
@@ -66,7 +65,7 @@ namespace osu.Game.Rulesets.Edit.Checks.Components
                         return error_gray;
 
                     default:
-                        return Color4.White;
+                        return Colour4.White;
                 }
             }
         }

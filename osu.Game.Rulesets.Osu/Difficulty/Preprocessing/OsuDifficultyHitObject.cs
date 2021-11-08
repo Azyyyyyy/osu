@@ -2,10 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Game.Rulesets.Difficulty.Preprocessing;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Osu.Objects;
-using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Difficulty.Preprocessing
 {
@@ -85,7 +85,7 @@ namespace osu.Game.Rulesets.Osu.Difficulty.Preprocessing
             }
 
             Vector2 lastCursorPosition = getEndCursorPosition(lastObject);
-            JumpDistance = (BaseObject.StackedPosition * scalingFactor - lastCursorPosition * scalingFactor).Length;
+            JumpDistance = (BaseObject.StackedPosition * scalingFactor - lastCursorPosition * scalingFactor).Length();
 
             if (lastObject is Slider lastSlider)
             {
@@ -95,7 +95,7 @@ namespace osu.Game.Rulesets.Osu.Difficulty.Preprocessing
                 MovementTime = Math.Max(StrainTime - TravelTime, min_delta_time);
 
                 // Jump distance from the slider tail to the next object, as opposed to the lazy position of JumpDistance.
-                float tailJumpDistance = Vector2.Subtract(lastSlider.TailCircle.StackedPosition, BaseObject.StackedPosition).Length * scalingFactor;
+                float tailJumpDistance = Vector2.Subtract(lastSlider.TailCircle.StackedPosition, BaseObject.StackedPosition).Length() * scalingFactor;
 
                 // For hitobjects which continue in the direction of the slider, the player will normally follow through the slider,
                 // such that they're not jumping from the lazy position but rather from very close to (or the end of) the slider.
@@ -146,7 +146,7 @@ namespace osu.Game.Rulesets.Osu.Difficulty.Preprocessing
                 var currMovementObj = (OsuHitObject)slider.NestedHitObjects[i];
 
                 Vector2 currMovement = Vector2.Subtract(currMovementObj.StackedPosition, currCursorPosition);
-                double currMovementLength = scalingFactor * currMovement.Length;
+                double currMovementLength = scalingFactor * currMovement.Length();
 
                 // Amount of movement required so that the cursor position needs to be updated.
                 double requiredMovement = assumed_slider_radius;
@@ -159,10 +159,10 @@ namespace osu.Game.Rulesets.Osu.Difficulty.Preprocessing
                     // This code is designed to prevent buffing situations where lazy end is actually a less efficient movement.
                     Vector2 lazyMovement = Vector2.Subtract((Vector2)slider.LazyEndPosition, currCursorPosition);
 
-                    if (lazyMovement.Length < currMovement.Length)
+                    if (lazyMovement.Length() < currMovement.Length())
                         currMovement = lazyMovement;
 
-                    currMovementLength = scalingFactor * currMovement.Length;
+                    currMovementLength = scalingFactor * currMovement.Length();
                 }
                 else if (currMovementObj is SliderRepeat)
                 {

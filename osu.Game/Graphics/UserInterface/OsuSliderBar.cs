@@ -3,13 +3,11 @@
 
 using System;
 using System.Globalization;
+using System.Numerics;
 using JetBrains.Annotations;
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.UserInterface;
@@ -46,9 +44,9 @@ namespace osu.Game.Graphics.UserInterface
         /// </summary>
         public bool DisplayAsPercentage { get; set; }
 
-        private Color4 accentColour;
+        private Colour4 accentColour;
 
-        public Color4 AccentColour
+        public Colour4 AccentColour
         {
             get => accentColour;
             set
@@ -60,7 +58,7 @@ namespace osu.Game.Graphics.UserInterface
 
         private Colour4 backgroundColour;
 
-        public Color4 BackgroundColour
+        public Colour4 BackgroundColour
         {
             get => backgroundColour;
             set

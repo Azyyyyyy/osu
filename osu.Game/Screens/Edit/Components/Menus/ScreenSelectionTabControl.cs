@@ -1,15 +1,13 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.UserInterface;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Components.Menus
 {
@@ -30,7 +28,7 @@ namespace osu.Game.Screens.Edit.Components.Menus
                 Origin = Anchor.BottomLeft,
                 RelativeSizeAxes = Axes.X,
                 Height = 1,
-                Colour = Color4.White.Opacity(0.2f),
+                Colour = Colour4.White.Opacity(0.2f),
             });
         }
 

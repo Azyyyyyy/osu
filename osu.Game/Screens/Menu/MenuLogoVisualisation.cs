@@ -1,12 +1,12 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osuTK.Graphics;
 using osu.Game.Skinning;
 using osu.Game.Online.API;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Game.Online.API.Requests.Responses;
+using osu.Framework.Graphics;
 
 namespace osu.Game.Screens.Menu
 {
@@ -28,9 +28,9 @@ namespace osu.Game.Screens.Menu
         private void updateColour()
         {
             if (user.Value?.IsSupporter ?? false)
-                Colour = skin.Value.GetConfig<GlobalSkinColours, Color4>(GlobalSkinColours.MenuGlow)?.Value ?? Color4.White;
+                Colour = skin.Value.GetConfig<GlobalSkinColours, Colour4>(GlobalSkinColours.MenuGlow)?.Value ?? Colour4.White;
             else
-                Colour = Color4.White;
+                Colour = Colour4.White;
         }
     }
 }

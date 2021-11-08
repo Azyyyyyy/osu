@@ -1,12 +1,11 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -48,7 +47,7 @@ namespace osu.Game.Graphics.UserInterface
                 {
                     new Box
                     {
-                        Colour = inverted ? Color4.White : Color4.Black,
+                        Colour = inverted ? Colour4.White : Colour4.Black,
                         RelativeSizeAxes = Axes.Both,
                         Alpha = withBox ? 0.7f : 0
                     },
@@ -56,7 +55,7 @@ namespace osu.Game.Graphics.UserInterface
                     {
                         Anchor = Anchor.Centre,
                         Origin = Anchor.Centre,
-                        Colour = inverted ? Color4.Black : Color4.White,
+                        Colour = inverted ? Colour4.Black : Colour4.White,
                         Scale = new Vector2(withBox ? 0.6f : 1),
                         RelativeSizeAxes = Axes.Both,
                         Icon = FontAwesome.Solid.CircleNotch

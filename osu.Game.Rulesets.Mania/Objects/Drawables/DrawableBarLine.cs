@@ -1,10 +1,9 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Shapes;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.Objects.Drawables
 {
@@ -36,7 +35,7 @@ namespace osu.Game.Rulesets.Mania.Objects.Drawables
                 Anchor = Anchor.BottomCentre,
                 Origin = Anchor.BottomCentre,
                 RelativeSizeAxes = Axes.Both,
-                Colour = new Color4(255, 204, 33, 255),
+                Colour = new Colour4(255, 204, 33, 255),
             });
 
             if (barLine.Major)

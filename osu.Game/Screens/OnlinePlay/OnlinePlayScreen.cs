@@ -4,7 +4,7 @@
 using System.Diagnostics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Logging;
 using osu.Framework.Screens;
@@ -225,10 +225,10 @@ namespace osu.Game.Screens.OnlinePlay
 
             public MultiplayerWaveContainer()
             {
-                FirstWaveColour = Color4Extensions.FromHex(@"654d8c");
-                SecondWaveColour = Color4Extensions.FromHex(@"554075");
-                ThirdWaveColour = Color4Extensions.FromHex(@"44325e");
-                FourthWaveColour = Color4Extensions.FromHex(@"392850");
+                FirstWaveColour = Colour4Extensions.FromHex(@"654d8c");
+                SecondWaveColour = Colour4Extensions.FromHex(@"554075");
+                ThirdWaveColour = Colour4Extensions.FromHex(@"44325e");
+                FourthWaveColour = Colour4Extensions.FromHex(@"392850");
             }
         }
 

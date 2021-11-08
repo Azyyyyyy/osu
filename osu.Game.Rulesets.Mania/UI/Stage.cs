@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Pooling;
@@ -16,8 +17,6 @@ using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.UI;
 using osu.Game.Rulesets.UI.Scrolling;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.UI
 {
@@ -38,11 +37,11 @@ namespace osu.Game.Rulesets.Mania.UI
 
         private readonly Drawable barLineContainer;
 
-        private readonly Dictionary<ColumnType, Color4> columnColours = new Dictionary<ColumnType, Color4>
+        private readonly Dictionary<ColumnType, Colour4> columnColours = new Dictionary<ColumnType, Colour4>
         {
-            { ColumnType.Even, new Color4(6, 84, 0, 255) },
-            { ColumnType.Odd, new Color4(94, 0, 57, 255) },
-            { ColumnType.Special, new Color4(0, 48, 63, 255) }
+            { ColumnType.Even, new Colour4(6, 84, 0, 255) },
+            { ColumnType.Odd, new Colour4(94, 0, 57, 255) },
+            { ColumnType.Special, new Colour4(0, 48, 63, 255) }
         };
 
         public override bool ReceivePositionalInputAt(Vector2 screenSpacePos) => Columns.Any(c => c.ReceivePositionalInputAt(screenSpacePos));

@@ -3,9 +3,9 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -15,9 +15,7 @@ using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Screens.Edit.Compose.Components
 {
@@ -60,7 +58,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
                                     {
                                         Name = "Black Background",
                                         RelativeSizeAxes = Axes.Both,
-                                        Colour = Color4.Black
+                                        Colour = Colour4.Black
                                     },
                                     new TickSliderBar(beatDivisor, BindableBeatDivisor.VALID_DIVISORS)
                                     {
@@ -178,7 +176,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
             [BackgroundDependencyLoader]
             private void load(OsuColour colours)
             {
-                IconColour = Color4.Black;
+                IconColour = Colour4.Black;
                 HoverColour = colours.Gray7;
                 FlashColour = colours.Gray9;
             }
@@ -310,7 +308,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
 
             private class Marker : CompositeDrawable
             {
-                private Color4 defaultColour;
+                private Colour4 defaultColour;
 
                 private const float size = 7;
 
@@ -333,7 +331,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
                             RelativeSizeAxes = Axes.Y,
                             Origin = Anchor.BottomCentre,
                             Anchor = Anchor.BottomCentre,
-                            Colour = ColourInfo.GradientVertical(Color4.White.Opacity(0.2f), Color4.White),
+                            Colour = ColourInfo.GradientVertical(Colour4.White.Opacity(0.2f), Colour4.White),
                             Blending = BlendingParameters.Additive,
                         },
                         new EquilateralTriangle
@@ -342,7 +340,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
                             Anchor = Anchor.BottomCentre,
                             Height = size,
                             EdgeSmoothness = new Vector2(1),
-                            Colour = Color4.White,
+                            Colour = Colour4.White,
                         }
                     };
                 }
@@ -354,7 +352,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
                     get => active;
                     set
                     {
-                        this.FadeColour(value ? Color4.White : defaultColour, 500, Easing.OutQuint);
+                        this.FadeColour(value ? Colour4.White : defaultColour, 500, Easing.OutQuint);
                         active = value;
                     }
                 }

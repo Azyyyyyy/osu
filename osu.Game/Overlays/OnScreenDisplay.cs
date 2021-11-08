@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Framework.Configuration;
 using osu.Framework.Configuration.Tracking;
 using osu.Framework.Graphics;
@@ -10,7 +11,6 @@ using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Transforms;
 using osu.Framework.Threading;
 using osu.Game.Overlays.OSD;
-using osuTK;
 
 namespace osu.Game.Overlays
 {

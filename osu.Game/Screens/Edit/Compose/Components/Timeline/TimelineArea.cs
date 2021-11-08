@@ -1,14 +1,14 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
 
 namespace osu.Game.Screens.Edit.Compose.Components.Timeline
 {
@@ -41,7 +41,7 @@ namespace osu.Game.Screens.Edit.Compose.Components.Timeline
                 new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4Extensions.FromHex("111")
+                    Colour = Colour4Extensions.FromHex("111")
                 },
                 new GridContainer
                 {
@@ -60,7 +60,7 @@ namespace osu.Game.Screens.Edit.Compose.Components.Timeline
                                     new Box
                                     {
                                         RelativeSizeAxes = Axes.Both,
-                                        Colour = Color4Extensions.FromHex("222")
+                                        Colour = Colour4Extensions.FromHex("222")
                                     },
                                     new FillFlowContainer
                                     {
@@ -99,7 +99,7 @@ namespace osu.Game.Screens.Edit.Compose.Components.Timeline
                                     new Box
                                     {
                                         RelativeSizeAxes = Axes.Both,
-                                        Colour = Color4Extensions.FromHex("333")
+                                        Colour = Colour4Extensions.FromHex("333")
                                     },
                                     new Container<TimelineButton>
                                     {

@@ -2,10 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using Humanizer;
+using osu.Framework.Graphics;
 using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Changelog
 {
@@ -24,6 +24,6 @@ namespace osu.Game.Overlays.Changelog
 
         protected override LocalisableString InfoText => Value.LatestBuild.Users > 0 ? $"{"user".ToQuantity(Value.LatestBuild.Users, "N0")} online" : null;
 
-        protected override Color4 GetBarColour(OsuColour colours) => Value.Colour;
+        protected override Colour4 GetBarColour(OsuColour colours) => Value.Colour;
     }
 }

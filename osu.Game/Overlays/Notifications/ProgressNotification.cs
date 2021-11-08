@@ -2,9 +2,9 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using System.Threading;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -14,8 +14,6 @@ using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Notifications
 {
@@ -97,7 +95,7 @@ namespace osu.Game.Overlays.Notifications
                 case ProgressNotificationState.Cancelled:
                     cancellationTokenSource.Cancel();
 
-                    iconBackground.FadeColour(ColourInfo.GradientVertical(Color4.Gray, Color4.Gray.Lighten(0.5f)), colour_fade_duration);
+                    iconBackground.FadeColour(ColourInfo.GradientVertical(Colour4.Gray, Colour4.Gray.Lighten(0.5f)), colour_fade_duration);
                     loadingSpinner.Hide();
 
                     var icon = new SpriteIcon
@@ -142,9 +140,9 @@ namespace osu.Game.Overlays.Notifications
         public override bool DisplayOnTop => false;
 
         private readonly ProgressBar progressBar;
-        private Color4 colourQueued;
-        private Color4 colourActive;
-        private Color4 colourCancelled;
+        private Colour4 colourQueued;
+        private Colour4 colourActive;
+        private Colour4 colourCancelled;
 
         private Box iconBackground;
         private LoadingSpinner loadingSpinner;
@@ -188,7 +186,7 @@ namespace osu.Game.Overlays.Notifications
                 iconBackground = new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.White,
+                    Colour = Colour4.White,
                 },
                 loadingSpinner = new LoadingSpinner
                 {
@@ -229,8 +227,8 @@ namespace osu.Game.Overlays.Notifications
         {
             private readonly Box box;
 
-            private Color4 colourActive;
-            private Color4 colourInactive;
+            private Colour4 colourActive;
+            private Colour4 colourInactive;
 
             private float progress;
 

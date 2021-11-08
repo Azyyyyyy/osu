@@ -3,13 +3,12 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Screens.Menu;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.UserInterface
 {
@@ -26,7 +25,7 @@ namespace osu.Game.Tests.Visual.UserInterface
             {
                 new Box
                 {
-                    Colour = ColourInfo.GradientVertical(Color4.Gray, Color4.WhiteSmoke),
+                    Colour = ColourInfo.GradientVertical(Colour4.Gray, Colour4.WhiteSmoke),
                     RelativeSizeAxes = Axes.Both,
                 },
                 buttons = new ButtonSystem(),
@@ -53,7 +52,7 @@ namespace osu.Game.Tests.Visual.UserInterface
                 buttons.State = ButtonSystemState.Play;
                 buttons.FadeIn(MainMenu.FADE_IN_DURATION, Easing.OutQuint);
                 buttons.MoveTo(new Vector2(0), MainMenu.FADE_IN_DURATION, Easing.OutQuint);
-                logo.FadeColour(Color4.White, 100, Easing.OutQuint);
+                logo.FadeColour(Colour4.White, 100, Easing.OutQuint);
                 logo.FadeIn(100, Easing.OutQuint);
             });
         }

@@ -14,7 +14,7 @@ using osu.Game.Scoring;
 using osu.Game.Screens.Play;
 using osu.Game.Screens.Ranking;
 using osu.Game.Users;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Screens.Select
 {

@@ -2,11 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using JetBrains.Annotations;
+using osu.Framework.Graphics;
 using osu.Game.Rulesets.Catch.Objects.Drawables;
 using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Skinning;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Catch.UI
 {
@@ -53,7 +53,7 @@ namespace osu.Game.Rulesets.Catch.UI
             updateCombo(result.ComboAtJudgement, judgedObject.AccentColour.Value);
         }
 
-        private void updateCombo(int newCombo, Color4? hitObjectColour)
+        private void updateCombo(int newCombo, Colour4? hitObjectColour)
         {
             currentCombo = newCombo;
             ComboCounter?.UpdateCombo(newCombo, hitObjectColour);

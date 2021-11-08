@@ -1,14 +1,14 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osu.Framework.Extensions.Color4Extensions;
+using System.Numerics;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Screens.Ranking.Expanded.Accuracy;
-using osuTK;
 
 namespace osu.Game.Screens.Ranking.Expanded.Statistics
 {
@@ -61,7 +61,7 @@ namespace osu.Game.Screens.Ranking.Expanded.Statistics
                     Origin = Anchor.CentreLeft,
                     Text = "PERFECT",
                     Font = OsuFont.Torus.With(size: 11, weight: FontWeight.SemiBold),
-                    Colour = ColourInfo.GradientVertical(Color4Extensions.FromHex("#66FFCC"), Color4Extensions.FromHex("#FF9AD7")),
+                    Colour = ColourInfo.GradientVertical(Colour4Extensions.FromHex("#66FFCC"), Colour4Extensions.FromHex("#FF9AD7")),
                     Alpha = 0,
                     UseFullGlyphHeight = false,
                 }

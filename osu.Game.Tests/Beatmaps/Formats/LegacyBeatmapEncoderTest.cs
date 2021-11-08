@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using NUnit.Framework;
 using osu.Framework.Audio.Track;
@@ -26,7 +27,6 @@ using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Taiko;
 using osu.Game.Skinning;
 using osu.Game.Tests.Resources;
-using osuTK;
 
 namespace osu.Game.Tests.Beatmaps.Formats
 {

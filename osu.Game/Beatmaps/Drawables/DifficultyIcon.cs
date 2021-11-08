@@ -3,11 +3,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Threading;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Cursor;
@@ -18,8 +18,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Rulesets;
 using osu.Game.Rulesets.Mods;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Beatmaps.Drawables
 {
@@ -101,7 +99,7 @@ namespace osu.Game.Beatmaps.Drawables
                     Masking = true,
                     EdgeEffect = new EdgeEffectParameters
                     {
-                        Colour = Color4.Black.Opacity(0.06f),
+                        Colour = Colour4.Black.Opacity(0.06f),
 
                         Type = EdgeEffectType.Shadow,
                         Radius = 3,

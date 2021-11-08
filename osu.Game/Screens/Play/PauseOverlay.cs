@@ -9,7 +9,6 @@ using osu.Framework.Graphics;
 using osu.Game.Audio;
 using osu.Game.Graphics;
 using osu.Game.Skinning;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play
 {
@@ -31,7 +30,7 @@ namespace osu.Game.Screens.Play
         {
             AddButton("Continue", colours.Green, () => OnResume?.Invoke());
             AddButton("Retry", colours.YellowDark, () => OnRetry?.Invoke());
-            AddButton("Quit", new Color4(170, 27, 39, 255), () => OnQuit?.Invoke());
+            AddButton("Quit", new Colour4(170, 27, 39, 255), () => OnQuit?.Invoke());
 
             AddInternal(pauseLoop = new SkinnableSound(new SampleInfo("Gameplay/pause-loop"))
             {

@@ -3,8 +3,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Cursor;
@@ -23,8 +24,6 @@ using osu.Game.Rulesets.UI;
 using osu.Game.Screens.Select;
 using osu.Game.Scoring;
 using osu.Game.Users.Drawables;
-using osuTK;
-using osuTK.Graphics;
 using osu.Game.Online.API;
 using osu.Game.Utils;
 
@@ -109,7 +108,7 @@ namespace osu.Game.Online.Leaderboards
                                 background = new Box
                                 {
                                     RelativeSizeAxes = Axes.Both,
-                                    Colour = user.Id == api.LocalUser.Value.Id && allowHighlight ? colour.Green : Color4.Black,
+                                    Colour = user.Id == api.LocalUser.Value.Id && allowHighlight ? colour.Green : Colour4.Black,
                                     Alpha = background_alpha,
                                 },
                             },
@@ -130,7 +129,7 @@ namespace osu.Game.Online.Leaderboards
                                         {
                                             Type = EdgeEffectType.Shadow,
                                             Radius = 1,
-                                            Colour = Color4.Black.Opacity(0.2f),
+                                            Colour = Colour4.Black.Opacity(0.2f),
                                         },
                                     })
                                 {
@@ -198,8 +197,8 @@ namespace osu.Game.Online.Leaderboards
                                     {
                                         scoreLabel = new GlowingSpriteText
                                         {
-                                            TextColour = Color4.White,
-                                            GlowColour = Color4Extensions.FromHex(@"83ccfa"),
+                                            TextColour = Colour4.White,
+                                            GlowColour = Colour4Extensions.FromHex(@"83ccfa"),
                                             Current = scoreManager.GetBindableTotalScoreString(Score),
                                             Font = OsuFont.Numeric.With(size: 23),
                                         },
@@ -324,7 +323,7 @@ namespace osu.Game.Online.Leaderboards
                                     Origin = Anchor.Centre,
                                     Size = new Vector2(icon_size),
                                     Rotation = 45,
-                                    Colour = Color4Extensions.FromHex(@"3087ac"),
+                                    Colour = Colour4Extensions.FromHex(@"3087ac"),
                                     Icon = FontAwesome.Solid.Square,
                                     Shadow = true,
                                 },
@@ -333,7 +332,7 @@ namespace osu.Game.Online.Leaderboards
                                     Anchor = Anchor.Centre,
                                     Origin = Anchor.Centre,
                                     Size = new Vector2(icon_size - 6),
-                                    Colour = Color4Extensions.FromHex(@"a4edff"),
+                                    Colour = Colour4Extensions.FromHex(@"a4edff"),
                                     Icon = statistic.Icon,
                                 },
                             },
@@ -342,8 +341,8 @@ namespace osu.Game.Online.Leaderboards
                         {
                             Anchor = Anchor.CentreLeft,
                             Origin = Anchor.CentreLeft,
-                            TextColour = Color4.White,
-                            GlowColour = Color4Extensions.FromHex(@"83ccfa"),
+                            TextColour = Colour4.White,
+                            GlowColour = Colour4Extensions.FromHex(@"83ccfa"),
                             Text = statistic.Value,
                             Font = OsuFont.GetFont(size: 17, weight: FontWeight.Bold),
                         },

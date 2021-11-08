@@ -4,12 +4,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Utils;
@@ -52,13 +51,13 @@ namespace osu.Game.Screens.Select
         {
             Shear = wedged_container_shear;
             Masking = true;
-            BorderColour = new Color4(221, 255, 255, 255);
+            BorderColour = new Colour4(221, 255, 255, 255);
             BorderThickness = BORDER_THICKNESS;
             Alpha = 0;
             EdgeEffect = new EdgeEffectParameters
             {
                 Type = EdgeEffectType.Glow,
-                Colour = new Color4(130, 204, 255, 150),
+                Colour = new Colour4(130, 204, 255, 150),
                 Radius = 20,
                 Roundness = 15,
             };
@@ -475,7 +474,7 @@ namespace osu.Game.Screens.Select
                                     Anchor = Anchor.Centre,
                                     Origin = Anchor.Centre,
                                     RelativeSizeAxes = Axes.Both,
-                                    Colour = Color4Extensions.FromHex(@"441288"),
+                                    Colour = Colour4Extensions.FromHex(@"441288"),
                                     Icon = FontAwesome.Solid.Square,
                                     Rotation = 45,
                                 },
@@ -484,7 +483,7 @@ namespace osu.Game.Screens.Select
                                     Anchor = Anchor.Centre,
                                     Origin = Anchor.Centre,
                                     RelativeSizeAxes = Axes.Both,
-                                    Colour = Color4Extensions.FromHex(@"f7dd55"),
+                                    Colour = Colour4Extensions.FromHex(@"f7dd55"),
                                     Icon = FontAwesome.Regular.Circle,
                                     Size = new Vector2(0.8f)
                                 },
@@ -493,7 +492,7 @@ namespace osu.Game.Screens.Select
                                     i.Anchor = Anchor.Centre;
                                     i.Origin = Anchor.Centre;
                                     i.RelativeSizeAxes = Axes.Both;
-                                    i.Colour = Color4Extensions.FromHex(@"f7dd55");
+                                    i.Colour = Colour4Extensions.FromHex(@"f7dd55");
                                     i.Size = new Vector2(0.64f);
                                 }),
                             }
@@ -502,7 +501,7 @@ namespace osu.Game.Screens.Select
                         {
                             Anchor = Anchor.CentreLeft,
                             Origin = Anchor.CentreLeft,
-                            Colour = new Color4(255, 221, 85, 255),
+                            Colour = new Colour4(255, 221, 85, 255),
                             Font = OsuFont.GetFont(weight: FontWeight.Bold, size: 17),
                             Margin = new MarginPadding { Left = 30 },
                             Text = statistic.Content,

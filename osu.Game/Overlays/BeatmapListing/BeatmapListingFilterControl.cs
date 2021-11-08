@@ -4,8 +4,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -17,8 +17,6 @@ using osu.Game.Online.API.Requests;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Rulesets;
 using osu.Game.Resources.Localisation.Web;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.BeatmapListing
 {
@@ -84,7 +82,7 @@ namespace osu.Game.Overlays.BeatmapListing
                         Masking = true,
                         EdgeEffect = new EdgeEffectParameters
                         {
-                            Colour = Color4.Black.Opacity(0.25f),
+                            Colour = Colour4.Black.Opacity(0.25f),
                             Type = EdgeEffectType.Shadow,
                             Radius = 3,
                             Offset = new Vector2(0f, 1f),

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -165,7 +165,7 @@ namespace osu.Game.Screens.Ranking.Statistics
                 InternalChild = new Circle
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4Extensions.FromHex("#66FFCC")
+                    Colour = Colour4Extensions.FromHex("#66FFCC")
                 };
             }
         }

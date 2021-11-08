@@ -17,7 +17,6 @@ using osu.Game.Rulesets.Objects.Legacy;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Skinning;
 using osu.Game.Tests.Visual;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Gameplay
 {
@@ -42,7 +41,7 @@ namespace osu.Game.Tests.Gameplay
                 skinContainer.Add(hitObject);
             });
 
-            AddAssert("combo colour is green", () => hitObject.AccentColour.Value == Color4.Green);
+            AddAssert("combo colour is green", () => hitObject.AccentColour.Value == Colour4.Green);
         }
 
         [Test]
@@ -56,7 +55,7 @@ namespace osu.Game.Tests.Gameplay
                 hitObject.HitObject.ComboIndex = 1;
             });
 
-            AddAssert("combo colour is green", () => hitObject.AccentColour.Value == Color4.Green);
+            AddAssert("combo colour is green", () => hitObject.AccentColour.Value == Colour4.Green);
         }
 
         [Test]
@@ -65,10 +64,10 @@ namespace osu.Game.Tests.Gameplay
             TestDrawableHitObject hitObject = null;
 
             AddStep("add hitobject", () => skinContainer.Add(hitObject = new TestDrawableHitObject()));
-            AddAssert("combo colour is red", () => hitObject.AccentColour.Value == Color4.Red);
+            AddAssert("combo colour is red", () => hitObject.AccentColour.Value == Colour4.Red);
 
             AddStep("change combo", () => hitObject.HitObject.ComboIndex = 1);
-            AddAssert("combo colour is green", () => hitObject.AccentColour.Value == Color4.Green);
+            AddAssert("combo colour is green", () => hitObject.AccentColour.Value == Colour4.Green);
         }
 
         private class TestDrawableHitObject : DrawableHitObject<TestHitObjectWithCombo>
@@ -119,10 +118,10 @@ namespace osu.Game.Tests.Gameplay
 
         private class TestSkin : ISkin
         {
-            public readonly List<Color4> ComboColours = new List<Color4>
+            public readonly List<Colour4> ComboColours = new List<Colour4>
             {
-                Color4.Red,
-                Color4.Green
+                Colour4.Red,
+                Colour4.Green
             };
 
             public Drawable GetDrawableComponent(ISkinComponent component) => throw new NotImplementedException();
@@ -138,7 +137,7 @@ namespace osu.Game.Tests.Gameplay
                 switch (lookup)
                 {
                     case SkinComboColourLookup comboColour:
-                        return SkinUtils.As<TValue>(new Bindable<Color4>(ComboColours[comboColour.ColourIndex % ComboColours.Count]));
+                        return SkinUtils.As<TValue>(new Bindable<Colour4>(ComboColours[comboColour.ColourIndex % ComboColours.Count]));
                 }
 
                 throw new NotImplementedException();

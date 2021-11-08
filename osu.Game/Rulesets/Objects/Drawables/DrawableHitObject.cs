@@ -21,7 +21,6 @@ using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.UI;
 using osu.Game.Skinning;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Objects.Drawables
 {
@@ -52,7 +51,7 @@ namespace osu.Game.Rulesets.Objects.Drawables
         /// <summary>
         /// The colour used for various elements of this DrawableHitObject.
         /// </summary>
-        public readonly Bindable<Color4> AccentColour = new Bindable<Color4>(Color4.Gray);
+        public readonly Bindable<Colour4> AccentColour = new Bindable<Colour4>(Colour4.Gray);
 
         protected PausableSkinnableSound Samples { get; private set; }
 

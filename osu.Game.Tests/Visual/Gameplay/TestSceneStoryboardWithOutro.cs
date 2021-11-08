@@ -3,6 +3,7 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using osu.Framework.Graphics;
@@ -20,7 +21,7 @@ using osu.Game.Scoring;
 using osu.Game.Screens.Play;
 using osu.Game.Screens.Ranking;
 using osu.Game.Storyboards;
-using osuTK;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Gameplay
 {
@@ -52,7 +53,7 @@ namespace osu.Game.Tests.Visual.Gameplay
         {
             CreateTest(null);
             AddUntilStep("completion set by processor", () => Player.ScoreProcessor.HasCompleted.Value);
-            AddStep("skip outro", () => InputManager.Key(osuTK.Input.Key.Space));
+            AddStep("skip outro", () => InputManager.Key(Key.Space));
             AddUntilStep("wait for score shown", () => Player.IsScoreShown);
             AddUntilStep("time less than storyboard duration", () => Player.GameplayClockContainer.GameplayClock.CurrentTime < currentStoryboardDuration);
         }

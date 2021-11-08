@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -8,8 +9,6 @@ using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.Containers
 {
@@ -22,12 +21,12 @@ namespace osu.Game.Graphics.Containers
         /// </summary>
         public readonly BindableBool DragActive = new BindableBool();
 
-        private Color4 handleColour = Color4.White;
+        private Colour4 handleColour = Colour4.White;
 
         /// <summary>
         /// The colour of the drag handle.
         /// </summary>
-        protected Color4 HandleColour
+        protected Colour4 HandleColour
         {
             get => handleColour;
             set

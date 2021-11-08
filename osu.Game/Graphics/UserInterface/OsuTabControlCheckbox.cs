@@ -1,8 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osuTK;
-using osuTK.Graphics;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
@@ -25,9 +24,9 @@ namespace osu.Game.Graphics.UserInterface
         private readonly Box box;
         private readonly SpriteText text;
 
-        private Color4? accentColour;
+        private Colour4? accentColour;
 
-        public Color4 AccentColour
+        public Colour4 AccentColour
         {
             get => accentColour.GetValueOrDefault();
             set
@@ -78,7 +77,7 @@ namespace osu.Game.Graphics.UserInterface
                     RelativeSizeAxes = Axes.X,
                     Height = 1,
                     Alpha = 0,
-                    Colour = Color4.White,
+                    Colour = Colour4.White,
                     Origin = Anchor.BottomLeft,
                     Anchor = Anchor.BottomLeft,
                 }
@@ -130,7 +129,7 @@ namespace osu.Game.Graphics.UserInterface
         private void updateFade()
         {
             box.FadeTo(Current.Value || IsHovered ? 1 : 0, transition_length, Easing.OutQuint);
-            text.FadeColour(Current.Value || IsHovered ? Color4.White : AccentColour, transition_length, Easing.OutQuint);
+            text.FadeColour(Current.Value || IsHovered ? Colour4.White : AccentColour, transition_length, Easing.OutQuint);
         }
     }
 }

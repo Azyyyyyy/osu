@@ -3,6 +3,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Numerics;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
@@ -26,8 +27,6 @@ using osu.Game.Screens.Menu;
 using osu.Game.Screens.Play.PlayerSettings;
 using osu.Game.Users;
 using osu.Game.Utils;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play
 {
@@ -353,7 +352,7 @@ namespace osu.Game.Screens.Play
             content.ScaleTo(1, 650, Easing.OutQuint).Then().Schedule(prepareNewPlayer);
             lowPassFilter.CutoffTo(1000, 650, Easing.OutQuint);
 
-            ApplyToBackground(b => b?.FadeColour(Color4.White, 800, Easing.OutQuint));
+            ApplyToBackground(b => b?.FadeColour(Colour4.White, 800, Easing.OutQuint));
         }
 
         private void contentOut()

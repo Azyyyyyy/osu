@@ -5,13 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Utils;
 using osu.Game.Beatmaps.Legacy;
 using osu.Game.IO;
 using osu.Game.Storyboards;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Beatmaps.Formats
 {
@@ -262,8 +261,8 @@ namespace osu.Game.Beatmaps.Formats
                                 float endGreen = split.Length > 8 ? Parsing.ParseFloat(split[8]) : startGreen;
                                 float endBlue = split.Length > 9 ? Parsing.ParseFloat(split[9]) : startBlue;
                                 timelineGroup?.Colour.Add(easing, startTime, endTime,
-                                    new Color4(startRed / 255f, startGreen / 255f, startBlue / 255f, 1),
-                                    new Color4(endRed / 255f, endGreen / 255f, endBlue / 255f, 1));
+                                    new Colour4(startRed / 255f, startGreen / 255f, startBlue / 255f, 1),
+                                    new Colour4(endRed / 255f, endGreen / 255f, endBlue / 255f, 1));
                                 break;
                             }
 

@@ -4,8 +4,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using osuTK;
-using osuTK.Graphics;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -21,7 +20,6 @@ using osu.Game.Online.Chat;
 using osu.Game.Overlays.Chat;
 using osu.Game.Overlays.Chat.Selection;
 using osu.Game.Overlays.Chat.Tabs;
-using osuTK.Input;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
 using osu.Framework.Input;
@@ -29,6 +27,7 @@ using osu.Framework.Input.Bindings;
 using osu.Framework.Localisation;
 using osu.Game.Localisation;
 using osu.Game.Online;
+using Silk.NET.Input;
 
 namespace osu.Game.Overlays
 {
@@ -173,7 +172,7 @@ namespace osu.Game.Overlays
                                 tabBackground = new Box
                                 {
                                     RelativeSizeAxes = Axes.Both,
-                                    Colour = Color4.Black,
+                                    Colour = Colour4.Black,
                                 },
                                 new Sprite
                                 {

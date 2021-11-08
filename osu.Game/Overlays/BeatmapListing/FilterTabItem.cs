@@ -11,7 +11,6 @@ using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.BeatmapListing
 {
@@ -75,6 +74,6 @@ namespace osu.Game.Overlays.BeatmapListing
             text.Font = text.Font.With(weight: Active.Value ? FontWeight.SemiBold : FontWeight.Regular);
         }
 
-        protected virtual Color4 GetStateColour() => Active.Value ? colourProvider.Content1 : colourProvider.Light2;
+        protected virtual Colour4 GetStateColour() => Active.Value ? colourProvider.Content1 : colourProvider.Light2;
     }
 }

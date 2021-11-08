@@ -12,7 +12,7 @@ using osu.Game.Screens;
 using osu.Game.Screens.Menu;
 using osu.Game.Screens.Play;
 using osu.Game.Tests.Beatmaps.IO;
-using osuTK.Input;
+using Silk.NET.Input;
 using static osu.Game.Tests.Visual.Navigation.TestSceneScreenNavigation;
 
 namespace osu.Game.Tests.Visual.Navigation

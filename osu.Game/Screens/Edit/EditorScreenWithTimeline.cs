@@ -3,14 +3,12 @@
 
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Screens.Edit.Compose.Components;
 using osu.Game.Screens.Edit.Compose.Components.Timeline;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit
 {
@@ -60,7 +58,7 @@ namespace osu.Game.Screens.Edit
                                 new Box
                                 {
                                     RelativeSizeAxes = Axes.Both,
-                                    Colour = Color4.Black.Opacity(0.5f)
+                                    Colour = Colour4.Black.Opacity(0.5f)
                                 },
                                 new Container
                                 {

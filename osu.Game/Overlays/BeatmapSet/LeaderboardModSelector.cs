@@ -6,13 +6,12 @@ using osu.Framework.Graphics;
 using osu.Game.Rulesets.Mods;
 using osu.Framework.Bindables;
 using osu.Game.Rulesets;
-using osuTK;
 using osu.Game.Rulesets.UI;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics.UserInterface;
-using osuTK.Graphics;
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.IEnumerableExtensions;
 
@@ -123,7 +122,7 @@ namespace osu.Game.Overlays.BeatmapSet
                     if (Selected.Value)
                         return;
 
-                    this.FadeColour(highlighted.NewValue ? Color4.White : Color4.DimGray, duration, Easing.OutQuint);
+                    this.FadeColour(highlighted.NewValue ? Colour4.White : Colour4.DimGray, duration, Easing.OutQuint);
                 }, true);
 
                 Selected.BindValueChanged(selected =>

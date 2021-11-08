@@ -3,9 +3,9 @@
 
 #nullable enable
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -13,8 +13,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Input.Events;
 using osu.Game.Overlays;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.UserInterfaceV2
 {
@@ -28,8 +26,8 @@ namespace osu.Game.Graphics.UserInterfaceV2
         private readonly Drawable switchCircle;
         private readonly CircularBorderContainer circularContainer;
 
-        private Color4 enabledColour;
-        private Color4 disabledColour;
+        private Colour4 enabledColour;
+        private Colour4 disabledColour;
 
         public SwitchButton()
         {
@@ -38,7 +36,7 @@ namespace osu.Game.Graphics.UserInterfaceV2
             InternalChild = circularContainer = new CircularBorderContainer
             {
                 RelativeSizeAxes = Axes.Both,
-                BorderColour = Color4.White,
+                BorderColour = Colour4.White,
                 BorderThickness = border_thickness,
                 Masking = true,
                 Children = new Drawable[]

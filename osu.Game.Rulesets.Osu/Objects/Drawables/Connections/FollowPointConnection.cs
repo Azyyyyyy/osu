@@ -2,11 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Pooling;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Pooling;
-using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables.Connections
 {
@@ -56,7 +56,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables.Connections
             Vector2 endPosition = end.StackedPosition;
 
             Vector2 distanceVector = endPosition - startPosition;
-            int distance = (int)distanceVector.Length;
+            int distance = (int)distanceVector.Length();
             float rotation = (float)(Math.Atan2(distanceVector.Y, distanceVector.X) * (180 / Math.PI));
 
             double finalTransformEndTime = startTime;

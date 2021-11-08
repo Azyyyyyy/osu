@@ -1,17 +1,15 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using System.Threading;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Screens;
 using osu.Game.Beatmaps;
 using osu.Game.Online.Rooms;
-using osuTK;
-using osuTK.Graphics;
 
 #nullable enable
 
@@ -29,7 +27,7 @@ namespace osu.Game.Screens.OnlinePlay.Components
             {
                 RelativeSizeAxes = Axes.Both,
                 Depth = float.MinValue,
-                Colour = ColourInfo.GradientVertical(Color4.Black.Opacity(0.9f), Color4.Black.Opacity(0.6f))
+                Colour = ColourInfo.GradientVertical(Colour4.Black.Opacity(0.9f), Colour4.Black.Opacity(0.6f))
             });
         }
 

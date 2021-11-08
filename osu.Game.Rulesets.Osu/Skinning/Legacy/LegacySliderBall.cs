@@ -6,7 +6,6 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
 using osu.Game.Skinning;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 {
@@ -30,7 +29,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
         [BackgroundDependencyLoader]
         private void load()
         {
-            var ballColour = skin.GetConfig<OsuSkinColour, Color4>(OsuSkinColour.SliderBall)?.Value ?? Color4.White;
+            var ballColour = skin.GetConfig<OsuSkinColour, Colour4>(OsuSkinColour.SliderBall)?.Value ?? Colour4.White;
 
             InternalChildren = new[]
             {
@@ -39,7 +38,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
                     Texture = skin.GetTexture("sliderb-nd"),
-                    Colour = new Color4(5, 5, 5, 255),
+                    Colour = new Colour4(5, 5, 5, 255),
                 },
                 LegacyColourCompatibility.ApplyWithDoubledAlpha(animationContent.With(d =>
                 {

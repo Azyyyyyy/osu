@@ -3,6 +3,7 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
@@ -16,8 +17,6 @@ using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Online.API;
 using osu.Game.Overlays.Settings;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.AccountCreation
 {
@@ -143,7 +142,7 @@ namespace osu.Game.Overlays.AccountCreation
             string password = passwordTextBox.Text;
 
             foreach (var d in characterCheckText.Drawables)
-                d.Colour = password.Length == 0 ? Color4.White : Interpolation.ValueAt(password.Length, Color4.OrangeRed, Color4.YellowGreen, 0, 8, Easing.In);
+                d.Colour = password.Length == 0 ? Colour4.White : Interpolation.ValueAt(password.Length, Colour4.OrangeRed, Colour4.YellowGreen, 0, 8, Easing.In);
         }
 
         public override void OnEntering(IScreen last)

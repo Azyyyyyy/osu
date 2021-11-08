@@ -5,6 +5,7 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions;
 using osu.Game.Graphics;
@@ -13,7 +14,6 @@ using osu.Framework.Extensions.IEnumerableExtensions;
 using osu.Framework.Extensions.LocalisationExtensions;
 using osu.Game.Users;
 using osu.Game.Users.Drawables;
-using osuTK;
 using osu.Framework.Localisation;
 
 namespace osu.Game.Overlays.Rankings.Tables

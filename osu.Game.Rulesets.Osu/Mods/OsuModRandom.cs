@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Graphics.Primitives;
 using osu.Framework.Utils;
 using osu.Game.Beatmaps;
@@ -13,7 +14,6 @@ using osu.Game.Rulesets.Osu.Beatmaps;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.UI;
 using osu.Game.Rulesets.Osu.Utils;
-using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Mods
 {
@@ -24,7 +24,7 @@ namespace osu.Game.Rulesets.Osu.Mods
     {
         public override string Description => "It never gets boring!";
 
-        private static readonly float playfield_diagonal = OsuPlayfield.BASE_SIZE.LengthFast;
+        private static readonly float playfield_diagonal = OsuPlayfield.BASE_SIZE.Length();
 
         /// <summary>
         /// Number of previous hitobjects to be shifted together when another object is being moved.

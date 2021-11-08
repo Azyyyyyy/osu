@@ -6,9 +6,9 @@ using osu.Framework.Graphics;
 using osu.Framework.Allocation;
 using osu.Game.Overlays;
 using osu.Framework.Graphics.Containers;
-using osuTK;
 using NUnit.Framework;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Testing;
 

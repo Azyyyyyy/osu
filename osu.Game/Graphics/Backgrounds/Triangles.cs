@@ -3,8 +3,6 @@
 
 using osu.Framework.Graphics;
 using osu.Framework.Utils;
-using osuTK;
-using osuTK.Graphics;
 using System;
 using osu.Framework.Graphics.Shaders;
 using osu.Framework.Graphics.Textures;
@@ -12,10 +10,14 @@ using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Primitives;
 using osu.Framework.Allocation;
 using System.Collections.Generic;
+using System.Numerics;
+using osu.Framework.Extensions.MatrixExtensions;
 using osu.Framework.Graphics.Batches;
 using osu.Framework.Graphics.OpenGL.Buffers;
 using osu.Framework.Graphics.OpenGL.Vertices;
 using osu.Framework.Lists;
+using osu.Framework.Extensions;
+using Vector2Extensions = osu.Framework.Graphics.Vector2Extensions;
 
 namespace osu.Game.Graphics.Backgrounds
 {
@@ -30,9 +32,9 @@ namespace osu.Game.Graphics.Backgrounds
         /// </summary>
         private const float edge_smoothness = 1;
 
-        private Color4 colourLight = Color4.White;
+        private Colour4 colourLight = Colour4.White;
 
-        public Color4 ColourLight
+        public Colour4 ColourLight
         {
             get => colourLight;
             set
@@ -44,9 +46,9 @@ namespace osu.Game.Graphics.Backgrounds
             }
         }
 
-        private Color4 colourDark = Color4.Black;
+        private Colour4 colourDark = Colour4.Black;
 
-        public Color4 ColourDark
+        public Colour4 ColourDark
         {
             get => colourDark;
             set
@@ -155,7 +157,7 @@ namespace osu.Game.Graphics.Backgrounds
 
                 // Scale moved distance by the size of the triangle. Smaller triangles should move more slowly.
                 newParticle.Position.Y += Math.Max(0.5f, parts[i].Scale) * movedDistance;
-                newParticle.Colour.A = adjustedAlpha;
+                newParticle.Colour = newParticle.Colour.Opacity(adjustedAlpha);
 
                 parts[i] = newParticle;
 
@@ -223,7 +225,7 @@ namespace osu.Game.Graphics.Backgrounds
         /// Creates a shade of colour for the triangles.
         /// </summary>
         /// <returns>The colour.</returns>
-        protected virtual Color4 CreateTriangleShade(float shade) => Interpolation.ValueAt(shade, colourDark, colourLight, 0, 1);
+        protected virtual Colour4 CreateTriangleShade(float shade) => Interpolation.ValueAt(shade, colourDark, colourLight, 0, 1);
 
         private void updateColours()
         {
@@ -280,7 +282,7 @@ namespace osu.Game.Graphics.Backgrounds
 
                 shader.Bind();
 
-                Vector2 localInflationAmount = edge_smoothness * DrawInfo.MatrixInverse.ExtractScale().Xy;
+                Vector2 localInflationAmount = edge_smoothness * DrawInfo.MatrixInverse.ExtractScale().XY();
 
                 foreach (TriangleParticle particle in parts)
                 {
@@ -331,7 +333,7 @@ namespace osu.Game.Graphics.Backgrounds
             /// <summary>
             /// The colour of the triangle.
             /// </summary>
-            public Color4 Colour;
+            public Colour4 Colour;
 
             /// <summary>
             /// The scale of the triangle.

@@ -5,12 +5,10 @@ using System;
 using System.Linq;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Graphics;
 using osu.Game.Rulesets.Objects.Drawables;
-using osuTK.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Input.Events;
 using osu.Game.Rulesets.Objects;
@@ -96,7 +94,7 @@ namespace osu.Game.Rulesets.Taiko.Objects.Drawables
                                 RelativeSizeAxes = Axes.Both,
                                 Masking = true,
                                 BorderThickness = target_ring_thin_border,
-                                BorderColour = Color4.White,
+                                BorderColour = Colour4.White,
                                 Children = new[]
                                 {
                                     new Box

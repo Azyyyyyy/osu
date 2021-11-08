@@ -1,12 +1,12 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Screens.Play;
 using osu.Game.Screens.Play.HUD;
-using osuTK;
 
 namespace osu.Game.Skinning
 {

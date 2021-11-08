@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
@@ -28,7 +29,6 @@ using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Scoring;
 using osu.Game.Screens.Play;
-using osuTK;
 
 namespace osu.Game.Rulesets.UI
 {

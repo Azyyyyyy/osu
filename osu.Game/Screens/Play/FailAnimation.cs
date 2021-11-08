@@ -6,11 +6,11 @@ using osu.Framework.Bindables;
 using osu.Game.Rulesets.UI;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using ManagedBass.Fx;
 using osu.Framework.Allocation;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Audio.Track;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -19,8 +19,6 @@ using osu.Game.Audio.Effects;
 using osu.Game.Beatmaps;
 using osu.Game.Configuration;
 using osu.Game.Rulesets.Objects.Drawables;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play
 {
@@ -84,7 +82,7 @@ namespace osu.Game.Screens.Play
                 Content,
                 redFlashLayer = new Box
                 {
-                    Colour = Color4.Red.Opacity(0.6f),
+                    Colour = Colour4.Red.Opacity(0.6f),
                     RelativeSizeAxes = Axes.Both,
                     Blending = BlendingParameters.Additive,
                     Depth = float.MinValue,
@@ -127,14 +125,14 @@ namespace osu.Game.Screens.Play
 
             Content.Add(new Box
             {
-                Colour = Color4.Black,
+                Colour = Colour4.Black,
                 RelativeSizeAxes = Axes.Both,
                 Depth = float.MaxValue
             });
 
             Content.ScaleTo(0.85f, duration, Easing.OutQuart);
             Content.RotateTo(1, duration, Easing.OutQuart);
-            Content.FadeColour(Color4.Gray, duration);
+            Content.FadeColour(Colour4.Gray, duration);
         }
 
         public void RemoveFilters()

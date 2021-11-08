@@ -5,7 +5,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using osu.Framework.Allocation;
 using osu.Framework.Caching;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Lines;
@@ -15,7 +15,6 @@ using osu.Game.Tournament.Components;
 using osu.Game.Tournament.Models;
 using osu.Game.Tournament.Screens.Editors;
 using osu.Game.Tournament.Screens.Ladder.Components;
-using osuTK.Graphics;
 
 namespace osu.Game.Tournament.Screens.Ladder
 {
@@ -32,8 +31,8 @@ namespace osu.Game.Tournament.Screens.Ladder
         [BackgroundDependencyLoader]
         private void load(OsuColour colours, Storage storage)
         {
-            normalPathColour = Color4Extensions.FromHex("#66D1FF");
-            losersPathColour = Color4Extensions.FromHex("#FFC700");
+            normalPathColour = Colour4Extensions.FromHex("#66D1FF");
+            losersPathColour = Colour4Extensions.FromHex("#FFC700");
 
             RelativeSizeAxes = Axes.Both;
 
@@ -109,8 +108,8 @@ namespace osu.Game.Tournament.Screens.Ladder
                 UpdateLayout();
         }
 
-        private Color4 normalPathColour;
-        private Color4 losersPathColour;
+        private Colour4 normalPathColour;
+        private Colour4 losersPathColour;
 
         protected virtual bool DrawLoserPaths => false;
 

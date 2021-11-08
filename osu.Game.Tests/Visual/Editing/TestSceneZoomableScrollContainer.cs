@@ -1,6 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
@@ -12,9 +13,7 @@ using osu.Framework.Utils;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Cursor;
 using osu.Game.Screens.Edit.Compose.Components.Timeline;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Editing
 {
@@ -53,7 +52,7 @@ namespace osu.Game.Tests.Visual.Editing
                 scrollContainer.Add(innerBox = new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = ColourInfo.GradientHorizontal(new Color4(0.8f, 0.6f, 0.4f, 1f), new Color4(0.4f, 0.6f, 0.8f, 1f))
+                    Colour = ColourInfo.GradientHorizontal(new Colour4(0.8f, 0.6f, 0.4f, 1f), new Colour4(0.4f, 0.6f, 0.8f, 1f))
                 });
             });
             AddUntilStep("Scroll container is loaded", () => scrollContainer.LoadState >= LoadState.Loaded);

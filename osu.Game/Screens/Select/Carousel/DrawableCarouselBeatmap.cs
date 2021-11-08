@@ -4,10 +4,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -24,8 +25,6 @@ using osu.Game.Graphics.Backgrounds;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Overlays;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Select.Carousel
 {
@@ -97,8 +96,8 @@ namespace osu.Game.Screens.Select.Carousel
                 {
                     TriangleScale = 2,
                     RelativeSizeAxes = Axes.Both,
-                    ColourLight = Color4Extensions.FromHex(@"3a7285"),
-                    ColourDark = Color4Extensions.FromHex(@"123744")
+                    ColourLight = Colour4Extensions.FromHex(@"3a7285"),
+                    ColourDark = Colour4Extensions.FromHex(@"123744")
                 },
                 new FillFlowContainer
                 {
@@ -181,10 +180,10 @@ namespace osu.Game.Screens.Select.Carousel
             MovementContainer.MoveToX(-50, 500, Easing.OutExpo);
 
             background.Colour = ColourInfo.GradientVertical(
-                new Color4(20, 43, 51, 255),
-                new Color4(40, 86, 102, 255));
+                new Colour4(20, 43, 51, 255),
+                new Colour4(40, 86, 102, 255));
 
-            triangles.Colour = Color4.White;
+            triangles.Colour = Colour4.White;
         }
 
         protected override void Deselected()
@@ -193,7 +192,7 @@ namespace osu.Game.Screens.Select.Carousel
 
             MovementContainer.MoveToX(0, 500, Easing.OutExpo);
 
-            background.Colour = new Color4(20, 43, 51, 255);
+            background.Colour = new Colour4(20, 43, 51, 255);
             triangles.Colour = OsuColour.Gray(0.5f);
         }
 

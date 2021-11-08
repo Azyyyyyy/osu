@@ -2,9 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Cursor;
@@ -16,9 +17,7 @@ using osu.Game.Graphics.UserInterface;
 using osu.Game.Tournament.Components;
 using osu.Game.Tournament.Models;
 using osu.Game.Tournament.Screens.Editors;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tournament.Screens.Ladder.Components
 {
@@ -33,7 +32,7 @@ namespace osu.Game.Tournament.Screens.Ladder.Components
         private readonly Bindable<int?> score = new Bindable<int?>();
         private readonly BindableBool completed = new BindableBool();
 
-        private Color4 colourWinner;
+        private Colour4 colourWinner;
 
         private readonly Func<bool> isWinner;
         private LadderEditorScreen ladderEditor;
@@ -86,8 +85,8 @@ namespace osu.Game.Tournament.Screens.Ladder.Components
             this.ladderEditor = ladderEditor;
 
             colourWinner = losers
-                ? Color4Extensions.FromHex("#8E7F48")
-                : Color4Extensions.FromHex("#1462AA");
+                ? Colour4Extensions.FromHex("#8E7F48")
+                : Colour4Extensions.FromHex("#1462AA");
 
             InternalChildren = new Drawable[]
             {
@@ -181,10 +180,10 @@ namespace osu.Game.Tournament.Screens.Ladder.Components
         {
             bool winner = completed.Value && isWinner?.Invoke() == true;
 
-            background.FadeColour(winner ? Color4.White : Color4Extensions.FromHex("#444"), winner ? 500 : 0, Easing.OutQuint);
-            backgroundRight.FadeColour(winner ? colourWinner : Color4Extensions.FromHex("#333"), winner ? 500 : 0, Easing.OutQuint);
+            background.FadeColour(winner ? Colour4.White : Colour4Extensions.FromHex("#444"), winner ? 500 : 0, Easing.OutQuint);
+            backgroundRight.FadeColour(winner ? colourWinner : Colour4Extensions.FromHex("#333"), winner ? 500 : 0, Easing.OutQuint);
 
-            AcronymText.Colour = winner ? Color4.Black : Color4.White;
+            AcronymText.Colour = winner ? Colour4.Black : Colour4.White;
 
             scoreText.Font = scoreText.Font.With(weight: winner ? FontWeight.Bold : FontWeight.Regular);
         }

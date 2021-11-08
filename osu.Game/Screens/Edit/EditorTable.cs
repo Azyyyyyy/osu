@@ -12,7 +12,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Overlays;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit
 {
@@ -92,8 +91,8 @@ namespace osu.Game.Screens.Edit
                 };
             }
 
-            private Color4 colourHover;
-            private Color4 colourSelected;
+            private Colour4 colourHover;
+            private Colour4 colourSelected;
 
             [BackgroundDependencyLoader]
             private void load(OverlayColourProvider colours)

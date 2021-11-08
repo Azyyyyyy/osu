@@ -3,17 +3,15 @@
 
 using System;
 using System.Net;
+using System.Numerics;
 using System.Text.RegularExpressions;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK;
-using osuTK.Graphics;
 using APIUser = osu.Game.Online.API.Requests.Responses.APIUser;
 
 namespace osu.Game.Overlays.Changelog
@@ -55,7 +53,7 @@ namespace osu.Game.Overlays.Changelog
 
         private Drawable createTitle()
         {
-            var entryColour = entry.Major ? colours.YellowLight : Color4.White;
+            var entryColour = entry.Major ? colours.YellowLight : Colour4.White;
 
             LinkFlowContainer title;
 
@@ -100,7 +98,7 @@ namespace osu.Game.Overlays.Changelog
             return titleContainer;
         }
 
-        private void addRepositoryReference(LinkFlowContainer title, Color4 entryColour)
+        private void addRepositoryReference(LinkFlowContainer title, Colour4 entryColour)
         {
             title.AddText(" (", t =>
             {
@@ -120,7 +118,7 @@ namespace osu.Game.Overlays.Changelog
             });
         }
 
-        private void addGithubAuthorReference(LinkFlowContainer title, Color4 entryColour)
+        private void addGithubAuthorReference(LinkFlowContainer title, Colour4 entryColour)
         {
             title.AddText("by ", t =>
             {

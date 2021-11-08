@@ -4,8 +4,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Extensions.EnumExtensions;
-using osuTK;
 using osu.Game.Audio;
 using osu.Game.Beatmaps;
 using osu.Game.Beatmaps.ControlPoints;
@@ -34,7 +34,7 @@ namespace osu.Game.Rulesets.Mania.Beatmaps.Patterns.Legacy
 
             var positionData = hitObject as IHasPosition;
 
-            float positionSeparation = ((positionData?.Position ?? Vector2.Zero) - previousPosition).Length;
+            float positionSeparation = ((positionData?.Position ?? Vector2.Zero) - previousPosition).Length();
             double timeSeparation = hitObject.StartTime - previousTime;
 
             if (timeSeparation <= 80)

@@ -2,8 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
-using osuTK;
-using osuTK.Graphics;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions;
 using osu.Framework.Graphics;
@@ -39,9 +38,9 @@ namespace osu.Game.Graphics.UserInterface
 
             protected readonly SpriteText Text;
 
-            private Color4 accentColour;
+            private Colour4 accentColour;
 
-            public Color4 AccentColour
+            public Colour4 AccentColour
             {
                 get => accentColour;
                 set
@@ -72,7 +71,7 @@ namespace osu.Game.Graphics.UserInterface
                         RelativeSizeAxes = Axes.X,
                         Height = 5,
                         Scale = new Vector2(1f, 0f),
-                        Colour = Color4.White,
+                        Colour = Colour4.White,
                         Origin = Anchor.BottomLeft,
                         Anchor = Anchor.BottomLeft,
                     },

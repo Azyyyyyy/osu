@@ -2,13 +2,13 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
+using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Graphics;
 using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.UI;
 using osu.Game.Skinning;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play.HUD.HitErrorMeters
 {
@@ -45,7 +45,7 @@ namespace osu.Game.Screens.Play.HUD.HitErrorMeters
 
         protected abstract void OnNewJudgement(JudgementResult judgement);
 
-        protected Color4 GetColourForHitResult(HitResult result)
+        protected Colour4 GetColourForHitResult(HitResult result)
         {
             switch (result)
             {

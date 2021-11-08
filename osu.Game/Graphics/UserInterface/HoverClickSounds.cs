@@ -7,7 +7,7 @@ using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Extensions;
 using osu.Framework.Input.Events;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Graphics.UserInterface
 {

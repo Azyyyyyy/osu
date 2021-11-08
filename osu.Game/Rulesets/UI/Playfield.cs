@@ -17,8 +17,8 @@ using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Skinning;
-using osuTK;
 using System.Diagnostics;
+using System.Numerics;
 using osu.Framework.Audio.Sample;
 
 namespace osu.Game.Rulesets.UI

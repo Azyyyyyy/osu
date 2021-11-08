@@ -2,18 +2,16 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Configuration.Tracking;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.OSD
 {
@@ -105,7 +103,7 @@ namespace osu.Game.Overlays.OSD
 
         private class OptionLight : Container
         {
-            private Color4 glowingColour, idleColour;
+            private Colour4 glowingColour, idleColour;
 
             private const float transition_speed = 300;
 
@@ -141,8 +139,8 @@ namespace osu.Game.Overlays.OSD
             [BackgroundDependencyLoader]
             private void load(OsuColour colours)
             {
-                fill.Colour = idleColour = Color4.White.Opacity(0.4f);
-                glowingColour = Color4.White;
+                fill.Colour = idleColour = Colour4.White.Opacity(0.4f);
+                glowingColour = Colour4.White;
 
                 Size = new Vector2(25, 5);
 

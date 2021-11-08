@@ -3,13 +3,12 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Scoring;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play.HUD.HitErrorMeters
 {
@@ -53,7 +52,7 @@ namespace osu.Game.Screens.Play.HUD.HitErrorMeters
                 LayoutEasing = Easing.OutQuint;
             }
 
-            public void Push(Color4 colour)
+            public void Push(Colour4 colour)
             {
                 Add(new HitErrorCircle(colour, drawable_judgement_size));
 
@@ -68,7 +67,7 @@ namespace osu.Game.Screens.Play.HUD.HitErrorMeters
 
             private readonly Circle circle;
 
-            public HitErrorCircle(Color4 colour, int size)
+            public HitErrorCircle(Colour4 colour, int size)
             {
                 Size = new Vector2(size);
                 Child = circle = new Circle

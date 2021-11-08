@@ -6,6 +6,7 @@ using System.Linq;
 using NUnit.Framework;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.ObjectExtensions;
+using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Testing;
 using osu.Game.Beatmaps;
@@ -14,7 +15,6 @@ using osu.Game.Rulesets;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Osu.Mods;
 using osu.Game.Screens.Select.Details;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.SongSelect
 {
@@ -158,7 +158,7 @@ namespace osu.Game.Tests.Visual.SongSelect
             AddAssert("approach rate bar is red", () => barIsRed(advancedStats.ApproachRate));
         }
 
-        private bool barIsWhite(AdvancedStats.StatisticRow row) => row.ModBar.AccentColour == Color4.White;
+        private bool barIsWhite(AdvancedStats.StatisticRow row) => row.ModBar.AccentColour == Colour4.White;
         private bool barIsBlue(AdvancedStats.StatisticRow row) => row.ModBar.AccentColour == colours.BlueDark;
         private bool barIsRed(AdvancedStats.StatisticRow row) => row.ModBar.AccentColour == colours.Red;
 

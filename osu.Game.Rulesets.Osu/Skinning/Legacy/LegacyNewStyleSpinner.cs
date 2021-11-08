@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -10,8 +11,6 @@ using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.Objects.Drawables;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 {
@@ -27,7 +26,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
         private Sprite spinningMiddle;
         private Sprite fixedMiddle;
 
-        private readonly Color4 glowColour = new Color4(3, 151, 255, 255);
+        private readonly Colour4 glowColour = new Colour4(3, 151, 255, 255);
 
         private Container scaleContainer;
 
@@ -108,10 +107,10 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 
                     using (BeginAbsoluteSequence(spinner.StartTime - spinner.TimePreempt))
                     {
-                        fixedMiddle.FadeColour(Color4.White);
+                        fixedMiddle.FadeColour(Colour4.White);
 
                         using (BeginDelayedSequence(spinner.TimePreempt))
-                            fixedMiddle.FadeColour(Color4.Red, spinner.Duration);
+                            fixedMiddle.FadeColour(Colour4.Red, spinner.Duration);
                     }
 
                     if (state == ArmedState.Hit)
@@ -124,7 +123,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 
                 case DrawableSpinnerBonusTick _:
                     if (state == ArmedState.Hit)
-                        glow.FlashColour(Color4.White, 200);
+                        glow.FlashColour(Colour4.White, 200);
 
                     break;
             }

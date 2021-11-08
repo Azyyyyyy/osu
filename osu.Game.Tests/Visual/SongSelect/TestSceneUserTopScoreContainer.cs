@@ -6,7 +6,6 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK.Graphics;
 using osu.Game.Online.Leaderboards;
 using osu.Game.Overlays;
 using osu.Game.Rulesets.Mods;
@@ -41,7 +40,7 @@ namespace osu.Game.Tests.Visual.SongSelect
                     new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.DarkGreen,
+                        Colour = Colour4.DarkGreen,
                     },
                     topScoreContainer = new UserTopScoreContainer<ScoreInfo>(s => new LeaderboardScore(s, s.Position, false))
                     {

@@ -2,14 +2,13 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Cursor;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Input.Events;
 using osu.Framework.Localisation;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Compose.Components
 {
@@ -56,7 +55,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
         protected override void UpdateHoverState()
         {
             base.UpdateHoverState();
-            icon.FadeColour(!IsHeld && IsHovered ? Color4.White : Color4.Black, TRANSFORM_DURATION, Easing.OutQuint);
+            icon.FadeColour(!IsHeld && IsHovered ? Colour4.White : Colour4.Black, TRANSFORM_DURATION, Easing.OutQuint);
         }
 
         public LocalisableString TooltipText { get; }

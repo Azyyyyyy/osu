@@ -2,12 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.UserInterface
 {
@@ -48,7 +47,7 @@ namespace osu.Game.Tests.Visual.UserInterface
                 {
                     flash = new Box
                     {
-                        Colour = Color4.Yellow,
+                        Colour = Colour4.Yellow,
                         Size = new Vector2(box_size),
                         Anchor = Anchor.CentreLeft,
                         Origin = Anchor.CentreLeft,

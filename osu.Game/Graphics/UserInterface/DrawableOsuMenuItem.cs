@@ -3,7 +3,7 @@
 
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
@@ -11,7 +11,6 @@ using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Input.Events;
 using osu.Framework.Localisation;
 using osu.Game.Graphics.Sprites;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -32,8 +31,8 @@ namespace osu.Game.Graphics.UserInterface
         [BackgroundDependencyLoader]
         private void load(AudioManager audio)
         {
-            BackgroundColour = Color4.Transparent;
-            BackgroundColourHover = Color4Extensions.FromHex(@"172023");
+            BackgroundColour = Colour4.Transparent;
+            BackgroundColourHover = Colour4Extensions.FromHex(@"172023");
 
             AddInternal(new HoverClickSounds());
 
@@ -48,15 +47,15 @@ namespace osu.Game.Graphics.UserInterface
             {
                 default:
                 case MenuItemType.Standard:
-                    text.Colour = Color4.White;
+                    text.Colour = Colour4.White;
                     break;
 
                 case MenuItemType.Destructive:
-                    text.Colour = Color4.Red;
+                    text.Colour = Colour4.Red;
                     break;
 
                 case MenuItemType.Highlighted:
-                    text.Colour = Color4Extensions.FromHex(@"ffcc22");
+                    text.Colour = Colour4Extensions.FromHex(@"ffcc22");
                     break;
             }
         }

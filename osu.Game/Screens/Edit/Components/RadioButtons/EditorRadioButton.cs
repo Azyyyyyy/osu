@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Cursor;
 using osu.Framework.Graphics.Effects;
@@ -13,8 +13,6 @@ using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Components.RadioButtons
 {
@@ -27,10 +25,10 @@ namespace osu.Game.Screens.Edit.Components.RadioButtons
 
         public readonly RadioButton Button;
 
-        private Color4 defaultBackgroundColour;
-        private Color4 defaultBubbleColour;
-        private Color4 selectedBackgroundColour;
-        private Color4 selectedBubbleColour;
+        private Colour4 defaultBackgroundColour;
+        private Colour4 defaultBubbleColour;
+        private Colour4 selectedBackgroundColour;
+        private Colour4 selectedBubbleColour;
 
         private Drawable icon;
 
@@ -60,7 +58,7 @@ namespace osu.Game.Screens.Edit.Components.RadioButtons
                 Type = EdgeEffectType.Shadow,
                 Radius = 2,
                 Offset = new Vector2(0, 1),
-                Colour = Color4.Black.Opacity(0.5f)
+                Colour = Colour4.Black.Opacity(0.5f)
             };
 
             Add(icon = (Button.CreateIcon?.Invoke() ?? new Circle()).With(b =>

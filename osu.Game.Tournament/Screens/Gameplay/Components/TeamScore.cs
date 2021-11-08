@@ -1,8 +1,9 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -10,8 +11,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Tournament.Models;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tournament.Screens.Gameplay.Components
 {
@@ -68,7 +67,7 @@ namespace osu.Game.Tournament.Screens.Gameplay.Components
                             {
                                 new Box
                                 {
-                                    Colour = Color4.Transparent,
+                                    Colour = Colour4.Transparent,
                                     RelativeSizeAxes = Axes.Both,
                                     AlwaysPresent = true,
                                 },
@@ -76,7 +75,7 @@ namespace osu.Game.Tournament.Screens.Gameplay.Components
                         },
                         box = new Box
                         {
-                            Colour = Color4Extensions.FromHex("#FFE8AD"),
+                            Colour = Colour4Extensions.FromHex("#FFE8AD"),
                             RelativeSizeAxes = Axes.Both,
                         },
                     };
@@ -85,7 +84,7 @@ namespace osu.Game.Tournament.Screens.Gameplay.Components
                     EdgeEffect = new EdgeEffectParameters
                     {
                         Type = EdgeEffectType.Glow,
-                        Colour = Color4Extensions.FromHex("#FFE8AD").Opacity(0.1f),
+                        Colour = Colour4Extensions.FromHex("#FFE8AD").Opacity(0.1f),
                         Hollow = true,
                         Radius = 20,
                         Roundness = 10,

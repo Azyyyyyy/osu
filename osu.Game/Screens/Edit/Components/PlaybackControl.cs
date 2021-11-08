@@ -2,8 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
-using osuTK;
-using osuTK.Graphics;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Bindables;
@@ -16,7 +15,7 @@ using osu.Framework.Input.Events;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Screens.Edit.Components
 {
@@ -151,8 +150,8 @@ namespace osu.Game.Screens.Edit.Components
                     };
                 }
 
-                private Color4 hoveredColour;
-                private Color4 normalColour;
+                private Colour4 hoveredColour;
+                private Colour4 normalColour;
 
                 [BackgroundDependencyLoader]
                 private void load(OsuColour colours)

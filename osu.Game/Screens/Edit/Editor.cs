@@ -38,8 +38,7 @@ using osu.Game.Screens.Edit.Timing;
 using osu.Game.Screens.Edit.Verify;
 using osu.Game.Screens.Play;
 using osu.Game.Users;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Screens.Edit
 {
@@ -479,7 +478,7 @@ namespace osu.Game.Screens.Edit
             ApplyToBackground(b =>
             {
                 // todo: temporary. we want to be applying dim using the UserDimContainer eventually.
-                b.FadeColour(Color4.DarkGray, 500);
+                b.FadeColour(Colour4.DarkGray, 500);
 
                 b.IgnoreUserSettings.Value = true;
                 b.BlurAmount.Value = 0;
@@ -514,7 +513,7 @@ namespace osu.Game.Screens.Edit
                 }
             }
 
-            ApplyToBackground(b => b.FadeColour(Color4.White, 500));
+            ApplyToBackground(b => b.FadeColour(Colour4.White, 500));
             resetTrack();
 
             // To update the game-wide beatmap with any changes, perform a re-fetch on exit.

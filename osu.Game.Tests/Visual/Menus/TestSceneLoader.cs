@@ -12,7 +12,6 @@ using osu.Framework.Testing;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Screens;
 using osu.Game.Screens.Menu;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.Menus
 {
@@ -97,7 +96,7 @@ namespace osu.Game.Tests.Visual.Menus
                     InternalChild = new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.DarkSlateGray,
+                        Colour = Colour4.DarkSlateGray,
                         Alpha = 0,
                     };
                 }

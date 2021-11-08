@@ -2,12 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Catch.Objects.Drawables
 {
@@ -18,7 +17,7 @@ namespace osu.Game.Rulesets.Catch.Objects.Drawables
     public abstract class CaughtObject : SkinnableDrawable, IHasCatchObjectState
     {
         public PalpableCatchHitObject HitObject { get; private set; }
-        public Bindable<Color4> AccentColour { get; } = new Bindable<Color4>();
+        public Bindable<Colour4> AccentColour { get; } = new Bindable<Colour4>();
         public Bindable<bool> HyperDash { get; } = new Bindable<bool>();
         public Bindable<int> IndexInBeatmap { get; } = new Bindable<int>();
 

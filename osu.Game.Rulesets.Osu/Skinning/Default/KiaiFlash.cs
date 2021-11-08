@@ -6,7 +6,6 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Graphics.Containers;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Default
 {
@@ -24,7 +23,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Default
             Child = new Box
             {
                 RelativeSizeAxes = Axes.Both,
-                Colour = Color4.White,
+                Colour = Colour4.White,
                 Alpha = 0f,
             };
         }

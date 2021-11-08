@@ -3,8 +3,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
+using osu.Framework.Extensions.MatrixExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Batches;
 using osu.Framework.Graphics.OpenGL.Vertices;
@@ -19,8 +21,6 @@ using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.UI;
 using osu.Game.Scoring;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mods
 {
@@ -71,7 +71,7 @@ namespace osu.Game.Rulesets.Mods
             var flashlight = CreateFlashlight();
 
             flashlight.RelativeSizeAxes = Axes.Both;
-            flashlight.Colour = Color4.Black;
+            flashlight.Colour = Colour4.Black;
 
             flashlight.Combo.BindTo(Combo);
             drawableRuleset.KeyBindingInputManager.Add(flashlight);
@@ -196,7 +196,7 @@ namespace osu.Game.Rulesets.Mods
                     shader = Source.shader;
                     screenSpaceDrawQuad = Source.ScreenSpaceDrawQuad;
                     flashlightPosition = Vector2Extensions.Transform(Source.FlashlightPosition, DrawInfo.Matrix);
-                    flashlightSize = Source.FlashlightSize * DrawInfo.Matrix.ExtractScale().Xy;
+                    flashlightSize = Source.FlashlightSize * Framework.Extensions.Vector2Extensions.XY(DrawInfo.Matrix.ExtractScale());
                     flashlightDim = Source.FlashlightDim;
                 }
 

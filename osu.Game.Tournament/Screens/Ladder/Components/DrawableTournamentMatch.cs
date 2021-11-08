@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -11,9 +12,7 @@ using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Input.Events;
 using osu.Game.Tournament.Models;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tournament.Screens.Ladder.Components
 {
@@ -50,7 +49,7 @@ namespace osu.Game.Tournament.Screens.Ladder.Components
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
                     Alpha = 0,
-                    Colour = Color4.YellowGreen,
+                    Colour = Colour4.YellowGreen,
                     Child = new Box { RelativeSizeAxes = Axes.Both }
                 },
                 CurrentMatchSelectionBox = new Container
@@ -60,7 +59,7 @@ namespace osu.Game.Tournament.Screens.Ladder.Components
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
                     Alpha = 0,
-                    Colour = Color4.White,
+                    Colour = Colour4.White,
                     Child = new Box { RelativeSizeAxes = Axes.Both }
                 },
                 Flow = new FillFlowContainer<DrawableMatchTeam>

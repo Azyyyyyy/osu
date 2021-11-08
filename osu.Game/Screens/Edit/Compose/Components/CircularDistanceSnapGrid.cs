@@ -2,11 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.UserInterface;
 using osu.Game.Rulesets.Objects;
-using osuTK;
 
 namespace osu.Game.Screens.Edit.Compose.Components
 {
@@ -44,7 +44,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
 
             float dx = Math.Max(StartPosition.X, DrawWidth - StartPosition.X);
             float dy = Math.Max(StartPosition.Y, DrawHeight - StartPosition.Y);
-            float maxDistance = new Vector2(dx, dy).Length;
+            float maxDistance = new Vector2(dx, dy).Length();
             int requiredCircles = Math.Min(MaxIntervals, (int)(maxDistance / DistanceSpacing));
 
             for (int i = 0; i < requiredCircles; i++)
@@ -72,7 +72,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
             if (direction == Vector2.Zero)
                 direction = new Vector2(0.001f, 0.001f);
 
-            float distance = direction.Length;
+            float distance = direction.Length();
 
             float radius = DistanceSpacing;
             int radialCount = Math.Clamp((int)MathF.Round(distance / radius), 1, MaxIntervals);
@@ -80,7 +80,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
             Vector2 normalisedDirection = direction * new Vector2(1f / distance);
             Vector2 snappedPosition = StartPosition + normalisedDirection * radialCount * radius;
 
-            return (snappedPosition, StartTime + SnapProvider.GetSnappedDurationFromDistance(ReferenceObject, (snappedPosition - StartPosition).Length));
+            return (snappedPosition, StartTime + SnapProvider.GetSnappedDurationFromDistance(ReferenceObject, (snappedPosition - StartPosition).Length()));
         }
     }
 }

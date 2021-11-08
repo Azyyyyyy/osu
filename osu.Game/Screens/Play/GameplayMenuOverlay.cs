@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Humanizer;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -18,8 +18,6 @@ using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Input.Bindings;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play
 {
@@ -71,7 +69,7 @@ namespace osu.Game.Screens.Play
                 new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.Black,
+                    Colour = Colour4.Black,
                     Alpha = background_alpha,
                 },
                 new FillFlowContainer
@@ -103,7 +101,7 @@ namespace osu.Game.Screens.Play
                                     Anchor = Anchor.TopCentre,
                                     Colour = colours.Yellow,
                                     Shadow = true,
-                                    ShadowColour = new Color4(0, 0, 0, 0.25f)
+                                    ShadowColour = new Colour4(0, 0, 0, 0.25f)
                                 },
                                 new OsuSpriteText
                                 {
@@ -111,7 +109,7 @@ namespace osu.Game.Screens.Play
                                     Origin = Anchor.TopCentre,
                                     Anchor = Anchor.TopCentre,
                                     Shadow = true,
-                                    ShadowColour = new Color4(0, 0, 0, 0.25f)
+                                    ShadowColour = new Colour4(0, 0, 0, 0.25f)
                                 }
                             }
                         },
@@ -126,7 +124,7 @@ namespace osu.Game.Screens.Play
                             EdgeEffect = new EdgeEffectParameters
                             {
                                 Type = EdgeEffectType.Shadow,
-                                Colour = Color4.Black.Opacity(0.6f),
+                                Colour = Colour4.Black.Opacity(0.6f),
                                 Radius = 50
                             },
                         },
@@ -168,7 +166,7 @@ namespace osu.Game.Screens.Play
 
         protected override bool OnMouseMove(MouseMoveEvent e) => true;
 
-        protected void AddButton(string text, Color4 colour, Action action)
+        protected void AddButton(string text, Colour4 colour, Action action)
         {
             var button = new Button
             {
@@ -226,7 +224,7 @@ namespace osu.Game.Screens.Play
                 {
                     Text = "You've retried ",
                     Shadow = true,
-                    ShadowColour = new Color4(0, 0, 0, 0.25f),
+                    ShadowColour = new Colour4(0, 0, 0, 0.25f),
                     Font = OsuFont.GetFont(size: 18),
                 },
                 new OsuSpriteText
@@ -234,13 +232,13 @@ namespace osu.Game.Screens.Play
                     Text = "time".ToQuantity(retries),
                     Font = OsuFont.GetFont(weight: FontWeight.Bold, size: 18),
                     Shadow = true,
-                    ShadowColour = new Color4(0, 0, 0, 0.25f),
+                    ShadowColour = new Colour4(0, 0, 0, 0.25f),
                 },
                 new OsuSpriteText
                 {
                     Text = " in this session",
                     Shadow = true,
-                    ShadowColour = new Color4(0, 0, 0, 0.25f),
+                    ShadowColour = new Colour4(0, 0, 0, 0.25f),
                     Font = OsuFont.GetFont(size: 18),
                 }
             };

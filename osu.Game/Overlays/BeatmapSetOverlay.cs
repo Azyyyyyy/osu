@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -13,8 +14,6 @@ using osu.Game.Overlays.BeatmapSet;
 using osu.Game.Overlays.BeatmapSet.Scores;
 using osu.Game.Overlays.Comments;
 using osu.Game.Rulesets;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays
 {
@@ -68,7 +67,7 @@ namespace osu.Game.Overlays
 
         protected override BeatmapSetHeader CreateHeader() => new BeatmapSetHeader();
 
-        protected override Color4 BackgroundColour => ColourProvider.Background6;
+        protected override Colour4 BackgroundColour => ColourProvider.Background6;
 
         protected override void PopOutComplete()
         {

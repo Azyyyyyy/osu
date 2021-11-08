@@ -3,7 +3,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Extensions.IEnumerableExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -14,7 +13,6 @@ using osu.Game.Graphics.Sprites;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Online.Chat;
 using osu.Game.Overlays.Chat.Tabs;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.Online
 {
@@ -41,7 +39,7 @@ namespace osu.Game.Tests.Visual.Online
                     },
                     new Box
                     {
-                        Colour = Color4.Black.Opacity(0.1f),
+                        Colour = Colour4.Black.Opacity(0.1f),
                         RelativeSizeAxes = Axes.X,
                         Height = 50,
                         Depth = -1,

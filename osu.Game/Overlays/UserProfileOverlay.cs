@@ -3,6 +3,7 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -15,8 +16,6 @@ using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Overlays.Profile;
 using osu.Game.Overlays.Profile.Sections;
 using osu.Game.Users;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays
 {
@@ -37,7 +36,7 @@ namespace osu.Game.Overlays
 
         protected override ProfileHeader CreateHeader() => new ProfileHeader();
 
-        protected override Color4 BackgroundColour => ColourProvider.Background6;
+        protected override Colour4 BackgroundColour => ColourProvider.Background6;
 
         public void ShowUser(IUser user)
         {

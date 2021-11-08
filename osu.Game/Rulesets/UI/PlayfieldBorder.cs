@@ -2,12 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.UI
 {
@@ -114,7 +113,7 @@ namespace osu.Game.Rulesets.UI
             {
                 this.direction = direction;
 
-                Colour = Color4.White;
+                Colour = Colour4.White;
                 // starting in relative avoids the framework thinking it knows best and setting the width to 1 initially.
 
                 switch (direction)

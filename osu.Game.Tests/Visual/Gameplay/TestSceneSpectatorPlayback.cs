@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
@@ -33,8 +34,6 @@ using osu.Game.Rulesets.UI;
 using osu.Game.Scoring;
 using osu.Game.Screens.Play;
 using osu.Game.Tests.Visual.UserInterface;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.Gameplay
 {
@@ -122,7 +121,7 @@ namespace osu.Game.Tests.Visual.Gameplay
                                 {
                                     new Box
                                     {
-                                        Colour = Color4.Brown,
+                                        Colour = Colour4.Brown,
                                         RelativeSizeAxes = Axes.Both,
                                     },
                                     new OsuSpriteText
@@ -153,7 +152,7 @@ namespace osu.Game.Tests.Visual.Gameplay
                                 {
                                     new Box
                                     {
-                                        Colour = Color4.DarkBlue,
+                                        Colour = Colour4.DarkBlue,
                                         RelativeSizeAxes = Axes.Both,
                                     },
                                     new OsuSpriteText
@@ -269,7 +268,7 @@ namespace osu.Game.Tests.Visual.Gameplay
                 {
                     box = new Box
                     {
-                        Colour = Color4.Black,
+                        Colour = Colour4.Black,
                         RelativeSizeAxes = Axes.Both,
                     },
                 };
@@ -283,13 +282,13 @@ namespace osu.Game.Tests.Visual.Gameplay
 
             public bool OnPressed(KeyBindingPressEvent<TestAction> e)
             {
-                box.Colour = Color4.White;
+                box.Colour = Colour4.White;
                 return true;
             }
 
             public void OnReleased(KeyBindingReleaseEvent<TestAction> e)
             {
-                box.Colour = Color4.Black;
+                box.Colour = Colour4.Black;
             }
         }
 

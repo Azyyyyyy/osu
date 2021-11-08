@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Development;
 using osu.Framework.Graphics;
@@ -11,8 +12,6 @@ using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Rulesets;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Settings
 {
@@ -35,7 +34,7 @@ namespace osu.Game.Overlays.Settings
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.TopCentre,
                     Icon = ruleset.CreateInstance().CreateIcon(),
-                    Colour = Color4.Gray,
+                    Colour = Colour4.Gray,
                     Size = new Vector2(20),
                 };
 
@@ -102,7 +101,7 @@ namespace osu.Game.Overlays.Settings
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
                     Padding = new MarginPadding(5),
-                    Colour = isDebug ? colours.Red : Color4.White,
+                    Colour = isDebug ? colours.Red : Colour4.White,
                 });
             }
         }

@@ -10,7 +10,6 @@ using osu.Framework.Graphics.OpenGL.Textures;
 using osu.Framework.Graphics.Textures;
 using osu.Game.Audio;
 using osu.Game.Skinning;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit
 {
@@ -43,7 +42,7 @@ namespace osu.Game.Screens.Edit
 
         private void updateColours()
         {
-            skin.Configuration.CustomComboColours = ComboColours.Select(c => (Color4)c).ToList();
+            skin.Configuration.CustomComboColours = ComboColours.Select(c => (Colour4)c).ToList();
             invokeSkinChanged();
         }
 

@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -18,8 +19,8 @@ using osu.Framework.Utils;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Rulesets.Edit;
-using osuTK;
-using osuTK.Input;
+using Silk.NET.Input;
+using Vector2Extensions = osu.Framework.Extensions.Vector2Extensions;
 
 namespace osu.Game.Screens.Edit.Compose.Components
 {
@@ -434,8 +435,8 @@ namespace osu.Game.Screens.Edit.Compose.Components
             // Go through all hitobjects to make sure they would remain in the bounds of the editor after movement, before any movement is attempted
             foreach (var p in points)
             {
-                minPosition = Vector2.ComponentMin(minPosition, p);
-                maxPosition = Vector2.ComponentMax(maxPosition, p);
+                minPosition = Vector2Extensions.ComponentMin(minPosition, p);
+                maxPosition = Vector2Extensions.ComponentMax(maxPosition, p);
             }
 
             Vector2 size = maxPosition - minPosition;

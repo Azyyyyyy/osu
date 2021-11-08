@@ -2,11 +2,12 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Audio.Track;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -18,9 +19,7 @@ using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Graphics.Backgrounds;
 using osu.Game.Graphics.Containers;
 using osu.Game.Overlays;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Screens.Menu
 {
@@ -29,7 +28,7 @@ namespace osu.Game.Screens.Menu
     /// </summary>
     public class OsuLogo : BeatSyncedContainer
     {
-        public readonly Color4 OsuPink = Color4Extensions.FromHex(@"e967a1");
+        public readonly Colour4 OsuPink = Colour4Extensions.FromHex(@"e967a1");
 
         private const double transition_length = 300;
 
@@ -177,8 +176,8 @@ namespace osu.Game.Screens.Menu
                                                                         triangles = new Triangles
                                                                         {
                                                                             TriangleScale = 4,
-                                                                            ColourLight = Color4Extensions.FromHex(@"ff7db7"),
-                                                                            ColourDark = Color4Extensions.FromHex(@"de5b95"),
+                                                                            ColourLight = Colour4Extensions.FromHex(@"ff7db7"),
+                                                                            ColourDark = Colour4Extensions.FromHex(@"de5b95"),
                                                                             RelativeSizeAxes = Axes.Both,
                                                                         },
                                                                     }
@@ -187,7 +186,7 @@ namespace osu.Game.Screens.Menu
                                                                 {
                                                                     RelativeSizeAxes = Axes.Both,
                                                                     Blending = BlendingParameters.Additive,
-                                                                    Colour = Color4.White,
+                                                                    Colour = Colour4.White,
                                                                     Alpha = 0,
                                                                 },
                                                             },
@@ -204,7 +203,7 @@ namespace osu.Game.Screens.Menu
                                                     Anchor = Anchor.Centre,
                                                     Origin = Anchor.Centre,
                                                     Alpha = 0,
-                                                    BorderColour = Color4.White,
+                                                    BorderColour = Colour4.White,
                                                     RelativeSizeAxes = Axes.Both,
                                                     BorderThickness = 10,
                                                     Masking = true,

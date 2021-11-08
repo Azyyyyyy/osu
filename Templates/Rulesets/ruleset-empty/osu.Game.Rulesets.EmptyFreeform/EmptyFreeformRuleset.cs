@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -15,8 +16,6 @@ using osu.Game.Rulesets.EmptyFreeform.Mods;
 using osu.Game.Rulesets.EmptyFreeform.UI;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.UI;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.EmptyFreeform
 {
@@ -64,7 +63,7 @@ namespace osu.Game.Rulesets.EmptyFreeform
                     new Circle
                     {
                         Size = new Vector2(20),
-                        Colour = Color4.White,
+                        Colour = Colour4.White,
                     },
                     new SpriteText
                     {

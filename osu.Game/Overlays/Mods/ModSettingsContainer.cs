@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -12,8 +13,6 @@ using osu.Framework.Input.Events;
 using osu.Game.Configuration;
 using osu.Game.Graphics.Containers;
 using osu.Game.Rulesets.Mods;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Mods
 {
@@ -47,7 +46,7 @@ namespace osu.Game.Overlays.Mods
                     new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = new Color4(0, 0, 0, 192)
+                        Colour = new Colour4(0, 0, 0, 192)
                     },
                     new OsuScrollContainer
                     {

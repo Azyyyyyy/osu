@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Extensions.IEnumerableExtensions;
 using osu.Framework.Graphics;
@@ -14,8 +15,6 @@ using osu.Game.Configuration;
 using osu.Game.Overlays.Settings;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Osu.Mods;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.UserInterface
 {
@@ -39,7 +38,7 @@ namespace osu.Game.Tests.Visual.UserInterface
                     {
                         new Box
                         {
-                            Colour = Color4.Black,
+                            Colour = Colour4.Black,
                             RelativeSizeAxes = Axes.Both,
                         },
                         new FillFlowContainer

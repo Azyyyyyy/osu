@@ -3,10 +3,10 @@
 
 using System.Collections.Generic;
 using NUnit.Framework;
+using osu.Framework.Graphics;
 using osu.Game.IO;
 using osu.Game.Skinning;
 using osu.Game.Tests.Resources;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Skins
 {
@@ -22,12 +22,12 @@ namespace osu.Game.Tests.Skins
             using (var stream = new LineBufferedReader(resStream))
             {
                 var comboColors = decoder.Decode(stream).ComboColours;
-                var expectedColors = new List<Color4>
+                var expectedColors = new List<Colour4>
                 {
-                    new Color4(142, 199, 255, 255),
-                    new Color4(255, 128, 128, 255),
-                    new Color4(128, 255, 255, 255),
-                    new Color4(100, 100, 100, 100),
+                    new Colour4(142, 199, 255, 255),
+                    new Colour4(255, 128, 128, 255),
+                    new Colour4(128, 255, 255, 255),
+                    new Colour4(100, 100, 100, 100),
                 };
 
                 Assert.AreEqual(expectedColors.Count, comboColors.Count);

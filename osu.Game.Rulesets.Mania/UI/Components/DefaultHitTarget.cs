@@ -3,14 +3,12 @@
 
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Rulesets.Mania.Skinning.Default;
 using osu.Game.Rulesets.UI.Scrolling;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.UI.Components
 {
@@ -41,7 +39,7 @@ namespace osu.Game.Rulesets.Mania.UI.Components
                     RelativeSizeAxes = Axes.X,
                     Height = DefaultNotePiece.NOTE_HEIGHT,
                     Alpha = 0.6f,
-                    Colour = Color4.Black
+                    Colour = Colour4.Black
                 },
                 hitTargetLine = new Container
                 {

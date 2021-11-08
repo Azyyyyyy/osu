@@ -6,6 +6,7 @@ using osu.Framework.Graphics.Containers;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions;
 using osu.Framework.Extensions.EnumExtensions;
@@ -17,8 +18,6 @@ using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.UI;
 using osu.Game.Scoring;
 using osu.Game.Users.Drawables;
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Localisation;
 using osu.Framework.Extensions.LocalisationExtensions;
 using osu.Game.Resources.Localisation.Web;
@@ -36,7 +35,7 @@ namespace osu.Game.Overlays.BeatmapSet.Scores
 
         private readonly FillFlowContainer backgroundFlow;
 
-        private Color4 highAccuracyColour;
+        private Colour4 highAccuracyColour;
 
         public ScoreTable()
         {
@@ -160,7 +159,7 @@ namespace osu.Game.Overlays.BeatmapSet.Scores
                     Margin = new MarginPadding { Right = horizontal_inset },
                     Text = score.DisplayAccuracy,
                     Font = OsuFont.GetFont(size: text_size),
-                    Colour = score.Accuracy == 1 ? highAccuracyColour : Color4.White
+                    Colour = score.Accuracy == 1 ? highAccuracyColour : Colour4.White
                 },
                 new UpdateableFlag(score.User.Country)
                 {
@@ -172,7 +171,7 @@ namespace osu.Game.Overlays.BeatmapSet.Scores
                 {
                     Text = score.MaxCombo.ToLocalisableString(@"0\x"),
                     Font = OsuFont.GetFont(size: text_size),
-                    Colour = score.MaxCombo == score.BeatmapInfo?.MaxCombo ? highAccuracyColour : Color4.White
+                    Colour = score.MaxCombo == score.BeatmapInfo?.MaxCombo ? highAccuracyColour : Colour4.White
                 }
             };
 
@@ -187,7 +186,7 @@ namespace osu.Game.Overlays.BeatmapSet.Scores
                 {
                     Text = stat.MaxCount == null ? stat.Count.ToLocalisableString(@"N0") : (LocalisableString)$"{stat.Count}/{stat.MaxCount}",
                     Font = OsuFont.GetFont(size: text_size),
-                    Colour = stat.Count == 0 ? Color4.Gray : Color4.White
+                    Colour = stat.Count == 0 ? Colour4.Gray : Colour4.White
                 });
             }
 

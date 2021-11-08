@@ -11,7 +11,6 @@ using osu.Framework.Graphics.Sprites;
 using osu.Framework.Allocation;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics;
-using osuTK.Graphics;
 using osu.Framework.Localisation;
 
 namespace osu.Game.Overlays
@@ -95,7 +94,7 @@ namespace osu.Game.Overlays
 
         protected virtual LocalisableString InfoText => string.Empty;
 
-        protected abstract Color4 GetBarColour(OsuColour colours);
+        protected abstract Colour4 GetBarColour(OsuColour colours);
 
         protected override void OnActivated() => updateState();
 

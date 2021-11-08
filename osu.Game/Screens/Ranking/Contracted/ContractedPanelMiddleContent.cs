@@ -2,8 +2,9 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -18,8 +19,6 @@ using osu.Game.Screens.Play.HUD;
 using osu.Game.Users;
 using osu.Game.Users.Drawables;
 using osu.Game.Utils;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Ranking.Contracted
 {
@@ -61,7 +60,7 @@ namespace osu.Game.Screens.Ranking.Contracted
                             CornerRadius = 20,
                             EdgeEffect = new EdgeEffectParameters
                             {
-                                Colour = Color4.Black.Opacity(0.25f),
+                                Colour = Colour4.Black.Opacity(0.25f),
                                 Type = EdgeEffectType.Shadow,
                                 Radius = 1,
                                 Offset = new Vector2(0, 4)
@@ -71,13 +70,13 @@ namespace osu.Game.Screens.Ranking.Contracted
                                 new Box
                                 {
                                     RelativeSizeAxes = Axes.Both,
-                                    Colour = Color4Extensions.FromHex("444")
+                                    Colour = Colour4Extensions.FromHex("444")
                                 },
                                 new UserCoverBackground
                                 {
                                     RelativeSizeAxes = Axes.Both,
                                     User = score.User,
-                                    Colour = ColourInfo.GradientVertical(Color4.White.Opacity(0.5f), Color4Extensions.FromHex("#444").Opacity(0))
+                                    Colour = ColourInfo.GradientVertical(Colour4.White.Opacity(0.5f), Colour4Extensions.FromHex("#444").Opacity(0))
                                 },
                                 new FillFlowContainer
                                 {
@@ -97,7 +96,7 @@ namespace osu.Game.Screens.Ranking.Contracted
                                             CornerRadius = 20,
                                             EdgeEffect = new EdgeEffectParameters
                                             {
-                                                Colour = Color4.Black.Opacity(0.25f),
+                                                Colour = Colour4.Black.Opacity(0.25f),
                                                 Type = EdgeEffectType.Shadow,
                                                 Radius = 8,
                                                 Offset = new Vector2(0, 4),
@@ -219,7 +218,7 @@ namespace osu.Game.Screens.Ranking.Contracted
                     Origin = Anchor.CentreRight,
                     Text = value,
                     Font = OsuFont.GetFont(size: 12, weight: FontWeight.SemiBold),
-                    Colour = Color4Extensions.FromHex("#FFDD55")
+                    Colour = Colour4Extensions.FromHex("#FFDD55")
                 }
             }
         };

@@ -3,9 +3,9 @@
 
 using System;
 using osu.Framework.Extensions;
+using osu.Framework.Graphics;
 using osu.Framework.Localisation;
 using osu.Game.Graphics;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Dashboard.Friends
 {
@@ -20,18 +20,18 @@ namespace osu.Game.Overlays.Dashboard.Friends
 
         protected override LocalisableString AdditionalText => Value.Count.ToString();
 
-        protected override Color4 GetBarColour(OsuColour colours)
+        protected override Colour4 GetBarColour(OsuColour colours)
         {
             switch (Value.Status)
             {
                 case OnlineStatus.All:
-                    return Color4.White;
+                    return Colour4.White;
 
                 case OnlineStatus.Online:
                     return colours.GreenLight;
 
                 case OnlineStatus.Offline:
-                    return Color4.Black;
+                    return Colour4.Black;
 
                 default:
                     throw new ArgumentException($@"{Value.Status} status does not provide a colour in {nameof(GetBarColour)}.");

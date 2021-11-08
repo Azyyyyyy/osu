@@ -10,7 +10,6 @@ using osu.Game.Graphics;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.Taiko.Objects;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Taiko.UI
 {
@@ -34,7 +33,7 @@ namespace osu.Game.Rulesets.Taiko.UI
         {
             RelativeSizeAxes = Axes.Both;
 
-            BorderColour = Color4.White;
+            BorderColour = Colour4.White;
             BorderThickness = 1;
 
             Blending = BlendingParameters.Additive;

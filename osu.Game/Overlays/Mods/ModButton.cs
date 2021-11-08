@@ -1,9 +1,6 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
@@ -12,11 +9,13 @@ using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.UI;
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Graphics.Cursor;
 using osu.Framework.Input.Events;
 using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
+using Silk.NET.Input;
 
 namespace osu.Game.Overlays.Mods
 {
@@ -115,9 +114,9 @@ namespace osu.Game.Overlays.Mods
 
         public bool Selected => selectedIndex != -1;
 
-        private Color4 selectedColour;
+        private Colour4 selectedColour;
 
-        public Color4 SelectedColour
+        public Colour4 SelectedColour
         {
             get => selectedColour;
             set
@@ -237,7 +236,7 @@ namespace osu.Game.Overlays.Mods
                 backgroundIcon.Mod = foregroundIcon.Mod;
             foregroundIcon.Mod = mod;
             text.Text = mod.Name;
-            Colour = mod.HasImplementation ? Color4.White : Color4.Gray;
+            Colour = mod.HasImplementation ? Colour4.White : Colour4.Gray;
         }
 
         private void createIcons()

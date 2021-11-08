@@ -1,14 +1,14 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK;
 
 namespace osu.Game.Users
 {
@@ -51,7 +51,7 @@ namespace osu.Game.Users
                     Child = new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = string.IsNullOrEmpty(User.Colour) ? Color4Extensions.FromHex("0087ca") : Color4Extensions.FromHex(User.Colour)
+                        Colour = string.IsNullOrEmpty(User.Colour) ? Colour4Extensions.FromHex("0087ca") : Colour4Extensions.FromHex(User.Colour)
                     }
                 },
                 CreateUsername().With(u =>

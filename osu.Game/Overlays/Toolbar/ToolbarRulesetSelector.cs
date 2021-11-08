@@ -5,17 +5,16 @@ using System.Collections.Generic;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Rulesets;
 using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Input.Events;
-using osuTK.Input;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
+using Silk.NET.Input;
 
 namespace osu.Game.Overlays.Toolbar
 {
@@ -49,7 +48,7 @@ namespace osu.Game.Overlays.Toolbar
                     EdgeEffect = new EdgeEffectParameters
                     {
                         Type = EdgeEffectType.Glow,
-                        Colour = new Color4(255, 194, 224, 100),
+                        Colour = new Colour4(255, 194, 224, 100),
                         Radius = 15,
                         Roundness = 15,
                     },
@@ -68,7 +67,7 @@ namespace osu.Game.Overlays.Toolbar
         {
             base.LoadComplete();
 
-            Current.BindDisabledChanged(disabled => this.FadeColour(disabled ? Color4.Gray : Color4.White, 300), true);
+            Current.BindDisabledChanged(disabled => this.FadeColour(disabled ? Colour4.Gray : Colour4.White, 300), true);
             Current.BindValueChanged(_ => moveLineToCurrent());
 
             // Scheduled to allow the button flow layout to be computed before the line position is updated

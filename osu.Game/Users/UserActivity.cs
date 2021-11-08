@@ -1,23 +1,23 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using osu.Framework.Graphics;
 using osu.Game.Beatmaps;
 using osu.Game.Graphics;
 using osu.Game.Online.Rooms;
 using osu.Game.Rulesets;
-using osuTK.Graphics;
 
 namespace osu.Game.Users
 {
     public abstract class UserActivity
     {
         public abstract string Status { get; }
-        public virtual Color4 GetAppropriateColour(OsuColour colours) => colours.GreenDarker;
+        public virtual Colour4 GetAppropriateColour(OsuColour colours) => colours.GreenDarker;
 
         public class Modding : UserActivity
         {
             public override string Status => "Modding a map";
-            public override Color4 GetAppropriateColour(OsuColour colours) => colours.PurpleDark;
+            public override Colour4 GetAppropriateColour(OsuColour colours) => colours.PurpleDark;
         }
 
         public class ChoosingBeatmap : UserActivity

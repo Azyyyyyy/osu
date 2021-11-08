@@ -4,7 +4,7 @@
 using NUnit.Framework;
 using osu.Game.Rulesets;
 using osu.Game.Rulesets.Osu;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Gameplay
 {

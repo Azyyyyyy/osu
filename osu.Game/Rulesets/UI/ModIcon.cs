@@ -2,7 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
-using osuTK.Graphics;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -11,7 +11,6 @@ using osu.Framework.Graphics.Sprites;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Rulesets.Mods;
-using osuTK;
 using osu.Framework.Bindables;
 using osu.Framework.Localisation;
 
@@ -50,8 +49,8 @@ namespace osu.Game.Rulesets.UI
         [Resolved]
         private OsuColour colours { get; set; }
 
-        private Color4 backgroundColour;
-        private Color4 highlightedColour;
+        private Colour4 backgroundColour;
+        private Colour4 highlightedColour;
 
         /// <summary>
         /// Construct a new instance.

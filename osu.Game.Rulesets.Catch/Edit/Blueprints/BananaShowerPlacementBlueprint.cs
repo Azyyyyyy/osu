@@ -5,7 +5,7 @@ using osu.Framework.Input.Events;
 using osu.Game.Rulesets.Catch.Edit.Blueprints.Components;
 using osu.Game.Rulesets.Catch.Objects;
 using osu.Game.Rulesets.Edit;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Rulesets.Catch.Edit.Blueprints
 {

@@ -2,12 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Graphics;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.Skinning.Default;
 using osu.Game.Skinning;
 using osu.Game.Utils;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 {
@@ -15,7 +14,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
     {
         protected override DrawableSliderPath CreateSliderPath() => new LegacyDrawableSliderPath();
 
-        protected override Color4 GetBodyAccentColour(ISkinSource skin, Color4 hitObjectAccentColour)
+        protected override Colour4 GetBodyAccentColour(ISkinSource skin, Colour4 hitObjectAccentColour)
         {
             // legacy skins use a constant value for slider track alpha, regardless of the source colour.
             return base.GetBodyAccentColour(skin, hitObjectAccentColour).Opacity(0.7f);
@@ -29,21 +28,21 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
                 // Roughly matches osu!stable's slider border portions.
                 => base.CalculatedBorderPortion * 0.77f;
 
-            protected override Color4 ColourAt(float position)
+            protected override Colour4 ColourAt(float position)
             {
                 float realBorderPortion = shadow_portion + CalculatedBorderPortion;
                 float realGradientPortion = 1 - realBorderPortion;
 
                 if (position <= shadow_portion)
-                    return new Color4(0f, 0f, 0f, 0.25f * position / shadow_portion);
+                    return new Colour4(0f, 0f, 0f, 0.25f * position / shadow_portion);
 
                 if (position <= realBorderPortion)
                     return BorderColour;
 
                 position -= realBorderPortion;
 
-                Color4 outerColour = AccentColour.Darken(0.1f);
-                Color4 innerColour = lighten(AccentColour, 0.5f);
+                Colour4 outerColour = AccentColour.Darken(0.1f);
+                Colour4 innerColour = lighten(AccentColour, 0.5f);
 
                 return LegacyUtils.InterpolateNonLinear(position / realGradientPortion, outerColour, innerColour, 0, 1);
             }
@@ -51,10 +50,10 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
             /// <summary>
             /// Lightens a colour in a way more friendly to dark or strong colours.
             /// </summary>
-            private static Color4 lighten(Color4 color, float amount)
+            private static Colour4 lighten(Colour4 color, float amount)
             {
                 amount *= 0.5f;
-                return new Color4(
+                return new Colour4(
                     Math.Min(1, color.R * (1 + 0.5f * amount) + 1 * amount),
                     Math.Min(1, color.G * (1 + 0.5f * amount) + 1 * amount),
                     Math.Min(1, color.B * (1 + 0.5f * amount) + 1 * amount),

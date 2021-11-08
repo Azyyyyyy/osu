@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Input;
@@ -13,7 +14,6 @@ using osu.Game.Online.Spectator;
 using osu.Game.Rulesets.Replays;
 using osu.Game.Scoring;
 using osu.Game.Screens.Play;
-using osuTK;
 
 namespace osu.Game.Rulesets.UI
 {

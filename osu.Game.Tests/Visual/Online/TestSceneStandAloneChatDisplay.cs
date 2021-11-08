@@ -4,15 +4,15 @@
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Game.Online.Chat;
-using osuTK;
 using System;
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Graphics.Containers;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Overlays.Chat;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Online
 {

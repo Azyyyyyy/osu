@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Cursor;
@@ -21,9 +21,7 @@ using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Screens.Edit;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components
 {
@@ -95,7 +93,7 @@ namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components
                             Size = new Vector2(28),
                             Masking = true,
                             BorderThickness = 2,
-                            BorderColour = Color4.White,
+                            BorderColour = Colour4.White,
                             Alpha = 0,
                             Child = new Box
                             {
@@ -250,7 +248,7 @@ namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components
 
             markerRing.Alpha = IsSelected.Value ? 1 : 0;
 
-            Color4 colour = getColourFromNodeType();
+            Colour4 colour = getColourFromNodeType();
 
             if (IsHovered || IsSelected.Value)
                 colour = colour.Lighten(1);
@@ -259,7 +257,7 @@ namespace osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components
             marker.Scale = new Vector2(slider.Scale);
         }
 
-        private Color4 getColourFromNodeType()
+        private Colour4 getColourFromNodeType()
         {
             if (!(ControlPoint.Type is PathType pathType))
                 return colours.Yellow;

@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -12,8 +13,6 @@ using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Pippidon.UI;
 using osu.Game.Rulesets.Scoring;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Pippidon.Objects.Drawables
 {
@@ -67,7 +66,7 @@ namespace osu.Game.Rulesets.Pippidon.Objects.Drawables
 
                     this.ScaleTo(0.8f, duration, Easing.OutQuint);
                     this.MoveToOffset(new Vector2(0, 10), duration, Easing.In);
-                    this.FadeColour(Color4.Red, duration / 2, Easing.OutQuint).Then().FadeOut(duration / 2, Easing.InQuint).Expire();
+                    this.FadeColour(Colour4.Red, duration / 2, Easing.OutQuint).Then().FadeOut(duration / 2, Easing.InQuint).Expire();
                     break;
             }
         }

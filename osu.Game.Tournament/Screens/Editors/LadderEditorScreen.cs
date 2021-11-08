@@ -4,6 +4,7 @@
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -15,8 +16,6 @@ using osu.Game.Graphics.UserInterface;
 using osu.Game.Tournament.Models;
 using osu.Game.Tournament.Screens.Ladder;
 using osu.Game.Tournament.Screens.Ladder.Components;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tournament.Screens.Editors
 {
@@ -132,7 +131,7 @@ namespace osu.Game.Tournament.Screens.Editors
 
                 AddInternal(path = new ProgressionPath(matchesContainer.First(c => c.Match == Source), found)
                 {
-                    Colour = Color4.Yellow,
+                    Colour = Colour4.Yellow,
                 });
 
                 return base.OnMouseMove(e);

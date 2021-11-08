@@ -9,7 +9,6 @@ using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Primitives;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Input.Events;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Compose.Components
 {
@@ -44,7 +43,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
         protected virtual Drawable CreateBox() => new Container
         {
             Masking = true,
-            BorderColour = Color4.White,
+            BorderColour = Colour4.White,
             BorderThickness = SelectionBox.BORDER_RADIUS,
             Child = new Box
             {

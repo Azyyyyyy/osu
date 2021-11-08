@@ -13,7 +13,7 @@ using osu.Game.Beatmaps;
 using osu.Game.Graphics.UserInterfaceV2;
 using osu.Game.Screens.Edit;
 using osu.Game.Screens.Edit.Setup;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Editing
 {

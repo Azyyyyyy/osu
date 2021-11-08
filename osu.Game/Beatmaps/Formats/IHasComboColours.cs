@@ -3,7 +3,7 @@
 
 using System;
 using System.Collections.Generic;
-using osuTK.Graphics;
+using osu.Framework.Graphics;
 
 namespace osu.Game.Beatmaps.Formats
 {
@@ -12,19 +12,19 @@ namespace osu.Game.Beatmaps.Formats
         /// <summary>
         /// Retrieves the list of combo colours for presentation only.
         /// </summary>
-        IReadOnlyList<Color4> ComboColours { get; }
+        IReadOnlyList<Colour4> ComboColours { get; }
 
         /// <summary>
         /// The list of custom combo colours.
         /// If non-empty, <see cref="ComboColours"/> will return these colours;
         /// if empty, <see cref="ComboColours"/> will fall back to default combo colours.
         /// </summary>
-        List<Color4> CustomComboColours { get; }
+        List<Colour4> CustomComboColours { get; }
 
         /// <summary>
         /// Adds combo colours to the list.
         /// </summary>
         [Obsolete("Use CustomComboColours directly.")] // can be removed 20220215
-        void AddComboColours(params Color4[] colours);
+        void AddComboColours(params Colour4[] colours);
     }
 }

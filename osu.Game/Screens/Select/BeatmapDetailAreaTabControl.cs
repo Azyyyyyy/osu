@@ -3,10 +3,8 @@
 
 using System;
 using System.Collections.Generic;
-using osuTK.Graphics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Configuration;
@@ -56,7 +54,7 @@ namespace osu.Game.Screens.Select
                     Origin = Anchor.BottomLeft,
                     RelativeSizeAxes = Axes.X,
                     Height = 1,
-                    Colour = Color4.White.Opacity(0.2f),
+                    Colour = Colour4.White.Opacity(0.2f),
                 },
                 tabsContainer = new Container
                 {

@@ -1,9 +1,10 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -11,8 +12,6 @@ using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Components.Menus
 {
@@ -27,7 +26,7 @@ namespace osu.Game.Screens.Edit.Components.Menus
 
             MaskingContainer.CornerRadius = 0;
             ItemsContainer.Padding = new MarginPadding { Left = 100 };
-            BackgroundColour = Color4Extensions.FromHex("111");
+            BackgroundColour = Colour4Extensions.FromHex("111");
 
             ScreenSelectionTabControl tabControl;
             AddRangeInternal(new Drawable[]
@@ -70,8 +69,8 @@ namespace osu.Game.Screens.Edit.Components.Menus
             private void load(OsuColour colours)
             {
                 ForegroundColour = colours.BlueLight;
-                BackgroundColour = Color4.Transparent;
-                ForegroundColourHover = Color4.White;
+                BackgroundColour = Colour4.Transparent;
+                ForegroundColourHover = Colour4.White;
                 BackgroundColourHover = colours.Gray3;
             }
 

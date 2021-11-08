@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -14,8 +15,6 @@ using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Users;
 using osu.Game.Users.Drawables;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Rankings
 {
@@ -157,7 +156,7 @@ namespace osu.Game.Overlays.Rankings
             private void load(OverlayColourProvider colourProvider)
             {
                 IdleColour = colourProvider.Light2;
-                HoverColour = Color4.White;
+                HoverColour = Colour4.White;
             }
         }
     }

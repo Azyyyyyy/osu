@@ -1,6 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.UserInterface;
@@ -9,18 +10,15 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Rulesets;
-using osuTK.Graphics;
-using osuTK;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 
 namespace osu.Game.Overlays
 {
     public class OverlayRulesetTabItem : TabItem<RulesetInfo>
     {
-        private Color4 accentColour;
+        private Colour4 accentColour;
 
-        protected virtual Color4 AccentColour
+        protected virtual Colour4 AccentColour
         {
             get => accentColour;
             set
@@ -55,7 +53,7 @@ namespace osu.Game.Overlays
                         Anchor = Anchor.Centre,
                         Text = value.Name,
                         Font = OsuFont.GetFont(size: 14),
-                        ShadowColour = Color4.Black.Opacity(0.75f)
+                        ShadowColour = Colour4.Black.Opacity(0.75f)
                     }
                 },
                 new HoverClickSounds()
@@ -95,6 +93,6 @@ namespace osu.Game.Overlays
             AccentColour = Enabled.Value ? getActiveColour() : colourProvider.Foreground1;
         }
 
-        private Color4 getActiveColour() => IsHovered || Active.Value ? Color4.White : colourProvider.Highlight1;
+        private Colour4 getActiveColour() => IsHovered || Active.Value ? Colour4.White : colourProvider.Highlight1;
     }
 }

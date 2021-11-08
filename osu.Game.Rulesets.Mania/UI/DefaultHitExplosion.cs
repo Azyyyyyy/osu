@@ -1,9 +1,9 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -12,8 +12,6 @@ using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Mania.Judgements;
 using osu.Game.Rulesets.Mania.Skinning.Default;
 using osu.Game.Rulesets.UI.Scrolling;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.UI
 {
@@ -46,7 +44,7 @@ namespace osu.Game.Rulesets.Mania.UI
             const float roundness = 80;
             const float initial_height = 10;
 
-            var colour = Interpolation.ValueAt(0.4f, column.AccentColour, Color4.White, 0, 1);
+            var colour = Interpolation.ValueAt(0.4f, column.AccentColour, Colour4.White, 0, 1);
 
             InternalChildren = new Drawable[]
             {
@@ -62,7 +60,7 @@ namespace osu.Game.Rulesets.Mania.UI
                     EdgeEffect = new EdgeEffectParameters
                     {
                         Type = EdgeEffectType.Glow,
-                        Colour = Interpolation.ValueAt(0.1f, column.AccentColour, Color4.White, 0, 1).Opacity(0.3f),
+                        Colour = Interpolation.ValueAt(0.1f, column.AccentColour, Colour4.White, 0, 1).Opacity(0.3f),
                         Roundness = 160,
                         Radius = 200,
                     },
@@ -77,7 +75,7 @@ namespace osu.Game.Rulesets.Mania.UI
                     EdgeEffect = new EdgeEffectParameters
                     {
                         Type = EdgeEffectType.Glow,
-                        Colour = Interpolation.ValueAt(0.6f, column.AccentColour, Color4.White, 0, 1),
+                        Colour = Interpolation.ValueAt(0.6f, column.AccentColour, Colour4.White, 0, 1),
                         Roundness = 20,
                         Radius = 50,
                     },

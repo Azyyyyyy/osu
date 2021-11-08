@@ -4,8 +4,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using JetBrains.Annotations;
-using osuTK;
 using osu.Framework.Graphics;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Framework.Allocation;
@@ -17,7 +17,6 @@ using osu.Game.Rulesets.Osu.Skinning;
 using osu.Game.Rulesets.Osu.Skinning.Default;
 using osu.Game.Rulesets.Osu.UI;
 using osu.Game.Rulesets.Scoring;
-using osuTK.Graphics;
 using osu.Game.Skinning;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables
@@ -264,7 +263,7 @@ namespace osu.Game.Rulesets.Osu.Objects.Drawables
                 return;
 
             bool allowBallTint = CurrentSkin.GetConfig<OsuSkinConfiguration, bool>(OsuSkinConfiguration.AllowSliderBallTint)?.Value ?? false;
-            Ball.AccentColour = allowBallTint ? AccentColour.Value : Color4.White;
+            Ball.AccentColour = allowBallTint ? AccentColour.Value : Colour4.White;
         }
 
         protected override void CheckForResult(bool userTriggered, double timeOffset)

@@ -3,8 +3,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -22,8 +23,6 @@ using osu.Game.Rulesets;
 using osu.Game.Screens.Play.HUD;
 using osu.Game.Users;
 using osu.Game.Users.Drawables;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.OnlinePlay.Multiplayer.Participants
 {
@@ -58,7 +57,7 @@ namespace osu.Game.Screens.OnlinePlay.Multiplayer.Participants
         {
             var user = User.User;
 
-            var backgroundColour = Color4Extensions.FromHex("#33413C");
+            var backgroundColour = Colour4Extensions.FromHex("#33413C");
 
             InternalChild = new GridContainer
             {
@@ -80,7 +79,7 @@ namespace osu.Game.Screens.OnlinePlay.Multiplayer.Participants
                             Origin = Anchor.CentreLeft,
                             Icon = FontAwesome.Solid.Crown,
                             Size = new Vector2(14),
-                            Colour = Color4Extensions.FromHex("#F7E65D"),
+                            Colour = Colour4Extensions.FromHex("#F7E65D"),
                             Alpha = 0
                         },
                         new TeamDisplay(User),
@@ -103,7 +102,7 @@ namespace osu.Game.Screens.OnlinePlay.Multiplayer.Participants
                                     RelativeSizeAxes = Axes.Both,
                                     Width = 0.75f,
                                     User = user,
-                                    Colour = ColourInfo.GradientHorizontal(Color4.White.Opacity(0), Color4.White.Opacity(0.25f))
+                                    Colour = ColourInfo.GradientHorizontal(Colour4.White.Opacity(0), Colour4.White.Opacity(0.25f))
                                 },
                                 new FillFlowContainer
                                 {

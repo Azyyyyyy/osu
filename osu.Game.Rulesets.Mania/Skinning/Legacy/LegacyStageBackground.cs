@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -9,8 +10,6 @@ using osu.Framework.Graphics.Sprites;
 using osu.Game.Rulesets.Mania.Beatmaps;
 using osu.Game.Rulesets.Mania.UI;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.Skinning.Legacy
 {
@@ -101,8 +100,8 @@ namespace osu.Game.Rulesets.Mania.Skinning.Legacy
                 bool hasRightLine = rightLineWidth > 0 && skin.GetConfig<SkinConfiguration.LegacySetting, decimal>(SkinConfiguration.LegacySetting.Version)?.Value >= 2.4m
                                     || isLastColumn;
 
-                Color4 lineColour = skin.GetManiaSkinConfig<Color4>(LegacyManiaSkinConfigurationLookups.ColumnLineColour, columnIndex)?.Value ?? Color4.White;
-                Color4 backgroundColour = skin.GetManiaSkinConfig<Color4>(LegacyManiaSkinConfigurationLookups.ColumnBackgroundColour, columnIndex)?.Value ?? Color4.Black;
+                Colour4 lineColour = skin.GetManiaSkinConfig<Colour4>(LegacyManiaSkinConfigurationLookups.ColumnLineColour, columnIndex)?.Value ?? Colour4.White;
+                Colour4 backgroundColour = skin.GetManiaSkinConfig<Colour4>(LegacyManiaSkinConfigurationLookups.ColumnBackgroundColour, columnIndex)?.Value ?? Colour4.Black;
 
                 InternalChildren = new Drawable[]
                 {

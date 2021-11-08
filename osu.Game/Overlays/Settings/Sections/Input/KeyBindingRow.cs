@@ -4,10 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Extensions;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -22,9 +22,7 @@ using osu.Game.Graphics.UserInterface;
 using osu.Game.Input;
 using osu.Game.Input.Bindings;
 using osu.Game.Localisation;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Overlays.Settings.Sections.Input
 {
@@ -513,12 +511,12 @@ namespace osu.Game.Overlays.Settings.Sections.Input
                 if (isBinding)
                 {
                     box.FadeColour(colourProvider.Light2, transition_time, Easing.OutQuint);
-                    Text.FadeColour(Color4.Black, transition_time, Easing.OutQuint);
+                    Text.FadeColour(Colour4.Black, transition_time, Easing.OutQuint);
                 }
                 else
                 {
                     box.FadeColour(IsHovered ? colourProvider.Light4 : colourProvider.Background6, transition_time, Easing.OutQuint);
-                    Text.FadeColour(IsHovered ? Color4.Black : Color4.White, transition_time, Easing.OutQuint);
+                    Text.FadeColour(IsHovered ? Colour4.Black : Colour4.White, transition_time, Easing.OutQuint);
                 }
             }
 

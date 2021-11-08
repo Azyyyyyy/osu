@@ -12,7 +12,6 @@ using osu.Framework.Localisation;
 using osu.Game.Beatmaps;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Music
 {
@@ -58,7 +57,7 @@ namespace osu.Game.Overlays.Music
         private void updateSelectionState(bool instant)
         {
             foreach (Drawable s in titlePart.Drawables)
-                s.FadeColour(SelectedSet.Value?.Equals(Model) == true ? colours.Yellow : Color4.White, instant ? 0 : FADE_DURATION);
+                s.FadeColour(SelectedSet.Value?.Equals(Model) == true ? colours.Yellow : Colour4.White, instant ? 0 : FADE_DURATION);
         }
 
         protected override Drawable CreateContent() => text = new OsuTextFlowContainer

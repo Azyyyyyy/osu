@@ -12,6 +12,7 @@ using osu.Game.Rulesets;
 using osu.Game.Rulesets.Osu;
 using osu.Game.Storyboards;
 using osu.Game.Storyboards.Drawables;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Gameplay
 {
@@ -49,7 +50,7 @@ namespace osu.Game.Tests.Visual.Gameplay
         {
             checkForFirstSamplePlayback();
 
-            AddStep("skip intro", () => InputManager.Key(osuTK.Input.Key.Space));
+            AddStep("skip intro", () => InputManager.Key(Key.Space));
             AddAssert("all storyboard samples stopped immediately", () => allStoryboardSamples.All(sound => !sound.IsPlaying));
 
             AddUntilStep("any storyboard samples playing after skip", () => allStoryboardSamples.Any(sound => sound.IsPlaying));

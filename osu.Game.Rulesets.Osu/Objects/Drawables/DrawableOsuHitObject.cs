@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Game.Rulesets.Objects.Drawables;
@@ -10,7 +11,6 @@ using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Osu.Judgements;
 using osu.Game.Graphics.Containers;
 using osu.Game.Rulesets.Osu.UI;
-using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Objects.Drawables
 {

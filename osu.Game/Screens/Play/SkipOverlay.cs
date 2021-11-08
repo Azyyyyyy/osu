@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
@@ -18,8 +19,6 @@ using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Input.Bindings;
 using osu.Game.Screens.Ranking;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play
 {
@@ -250,8 +249,8 @@ namespace osu.Game.Screens.Play
 
         private class Button : OsuClickableContainer
         {
-            private Color4 colourNormal;
-            private Color4 colourHover;
+            private Colour4 colourNormal;
+            private Colour4 colourHover;
             private Box box;
             private FillFlowContainer flow;
             private Box background;
@@ -277,7 +276,7 @@ namespace osu.Game.Screens.Play
                     background = new Box
                     {
                         Alpha = 0.2f,
-                        Colour = Color4.Black,
+                        Colour = Colour4.Black,
                         RelativeSizeAxes = Axes.Both,
                     },
                     aspect = new AspectContainer
@@ -359,7 +358,7 @@ namespace osu.Game.Screens.Play
 
                 sampleConfirm.Play();
 
-                box.FlashColour(Color4.White, 500, Easing.OutQuint);
+                box.FlashColour(Colour4.White, 500, Easing.OutQuint);
                 aspect.ScaleTo(1.2f, 2000, Easing.OutQuint);
 
                 return base.OnClick(e);

@@ -2,8 +2,9 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
+using osu.Framework;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Primitives;
@@ -11,8 +12,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Rulesets.Edit;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Skinning.Editor
 {
@@ -50,7 +49,7 @@ namespace osu.Game.Skinning.Editor
                             RelativeSizeAxes = Axes.Both,
                             Masking = true,
                             BorderThickness = 3,
-                            BorderColour = Color4.White,
+                            BorderColour = Colour4.White,
                             Children = new Drawable[]
                             {
                                 new Box
@@ -146,18 +145,18 @@ namespace osu.Game.Skinning.Editor
             {
                 anchorLine = new Box
                 {
-                    Colour = Color4.Yellow,
+                    Colour = Colour4.Yellow,
                     Height = 2,
                 },
                 originBox = new Box
                 {
-                    Colour = Color4.Red,
+                    Colour = Colour4.Red,
                     Origin = Anchor.Centre,
                     Size = new Vector2(5),
                 },
                 anchorBox = new Box
                 {
-                    Colour = Color4.Red,
+                    Colour = Colour4.Red,
                     Origin = Anchor.Centre,
                     Size = new Vector2(5),
                 },
@@ -178,7 +177,7 @@ namespace osu.Game.Skinning.Editor
             var point2 = ToLocalSpace(originBox.ScreenSpaceDrawQuad.Centre);
 
             anchorLine.Position = point1;
-            anchorLine.Width = (point2 - point1).Length;
+            anchorLine.Width = (point2 - point1).Length();
             anchorLine.Rotation = MathHelper.RadiansToDegrees(MathF.Atan2(point2.Y - point1.Y, point2.X - point1.X));
         }
     }

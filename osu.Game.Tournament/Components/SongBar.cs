@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -15,8 +16,6 @@ using osu.Game.Graphics;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Rulesets;
 using osu.Game.Screens.Menu;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tournament.Components
 {
@@ -209,7 +208,7 @@ namespace osu.Game.Tournament.Components
                                         {
                                             new Box
                                             {
-                                                Colour = Color4.Black,
+                                                Colour = Colour4.Black,
                                                 RelativeSizeAxes = Axes.Both,
                                                 Alpha = 0.1f,
                                             },

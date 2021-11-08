@@ -22,6 +22,7 @@ using osu.Game.Updater;
 using osu.Desktop.Windows;
 using osu.Framework.Threading;
 using osu.Game.IO;
+using Silk.NET.Input;
 
 namespace osu.Desktop
 {
@@ -143,7 +144,7 @@ namespace osu.Desktop
 
             var desktopWindow = (SDL2DesktopWindow)host.Window;
 
-            desktopWindow.CursorState |= CursorState.Hidden;
+            desktopWindow.CursorState |= CursorMode.Hidden;
             desktopWindow.SetIconFromStream(iconStream);
             desktopWindow.Title = Name;
             desktopWindow.DragDrop += f => fileDrop(new[] { f });

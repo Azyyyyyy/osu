@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Primitives;
 using osu.Framework.Utils;
@@ -11,7 +12,6 @@ using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Screens.Edit.Compose.Components;
-using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Edit
 {
@@ -168,7 +168,7 @@ namespace osu.Game.Rulesets.Osu.Edit
             Quad sliderQuad = GetSurroundingQuad(slider.Path.ControlPoints.Select(p => p.Position));
 
             // Limit minimum distance between control points after scaling to almost 0. Less than 0 causes the slider to flip, exactly 0 causes a crash through division by 0.
-            scale = Vector2.ComponentMax(new Vector2(Precision.FLOAT_EPSILON), sliderQuad.Size + scale) - sliderQuad.Size;
+            scale = Vector2Extensions.ComponentMax(new Vector2(Precision.FLOAT_EPSILON), sliderQuad.Size + scale) - sliderQuad.Size;
 
             Vector2 pathRelativeDeltaScale = new Vector2(
                 sliderQuad.Width == 0 ? 0 : 1 + scale.X / sliderQuad.Width,
@@ -268,7 +268,7 @@ namespace osu.Game.Rulesets.Osu.Edit
             Vector2 scaledSize = selectionQuad.Size + scale;
             Vector2 minSize = new Vector2(Precision.FLOAT_EPSILON);
 
-            scale = Vector2.ComponentMax(minSize, scaledSize) - selectionQuad.Size;
+            scale = Vector2Extensions.ComponentMax(minSize, scaledSize) - selectionQuad.Size;
 
             return scale;
         }

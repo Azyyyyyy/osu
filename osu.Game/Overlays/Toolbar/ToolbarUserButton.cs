@@ -1,17 +1,15 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Effects;
 using osu.Game.Graphics;
 using osu.Game.Online.API;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Users.Drawables;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Toolbar
 {
@@ -43,7 +41,7 @@ namespace osu.Game.Overlays.Toolbar
                 {
                     Type = EdgeEffectType.Shadow,
                     Radius = 4,
-                    Colour = Color4.Black.Opacity(0.1f),
+                    Colour = Colour4.Black.Opacity(0.1f),
                 }
             });
         }

@@ -2,10 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -22,8 +22,6 @@ using osu.Game.Rulesets.Edit;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Compose.Components.Timeline
 {
@@ -43,7 +41,7 @@ namespace osu.Game.Screens.Edit.Compose.Components.Timeline
         private Bindable<int> comboIndexBindable;
         private Bindable<int> comboIndexWithOffsetsBindable;
 
-        private Bindable<Color4> displayColourBindable;
+        private Bindable<Colour4> displayColourBindable;
 
         private readonly ExtendableCircle circle;
         private readonly Border border;
@@ -151,7 +149,7 @@ namespace osu.Game.Screens.Edit.Compose.Components.Timeline
 
         private void updateColour()
         {
-            Color4 colour;
+            Colour4 colour;
 
             switch (Item)
             {
@@ -480,7 +478,7 @@ namespace osu.Game.Screens.Edit.Compose.Components.Timeline
                     {
                         Type = EdgeEffectType.Shadow,
                         Radius = 5,
-                        Colour = Color4.Black.Opacity(0.4f)
+                        Colour = Colour4.Black.Opacity(0.4f)
                     }
                 };
             }

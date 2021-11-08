@@ -2,8 +2,9 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Extensions.LocalisationExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -16,7 +17,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Resources.Localisation.Web;
-using osuTK;
 
 namespace osu.Game.Overlays.BeatmapSet
 {
@@ -149,7 +149,7 @@ namespace osu.Game.Overlays.BeatmapSet
                                 Icon = FontAwesome.Solid.Square,
                                 Size = new Vector2(12),
                                 Rotation = 45,
-                                Colour = Color4Extensions.FromHex(@"441288"),
+                                Colour = Colour4Extensions.FromHex(@"441288"),
                             },
                             new SpriteIcon
                             {
@@ -158,14 +158,14 @@ namespace osu.Game.Overlays.BeatmapSet
                                 Icon = FontAwesome.Regular.Circle,
                                 Size = new Vector2(10),
                                 Rotation = 0,
-                                Colour = Color4Extensions.FromHex(@"f7dd55"),
+                                Colour = Colour4Extensions.FromHex(@"f7dd55"),
                             },
                             new BeatmapStatisticIcon(icon)
                             {
                                 Anchor = Anchor.CentreLeft,
                                 Origin = Anchor.Centre,
                                 Size = new Vector2(10),
-                                Colour = Color4Extensions.FromHex(@"f7dd55"),
+                                Colour = Colour4Extensions.FromHex(@"f7dd55"),
                                 Scale = new Vector2(0.8f),
                             },
                             value = new OsuSpriteText

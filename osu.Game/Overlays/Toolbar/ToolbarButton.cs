@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Extensions.EnumExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -22,8 +22,6 @@ using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Input.Bindings;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Toolbar
 {
@@ -101,7 +99,7 @@ namespace osu.Game.Overlays.Toolbar
                 {
                     RelativeSizeAxes = Axes.Both,
                     Alpha = 0,
-                    Colour = Color4.White.Opacity(100),
+                    Colour = Colour4.White.Opacity(100),
                     Blending = BlendingParameters.Additive,
                 },
                 Flow = new FillFlowContainer
@@ -229,7 +227,7 @@ namespace osu.Game.Overlays.Toolbar
             EdgeEffect = new EdgeEffectParameters
             {
                 Type = EdgeEffectType.Shadow,
-                Colour = Color4.Black.Opacity(40),
+                Colour = Colour4.Black.Opacity(40),
                 Radius = 5,
             };
 

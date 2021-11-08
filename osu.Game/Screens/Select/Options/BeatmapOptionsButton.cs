@@ -1,7 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osu.Framework.Extensions.Color4Extensions;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -11,8 +11,6 @@ using osu.Framework.Input.Events;
 using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
-using osuTK;
-using osuTK.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.UserInterface;
 
@@ -29,7 +27,7 @@ namespace osu.Game.Screens.Select.Options
         private readonly OsuSpriteText secondLine;
         private readonly Container box;
 
-        public Color4 ButtonColour
+        public Colour4 ButtonColour
         {
             get => background.Colour;
             set => background.Colour = value;
@@ -94,7 +92,7 @@ namespace osu.Game.Screens.Select.Options
                     EdgeEffect = new EdgeEffectParameters
                     {
                         Type = EdgeEffectType.Shadow,
-                        Colour = Color4.Black.Opacity(0.2f),
+                        Colour = Colour4.Black.Opacity(0.2f),
                         Roundness = 5,
                         Radius = 8,
                     },
@@ -104,14 +102,14 @@ namespace osu.Game.Screens.Select.Options
                         {
                             RelativeSizeAxes = Axes.Both,
                             EdgeSmoothness = new Vector2(1.5f, 0),
-                            Colour = Color4.Black,
+                            Colour = Colour4.Black,
                         },
                         flash = new Box
                         {
                             RelativeSizeAxes = Axes.Both,
                             EdgeSmoothness = new Vector2(1.5f, 0),
                             Blending = BlendingParameters.Additive,
-                            Colour = Color4.White,
+                            Colour = Colour4.White,
                             Alpha = 0,
                         },
                     },

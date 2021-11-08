@@ -2,13 +2,13 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Input.Bindings;
 using osu.Framework.Threading;
 using osu.Game.Screens.Play.HUD;
 using osu.Game.Skinning;
-using osuTK;
 
 namespace osu.Game.Extensions
 {

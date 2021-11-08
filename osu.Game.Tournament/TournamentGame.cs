@@ -3,10 +3,11 @@
 
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Configuration;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -18,8 +19,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Cursor;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Tournament.Models;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tournament
 {
@@ -27,13 +26,13 @@ namespace osu.Game.Tournament
     {
         public static ColourInfo GetTeamColour(TeamColour teamColour) => teamColour == TeamColour.Red ? COLOUR_RED : COLOUR_BLUE;
 
-        public static readonly Color4 COLOUR_RED = new OsuColour().TeamColourRed;
-        public static readonly Color4 COLOUR_BLUE = new OsuColour().TeamColourBlue;
+        public static readonly Colour4 COLOUR_RED = new OsuColour().TeamColourRed;
+        public static readonly Colour4 COLOUR_BLUE = new OsuColour().TeamColourBlue;
 
-        public static readonly Color4 ELEMENT_BACKGROUND_COLOUR = Color4Extensions.FromHex("#fff");
-        public static readonly Color4 ELEMENT_FOREGROUND_COLOUR = Color4Extensions.FromHex("#000");
+        public static readonly Colour4 ELEMENT_BACKGROUND_COLOUR = Colour4Extensions.FromHex("#fff");
+        public static readonly Colour4 ELEMENT_FOREGROUND_COLOUR = Colour4Extensions.FromHex("#000");
 
-        public static readonly Color4 TEXT_COLOUR = Color4Extensions.FromHex("#fff");
+        public static readonly Colour4 TEXT_COLOUR = Colour4Extensions.FromHex("#fff");
         private Drawable heightWarning;
         private Bindable<Size> windowSize;
         private Bindable<WindowMode> windowMode;

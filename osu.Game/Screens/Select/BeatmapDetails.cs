@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -18,8 +18,6 @@ using osu.Game.Online.API.Requests;
 using osu.Game.Overlays.BeatmapSet;
 using osu.Game.Rulesets;
 using osu.Game.Screens.Select.Details;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Select
 {
@@ -73,7 +71,7 @@ namespace osu.Game.Screens.Select
                 new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.Black.Opacity(0.5f),
+                    Colour = Colour4.Black.Opacity(0.5f),
                 },
                 new Container
                 {
@@ -282,7 +280,7 @@ namespace osu.Game.Screens.Select
                     new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.Black.Opacity(0.5f),
+                        Colour = Colour4.Black.Opacity(0.5f),
                     },
                     content = new Container
                     {

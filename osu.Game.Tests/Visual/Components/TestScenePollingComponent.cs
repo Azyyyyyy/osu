@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using osu.Framework.Graphics;
@@ -11,8 +12,6 @@ using osu.Framework.Logging;
 using osu.Framework.Testing;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Online;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.Components
 {
@@ -43,7 +42,7 @@ namespace osu.Game.Tests.Visual.Components
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
                             Scale = new Vector2(0.4f),
-                            Colour = Color4.LimeGreen,
+                            Colour = Colour4.LimeGreen,
                             RelativeSizeAxes = Axes.Both,
                         },
                         new OsuSpriteText

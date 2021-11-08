@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -11,8 +12,6 @@ using osu.Framework.Input.Bindings;
 using osu.Framework.Input.Events;
 using osu.Game.Rulesets.Osu.UI.Cursor;
 using osu.Game.Screens.Play;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.UI
 {
@@ -118,7 +117,7 @@ namespace osu.Game.Rulesets.Osu.UI
 
             private void updateColour()
             {
-                this.FadeColour(IsHovered ? Color4.White : Color4.Orange, 400, Easing.OutQuint);
+                this.FadeColour(IsHovered ? Colour4.White : Colour4.Orange, 400, Easing.OutQuint);
             }
         }
     }

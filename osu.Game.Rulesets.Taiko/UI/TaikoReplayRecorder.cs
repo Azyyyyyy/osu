@@ -2,11 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Game.Rulesets.Replays;
 using osu.Game.Rulesets.Taiko.Replays;
 using osu.Game.Rulesets.UI;
 using osu.Game.Scoring;
-using osuTK;
 
 namespace osu.Game.Rulesets.Taiko.UI
 {

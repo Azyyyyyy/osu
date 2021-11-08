@@ -3,12 +3,12 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Utils;
 using osu.Game.Graphics;
 using osu.Game.Rulesets.Objects.Drawables;
-using osuTK.Graphics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Input.Events;
@@ -17,7 +17,6 @@ using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Scoring;
 using osu.Game.Rulesets.Taiko.Skinning.Default;
 using osu.Game.Skinning;
-using osuTK;
 
 namespace osu.Game.Rulesets.Taiko.Objects.Drawables
 {
@@ -35,8 +34,8 @@ namespace osu.Game.Rulesets.Taiko.Objects.Drawables
 
         private readonly Container tickContainer;
 
-        private Color4 colourIdle;
-        private Color4 colourEngaged;
+        private Colour4 colourIdle;
+        private Colour4 colourEngaged;
 
         public DrawableDrumRoll()
             : this(null)
@@ -171,7 +170,7 @@ namespace osu.Game.Rulesets.Taiko.Objects.Drawables
 
         private void updateColour(double fadeDuration = 0)
         {
-            Color4 newColour = Interpolation.ValueAt((float)rollingHits / rolling_hits_for_engaged_colour, colourIdle, colourEngaged, 0, 1);
+            Colour4 newColour = Interpolation.ValueAt((float)rollingHits / rolling_hits_for_engaged_colour, colourIdle, colourEngaged, 0, 1);
             (MainPiece.Drawable as IHasAccentColour)?.FadeAccent(newColour, fadeDuration);
         }
 

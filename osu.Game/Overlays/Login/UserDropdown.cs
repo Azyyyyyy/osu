@@ -1,16 +1,14 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.UserInterface;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Login
 {
@@ -20,7 +18,7 @@ namespace osu.Game.Overlays.Login
 
         protected override DropdownMenu CreateMenu() => new UserDropdownMenu();
 
-        public Color4 StatusColour
+        public Colour4 StatusColour
         {
             set
             {
@@ -41,7 +39,7 @@ namespace osu.Game.Overlays.Login
                 EdgeEffect = new EdgeEffectParameters
                 {
                     Type = EdgeEffectType.Shadow,
-                    Colour = Color4.Black.Opacity(0.25f),
+                    Colour = Colour4.Black.Opacity(0.25f),
                     Radius = 4,
                 };
             }
@@ -78,7 +76,7 @@ namespace osu.Game.Overlays.Login
 
             private readonly SpriteIcon statusIcon;
 
-            public Color4 StatusColour
+            public Colour4 StatusColour
             {
                 set => statusIcon.FadeColour(value, 500, Easing.OutQuint);
             }
@@ -92,7 +90,7 @@ namespace osu.Game.Overlays.Login
                 EdgeEffect = new EdgeEffectParameters
                 {
                     Type = EdgeEffectType.Shadow,
-                    Colour = Color4.Black.Opacity(0.25f),
+                    Colour = Colour4.Black.Opacity(0.25f),
                     Radius = 4,
                 };
 

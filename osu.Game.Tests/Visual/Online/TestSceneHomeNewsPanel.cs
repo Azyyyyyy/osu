@@ -8,8 +8,8 @@ using osu.Framework.Allocation;
 using osu.Game.Overlays;
 using System;
 using osu.Game.Overlays.Dashboard.Home.News;
-using osuTK;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace osu.Game.Tests.Visual.Online
 {

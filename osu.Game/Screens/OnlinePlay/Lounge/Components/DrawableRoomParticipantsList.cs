@@ -3,6 +3,7 @@
 
 using System.Collections.Specialized;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -15,7 +16,6 @@ using osu.Game.Graphics.Sprites;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Overlays;
 using osu.Game.Users.Drawables;
-using osuTK;
 
 namespace osu.Game.Screens.OnlinePlay.Lounge.Components
 {

@@ -4,8 +4,9 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -13,8 +14,6 @@ using osu.Framework.Utils;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Scoring;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Statistics
 {
@@ -72,11 +71,11 @@ namespace osu.Game.Rulesets.Osu.Statistics
                         Size = new Vector2(inner_portion),
                         Masking = true,
                         BorderThickness = line_thickness,
-                        BorderColour = Color4.White,
+                        BorderColour = Colour4.White,
                         Child = new Box
                         {
                             RelativeSizeAxes = Axes.Both,
-                            Colour = Color4Extensions.FromHex("#202624")
+                            Colour = Colour4Extensions.FromHex("#202624")
                         }
                     },
                     new Container
@@ -139,7 +138,7 @@ namespace osu.Game.Rulesets.Osu.Statistics
                     bufferedGrid = new BufferedContainer(cachedFrameBuffer: true)
                     {
                         RelativeSizeAxes = Axes.Both,
-                        BackgroundColour = Color4Extensions.FromHex("#202624").Opacity(0),
+                        BackgroundColour = Colour4Extensions.FromHex("#202624").Opacity(0),
                         Child = pointGrid = new GridContainer
                         {
                             RelativeSizeAxes = Axes.Both
@@ -165,7 +164,7 @@ namespace osu.Game.Rulesets.Osu.Statistics
 
                     var point = new HitPoint(pointType, this)
                     {
-                        BaseColour = pointType == HitPointType.Hit ? new Color4(102, 255, 204, 255) : new Color4(255, 102, 102, 255)
+                        BaseColour = pointType == HitPointType.Hit ? new Colour4(102, 255, 204, 255) : new Colour4(255, 102, 102, 255)
                     };
 
                     points[r][c] = point;
@@ -236,7 +235,7 @@ namespace osu.Game.Rulesets.Osu.Statistics
             /// <summary>
             /// The base colour which will be lightened/darkened depending on the value of this <see cref="HitPoint"/>.
             /// </summary>
-            public Color4 BaseColour;
+            public Colour4 BaseColour;
 
             private readonly HitPointType pointType;
             private readonly AccuracyHeatmap heatmap;

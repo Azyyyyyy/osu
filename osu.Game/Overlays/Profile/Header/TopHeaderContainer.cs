@@ -1,9 +1,10 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Extensions.LocalisationExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -17,7 +18,6 @@ using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Overlays.Profile.Header.Components;
 using osu.Game.Resources.Localisation.Web;
 using osu.Game.Users.Drawables;
-using osuTK;
 
 namespace osu.Game.Overlays.Profile.Header
 {
@@ -176,7 +176,7 @@ namespace osu.Game.Overlays.Profile.Header
             userCountryText.Text = user?.Country?.FullName ?? "Alien";
             supporterTag.SupportLevel = user?.SupportLevel ?? 0;
             titleText.Text = user?.Title ?? string.Empty;
-            titleText.Colour = Color4Extensions.FromHex(user?.Colour ?? "fff");
+            titleText.Colour = Colour4Extensions.FromHex(user?.Colour ?? "fff");
 
             userStats.Clear();
 

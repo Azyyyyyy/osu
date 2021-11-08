@@ -4,7 +4,6 @@
 using System.Diagnostics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -13,7 +12,6 @@ using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Input.Events;
 using osu.Framework.Localisation;
 using osu.Game.Graphics.Sprites;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -32,11 +30,11 @@ namespace osu.Game.Graphics.UserInterface
             }
         }
 
-        private Color4? backgroundColour;
+        private Colour4? backgroundColour;
 
-        public Color4 BackgroundColour
+        public Colour4 BackgroundColour
         {
-            get => backgroundColour ?? Color4.White;
+            get => backgroundColour ?? Colour4.White;
             set
             {
                 backgroundColour = value;
@@ -75,7 +73,7 @@ namespace osu.Game.Graphics.UserInterface
                         Anchor = Anchor.Centre,
                         Origin = Anchor.Centre,
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.White.Opacity(.1f),
+                        Colour = Colour4.White.Opacity(.1f),
                         Blending = BlendingParameters.Additive,
                         Depth = float.MinValue
                     },
@@ -147,7 +145,7 @@ namespace osu.Game.Graphics.UserInterface
 
         private void enabledChanged(ValueChangedEvent<bool> e)
         {
-            this.FadeColour(e.NewValue ? Color4.White : Color4.Gray, 200, Easing.OutQuint);
+            this.FadeColour(e.NewValue ? Colour4.White : Colour4.Gray, 200, Easing.OutQuint);
         }
     }
 }

@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -18,7 +19,6 @@ using osu.Game.Localisation;
 using osu.Game.Online.Rooms;
 using osu.Game.Scoring;
 using osu.Game.Screens.Play.HUD;
-using osuTK;
 
 namespace osu.Game.Screens.OnlinePlay.Multiplayer
 {

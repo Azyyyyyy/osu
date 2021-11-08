@@ -4,8 +4,8 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -16,8 +16,6 @@ using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Rulesets.Edit;
 using osu.Game.Rulesets.Scoring;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Skinning.Editor
 {
@@ -124,7 +122,7 @@ namespace osu.Game.Skinning.Editor
                     Type = EdgeEffectType.Shadow,
                     Radius = 2,
                     Offset = new Vector2(0, 1),
-                    Colour = Color4.Black.Opacity(0.5f)
+                    Colour = Colour4.Black.Opacity(0.5f)
                 };
 
                 AddRange(new Drawable[]

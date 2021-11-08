@@ -1,14 +1,13 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Screens;
 using osu.Game.Screens.Menu;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.Menus
 {
@@ -30,7 +29,7 @@ namespace osu.Game.Tests.Visual.Menus
                 {
                     RelativeSizeAxes = Axes.Both,
                     Depth = float.MaxValue,
-                    Colour = Color4.Black,
+                    Colour = Colour4.Black,
                 },
                 logo = new OsuLogo
                 {

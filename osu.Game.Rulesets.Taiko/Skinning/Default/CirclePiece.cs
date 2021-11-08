@@ -2,7 +2,6 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Audio.Track;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -11,7 +10,6 @@ using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Backgrounds;
 using osu.Game.Graphics.Containers;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Taiko.Skinning.Default
 {
@@ -28,12 +26,12 @@ namespace osu.Game.Rulesets.Taiko.Skinning.Default
         public const float SYMBOL_BORDER = 8;
         private const double pre_beat_transition_time = 80;
 
-        private Color4 accentColour;
+        private Colour4 accentColour;
 
         /// <summary>
         /// The colour of the inner circle and outer glows.
         /// </summary>
-        public Color4 AccentColour
+        public Colour4 AccentColour
         {
             get => accentColour;
             set
@@ -98,8 +96,8 @@ namespace osu.Game.Rulesets.Taiko.Skinning.Default
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
                             RelativeSizeAxes = Axes.Both,
-                            ColourLight = Color4.White,
-                            ColourDark = Color4.White.Darken(0.1f)
+                            ColourLight = Colour4.White,
+                            ColourDark = Colour4.White.Darken(0.1f)
                         }
                     }
                 },
@@ -110,7 +108,7 @@ namespace osu.Game.Rulesets.Taiko.Skinning.Default
                     Origin = Anchor.Centre,
                     RelativeSizeAxes = Axes.Both,
                     BorderThickness = 8,
-                    BorderColour = Color4.White,
+                    BorderColour = Colour4.White,
                     Masking = true,
                     Children = new[]
                     {
@@ -119,7 +117,7 @@ namespace osu.Game.Rulesets.Taiko.Skinning.Default
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
                             RelativeSizeAxes = Axes.Both,
-                            Colour = Color4.White,
+                            Colour = Colour4.White,
                             Blending = BlendingParameters.Additive,
                             Alpha = 0,
                             AlwaysPresent = true

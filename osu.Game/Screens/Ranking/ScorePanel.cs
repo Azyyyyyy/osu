@@ -2,9 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -14,8 +15,6 @@ using osu.Game.Scoring;
 using osu.Game.Screens.Ranking.Contracted;
 using osu.Game.Screens.Ranking.Expanded;
 using osu.Game.Users;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Ranking
 {
@@ -71,10 +70,10 @@ namespace osu.Game.Screens.Ranking
         /// </summary>
         private const double content_fade_duration = 50;
 
-        private static readonly ColourInfo expanded_top_layer_colour = ColourInfo.GradientVertical(Color4Extensions.FromHex("#444"), Color4Extensions.FromHex("#333"));
-        private static readonly ColourInfo expanded_middle_layer_colour = ColourInfo.GradientVertical(Color4Extensions.FromHex("#555"), Color4Extensions.FromHex("#333"));
-        private static readonly Color4 contracted_top_layer_colour = Color4Extensions.FromHex("#353535");
-        private static readonly Color4 contracted_middle_layer_colour = Color4Extensions.FromHex("#353535");
+        private static readonly ColourInfo expanded_top_layer_colour = ColourInfo.GradientVertical(Colour4Extensions.FromHex("#444"), Colour4Extensions.FromHex("#333"));
+        private static readonly ColourInfo expanded_middle_layer_colour = ColourInfo.GradientVertical(Colour4Extensions.FromHex("#555"), Colour4Extensions.FromHex("#333"));
+        private static readonly Colour4 contracted_top_layer_colour = Colour4Extensions.FromHex("#353535");
+        private static readonly Colour4 contracted_middle_layer_colour = Colour4Extensions.FromHex("#353535");
 
         public event Action<PanelState> StateChanged;
 
@@ -158,7 +157,7 @@ namespace osu.Game.Screens.Ranking
                                     {
                                         RelativeSizeAxes = Axes.Both,
                                         User = Score.User,
-                                        Colour = ColourInfo.GradientVertical(Color4.White.Opacity(0.5f), Color4Extensions.FromHex("#444").Opacity(0))
+                                        Colour = ColourInfo.GradientVertical(Colour4.White.Opacity(0.5f), Colour4Extensions.FromHex("#444").Opacity(0))
                                     }
                                 }
                             },

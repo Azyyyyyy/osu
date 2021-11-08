@@ -1,14 +1,12 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics.Colour;
-using osu.Framework.Extensions.Color4Extensions;
-using osuTK.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK;
 using osu.Game.Overlays.Profile.Header.Components;
 
 namespace osu.Game.Users
@@ -29,7 +27,7 @@ namespace osu.Game.Users
             Background.Width = 0.5f;
             Background.Origin = Anchor.CentreRight;
             Background.Anchor = Anchor.CentreRight;
-            Background.Colour = ColourInfo.GradientHorizontal(Color4.White.Opacity(1), Color4.White.Opacity(0.3f));
+            Background.Colour = ColourInfo.GradientHorizontal(Colour4.White.Opacity(1), Colour4.White.Opacity(0.3f));
         }
 
         protected override Drawable CreateLayout()

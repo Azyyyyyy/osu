@@ -1,6 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -10,8 +11,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.News.Sidebar
 {
@@ -107,8 +106,8 @@ namespace osu.Game.Overlays.News.Sidebar
             [BackgroundDependencyLoader]
             private void load(OverlayColourProvider colourProvider)
             {
-                IdleColour = isCurrent ? Color4.White : colourProvider.Light2;
-                HoverColour = isCurrent ? Color4.White : colourProvider.Light1;
+                IdleColour = isCurrent ? Colour4.White : colourProvider.Light2;
+                HoverColour = isCurrent ? Colour4.White : colourProvider.Light1;
                 Action = () =>
                 {
                     if (!isCurrent)

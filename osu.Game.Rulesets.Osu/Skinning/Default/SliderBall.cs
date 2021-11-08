@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -17,8 +18,6 @@ using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.Objects.Drawables;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Default
 {
@@ -26,7 +25,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Default
     {
         public Func<OsuAction?> GetInitialHitAction;
 
-        public Color4 AccentColour
+        public Colour4 AccentColour
         {
             get => ball.Colour;
             set => ball.Colour = value;
@@ -223,11 +222,11 @@ namespace osu.Game.Rulesets.Osu.Skinning.Default
                     RelativeSizeAxes = Axes.Both,
                     Masking = true,
                     BorderThickness = 5,
-                    BorderColour = Color4.Orange,
+                    BorderColour = Colour4.Orange,
                     Blending = BlendingParameters.Additive,
                     Child = new Box
                     {
-                        Colour = Color4.Orange,
+                        Colour = Colour4.Orange,
                         RelativeSizeAxes = Axes.Both,
                         Alpha = 0.2f,
                     }
@@ -257,13 +256,13 @@ namespace osu.Game.Rulesets.Osu.Skinning.Default
                     Origin = Anchor.Centre,
                     Blending = BlendingParameters.Additive,
                     BorderThickness = 10,
-                    BorderColour = Color4.White,
+                    BorderColour = Colour4.White,
                     Alpha = 1,
                     Child = box = new Box
                     {
                         Blending = BlendingParameters.Additive,
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.White,
+                        Colour = Colour4.White,
                         AlwaysPresent = true,
                         Alpha = 0
                     }

@@ -1,9 +1,10 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Cursor;
@@ -12,8 +13,6 @@ using osu.Framework.Graphics.Sprites;
 using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Online.Rooms;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.OnlinePlay.Components
 {
@@ -33,7 +32,7 @@ namespace osu.Game.Screens.OnlinePlay.Components
                 new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4Extensions.FromHex(@"545454"),
+                    Colour = Colour4Extensions.FromHex(@"545454"),
                 },
             };
         }
@@ -130,7 +129,7 @@ namespace osu.Game.Screens.OnlinePlay.Components
 
         private class VersusRow : FillFlowContainer
         {
-            public VersusRow(Color4 first, Color4 second, float size)
+            public VersusRow(Colour4 first, Colour4 second, float size)
             {
                 var triangleSize = new Vector2(size);
                 AutoSizeAxes = Axes.Both;

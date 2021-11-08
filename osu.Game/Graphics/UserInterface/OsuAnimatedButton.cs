@@ -2,14 +2,12 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics.Containers;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -21,14 +19,14 @@ namespace osu.Game.Graphics.UserInterface
         /// <summary>
         /// The colour that should be flashed when the <see cref="OsuAnimatedButton"/> is clicked.
         /// </summary>
-        protected Color4 FlashColour = Color4.White.Opacity(0.3f);
+        protected Colour4 FlashColour = Colour4.White.Opacity(0.3f);
 
-        private Color4 hoverColour = Color4.White.Opacity(0.1f);
+        private Colour4 hoverColour = Colour4.White.Opacity(0.1f);
 
         /// <summary>
         /// The background colour of the <see cref="OsuAnimatedButton"/> while it is hovered.
         /// </summary>
-        protected Color4 HoverColour
+        protected Colour4 HoverColour
         {
             get => hoverColour;
             set
@@ -55,7 +53,7 @@ namespace osu.Game.Graphics.UserInterface
                 Masking = true,
                 EdgeEffect = new EdgeEffectParameters
                 {
-                    Colour = Color4.Black.Opacity(0.04f),
+                    Colour = Colour4.Black.Opacity(0.04f),
                     Type = EdgeEffectType.Shadow,
                     Radius = 5,
                 },
@@ -81,7 +79,7 @@ namespace osu.Game.Graphics.UserInterface
                 content.AutoSizeAxes = AutoSizeAxes;
             }
 
-            Enabled.BindValueChanged(enabled => this.FadeColour(enabled.NewValue ? Color4.White : colours.Gray9, 200, Easing.OutQuint), true);
+            Enabled.BindValueChanged(enabled => this.FadeColour(enabled.NewValue ? Colour4.White : colours.Gray9, 200, Easing.OutQuint), true);
         }
 
         protected override bool OnHover(HoverEvent e)

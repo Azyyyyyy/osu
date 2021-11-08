@@ -3,6 +3,7 @@
 
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
@@ -17,7 +18,6 @@ using osu.Game.Online.Leaderboards;
 using osu.Game.Rulesets;
 using osu.Game.Rulesets.UI;
 using osu.Game.Utils;
-using osuTK;
 
 namespace osu.Game.Overlays.Profile.Sections.Ranks
 {

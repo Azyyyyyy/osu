@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Bindables;
+using osu.Framework.Graphics;
 using osu.Game.Graphics;
-using osuTK.Graphics;
 
 namespace osu.Game.Beatmaps.ControlPoints
 {
@@ -41,7 +41,7 @@ namespace osu.Game.Beatmaps.ControlPoints
             set => ScrollSpeedBindable.Value = value;
         }
 
-        public override Color4 GetRepresentingColour(OsuColour colours) => colours.Purple;
+        public override Colour4 GetRepresentingColour(OsuColour colours) => colours.Purple;
 
         /// <summary>
         /// Whether the first bar line of this control point is ignored.

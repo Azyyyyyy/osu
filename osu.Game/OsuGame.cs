@@ -39,7 +39,6 @@ using osu.Game.Input.Bindings;
 using osu.Game.Online.Chat;
 using osu.Game.Overlays.Music;
 using osu.Game.Skinning;
-using osuTK.Graphics;
 using osu.Game.Overlays.Volume;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Scoring;
@@ -180,7 +179,7 @@ namespace osu.Game
         }
 
         private void updateBlockingOverlayFade() =>
-            screenContainer.FadeColour(visibleBlockingOverlays.Any() ? OsuColour.Gray(0.5f) : Color4.White, 500, Easing.OutQuint);
+            screenContainer.FadeColour(visibleBlockingOverlays.Any() ? OsuColour.Gray(0.5f) : Colour4.White, 500, Easing.OutQuint);
 
         public void AddBlockingOverlay(OverlayContainer overlay)
         {

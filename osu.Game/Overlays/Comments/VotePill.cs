@@ -9,16 +9,14 @@ using osu.Game.Online.API.Requests.Responses;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Allocation;
 using osu.Game.Graphics.Sprites;
-using osuTK.Graphics;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics.UserInterface;
 using System.Collections.Generic;
-using osuTK;
 using osu.Game.Online.API;
 using osu.Game.Online.API.Requests;
 using osu.Framework.Bindables;
 using System.Linq;
+using System.Numerics;
 
 namespace osu.Game.Overlays.Comments
 {
@@ -26,7 +24,7 @@ namespace osu.Game.Overlays.Comments
     {
         private const int duration = 200;
 
-        public Color4 AccentColour { get; set; }
+        public Colour4 AccentColour { get; set; }
 
         protected override IEnumerable<Drawable> EffectTargets => null;
 
@@ -65,7 +63,7 @@ namespace osu.Game.Overlays.Comments
         private void load(OsuColour colours)
         {
             AccentColour = borderContainer.BorderColour = sideNumber.Colour = colours.GreenLight;
-            hoverLayer.Colour = Color4.Black.Opacity(0.5f);
+            hoverLayer.Colour = Colour4.Black.Opacity(0.5f);
 
             bool ownComment = api.LocalUser.Value.Id == comment.UserId;
 

@@ -4,6 +4,7 @@
 #nullable enable
 
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
@@ -12,15 +13,12 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.UserInterface;
 using osu.Game.Graphics.Sprites;
-using osuTK.Graphics;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Input.Events;
 using osu.Framework.Utils;
 using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Graphics.Containers;
 using osu.Game.Overlays;
-using osuTK;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -63,15 +61,15 @@ namespace osu.Game.Graphics.UserInterface
         [BackgroundDependencyLoader(true)]
         private void load(OverlayColourProvider? colourProvider, OsuColour colour, AudioManager audio)
         {
-            BackgroundUnfocused = colourProvider?.Background5 ?? Color4.Black.Opacity(0.5f);
+            BackgroundUnfocused = colourProvider?.Background5 ?? Colour4.Black.Opacity(0.5f);
             BackgroundFocused = colourProvider?.Background4 ?? OsuColour.Gray(0.3f).Opacity(0.8f);
             BackgroundCommit = BorderColour = colourProvider?.Highlight1 ?? colour.Yellow;
-            selectionColour = colourProvider?.Background1 ?? new Color4(249, 90, 255, 255);
+            selectionColour = colourProvider?.Background1 ?? new Colour4(249, 90, 255, 255);
 
             if (caret != null)
                 caret.SelectionColour = selectionColour;
 
-            Placeholder.Colour = colourProvider?.Foreground1 ?? new Color4(180, 180, 180, 255);
+            Placeholder.Colour = colourProvider?.Foreground1 ?? new Colour4(180, 180, 180, 255);
 
             for (int i = 0; i < textAddedSamples.Length; i++)
                 textAddedSamples[i] = audio.Samples.Get($@"Keyboard/key-press-{1 + i}");
@@ -82,9 +80,9 @@ namespace osu.Game.Graphics.UserInterface
             caretMovedSample = audio.Samples.Get(@"Keyboard/key-movement");
         }
 
-        private Color4 selectionColour;
+        private Colour4 selectionColour;
 
-        protected override Color4 SelectionColour => selectionColour;
+        protected override Colour4 SelectionColour => selectionColour;
 
         protected override void OnUserTextAdded(string added)
         {
@@ -153,7 +151,7 @@ namespace osu.Game.Graphics.UserInterface
                 RelativeSizeAxes = Axes.Y;
                 Size = new Vector2(1, 0.9f);
 
-                Colour = Color4.Transparent;
+                Colour = Colour4.Transparent;
                 Anchor = Anchor.CentreLeft;
                 Origin = Anchor.CentreLeft;
 
@@ -169,7 +167,7 @@ namespace osu.Game.Graphics.UserInterface
 
             public float CaretWidth { get; set; }
 
-            public Color4 SelectionColour { get; set; }
+            public Colour4 SelectionColour { get; set; }
 
             public override void DisplayAt(Vector2 position, float? selectionWidth)
             {
@@ -185,7 +183,7 @@ namespace osu.Game.Graphics.UserInterface
                 {
                     this.MoveTo(new Vector2(position.X - CaretWidth / 2, position.Y), 60, Easing.Out);
                     this.ResizeWidthTo(CaretWidth, caret_move_time, Easing.Out);
-                    this.FadeColour(Color4.White, 200, Easing.Out);
+                    this.FadeColour(Colour4.White, 200, Easing.Out);
                 }
             }
 
@@ -210,7 +208,7 @@ namespace osu.Game.Graphics.UserInterface
                     InternalChild = new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.White,
+                        Colour = Colour4.White,
                     };
                 }
 

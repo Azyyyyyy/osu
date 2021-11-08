@@ -1,15 +1,14 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osuTK;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics.UserInterface;
 using osu.Framework.Allocation;
-using osuTK.Graphics;
 using osu.Framework.Graphics.Cursor;
 using osu.Framework.Localisation;
 using osu.Game.Resources.Localisation.Web;
@@ -96,7 +95,7 @@ namespace osu.Game.Overlays
                 base.OnHoverLost(e);
             }
 
-            private void updateState() => icon.Colour = Active.Value || IsHovered ? colourProvider.Light1 : Color4.White;
+            private void updateState() => icon.Colour = Active.Value || IsHovered ? colourProvider.Light1 : Colour4.White;
         }
     }
 

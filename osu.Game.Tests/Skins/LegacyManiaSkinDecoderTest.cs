@@ -2,10 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using NUnit.Framework;
+using osu.Framework.Graphics;
 using osu.Game.IO;
 using osu.Game.Skinning;
 using osu.Game.Tests.Resources;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Skins
 {
@@ -96,7 +96,7 @@ namespace osu.Game.Tests.Skins
                 var configs = decoder.Decode(stream);
 
                 Assert.That(configs.Count, Is.EqualTo(1));
-                Assert.That(configs[0].CustomColours, Contains.Key("ColourBarline").And.ContainValue(new Color4(50, 50, 50, 50)));
+                Assert.That(configs[0].CustomColours, Contains.Key("ColourBarline").And.ContainValue(new Colour4(50, 50, 50, 50)));
             }
         }
 

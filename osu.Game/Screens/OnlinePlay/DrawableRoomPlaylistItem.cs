@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
@@ -27,8 +27,6 @@ using osu.Game.Overlays.BeatmapSet;
 using osu.Game.Rulesets;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Screens.Play.HUD;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.OnlinePlay
 {
@@ -366,20 +364,20 @@ namespace osu.Game.Screens.OnlinePlay
                             new Box
                             {
                                 RelativeSizeAxes = Axes.Both,
-                                Colour = Color4.Black,
+                                Colour = Colour4.Black,
                                 Width = 0.4f,
                             },
                             // Piecewise-linear gradient with 2 segments to make it appear smoother
                             new Box
                             {
                                 RelativeSizeAxes = Axes.Both,
-                                Colour = ColourInfo.GradientHorizontal(Color4.Black, new Color4(0f, 0f, 0f, 0.7f)),
+                                Colour = ColourInfo.GradientHorizontal(Colour4.Black, new Colour4(0f, 0f, 0f, 0.7f)),
                                 Width = 0.4f,
                             },
                             new Box
                             {
                                 RelativeSizeAxes = Axes.Both,
-                                Colour = ColourInfo.GradientHorizontal(new Color4(0f, 0f, 0f, 0.7f), new Color4(0, 0, 0, 0.4f)),
+                                Colour = ColourInfo.GradientHorizontal(new Colour4(0f, 0f, 0f, 0.7f), new Colour4(0, 0, 0, 0.4f)),
                                 Width = 0.4f,
                             },
                         }

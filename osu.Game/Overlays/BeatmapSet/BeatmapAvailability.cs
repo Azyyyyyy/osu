@@ -1,14 +1,12 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.BeatmapSet
 {
@@ -32,7 +30,7 @@ namespace osu.Game.Overlays.BeatmapSet
                 new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.Black.Opacity(0.6f),
+                    Colour = Colour4.Black.Opacity(0.6f),
                 },
                 textContainer = new LinkFlowContainer(t => t.Font = OsuFont.GetFont(size: 14))
                 {
@@ -70,7 +68,7 @@ namespace osu.Game.Overlays.BeatmapSet
             textContainer.Clear();
             textContainer.AddParagraph(downloadDisabled
                 ? "This beatmap is currently not available for download."
-                : "Portions of this beatmap have been removed at the request of the creator or a third-party rights holder.", t => t.Colour = Color4.Orange);
+                : "Portions of this beatmap have been removed at the request of the creator or a third-party rights holder.", t => t.Colour = Colour4.Orange);
 
             if (hasExternalLink)
             {

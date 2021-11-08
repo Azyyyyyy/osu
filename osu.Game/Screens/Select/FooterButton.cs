@@ -2,8 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
-using osuTK;
-using osuTK.Graphics;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -34,9 +33,9 @@ namespace osu.Game.Screens.Select
             }
         }
 
-        private Color4 deselectedColour;
+        private Colour4 deselectedColour;
 
-        public Color4 DeselectedColour
+        public Colour4 DeselectedColour
         {
             get => deselectedColour;
             set
@@ -47,9 +46,9 @@ namespace osu.Game.Screens.Select
             }
         }
 
-        private Color4 selectedColour;
+        private Colour4 selectedColour;
 
-        public Color4 SelectedColour
+        public Colour4 SelectedColour
         {
             get => selectedColour;
             set
@@ -76,7 +75,7 @@ namespace osu.Game.Screens.Select
                 {
                     RelativeSizeAxes = Axes.Both,
                     EdgeSmoothness = new Vector2(2, 0),
-                    Colour = Color4.White,
+                    Colour = Colour4.White,
                     Alpha = 0,
                 },
                 light = new Box

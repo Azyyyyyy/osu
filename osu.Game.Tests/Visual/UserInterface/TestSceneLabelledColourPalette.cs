@@ -11,8 +11,7 @@ using osu.Framework.Utils;
 using osu.Game.Graphics.Cursor;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Graphics.UserInterfaceV2;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.UserInterface
 {
@@ -91,7 +90,7 @@ namespace osu.Game.Tests.Visual.UserInterface
             });
         }
 
-        private Colour4 randomColour() => new Color4(
+        private Colour4 randomColour() => new Colour4(
             RNG.NextSingle(),
             RNG.NextSingle(),
             RNG.NextSingle(),

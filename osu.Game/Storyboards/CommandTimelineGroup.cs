@@ -2,11 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Graphics;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Newtonsoft.Json;
 
 namespace osu.Game.Storyboards
@@ -20,7 +19,7 @@ namespace osu.Game.Storyboards
         public CommandTimeline<float> Scale = new CommandTimeline<float>();
         public CommandTimeline<Vector2> VectorScale = new CommandTimeline<Vector2>();
         public CommandTimeline<float> Rotation = new CommandTimeline<float>();
-        public CommandTimeline<Color4> Colour = new CommandTimeline<Color4>();
+        public CommandTimeline<Colour4> Colour = new CommandTimeline<Colour4>();
         public CommandTimeline<float> Alpha = new CommandTimeline<float>();
         public CommandTimeline<BlendingParameters> BlendingParameters = new CommandTimeline<BlendingParameters>();
         public CommandTimeline<bool> FlipH = new CommandTimeline<bool>();

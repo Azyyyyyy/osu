@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
-using osuTK;
-using osuTK.Graphics;
+using System.Numerics;
+using osu.Framework.Graphics;
 
 namespace osu.Game.Overlays
 {
@@ -25,33 +25,33 @@ namespace osu.Game.Overlays
             this.colourScheme = colourScheme;
         }
 
-        public Color4 Colour1 => getColour(1, 0.7f);
-        public Color4 Colour2 => getColour(0.8f, 0.6f);
-        public Color4 Colour3 => getColour(0.6f, 0.5f);
-        public Color4 Colour4 => getColour(0.4f, 0.3f);
+        public Colour4 Colour1 => getColour(1, 0.7f);
+        public Colour4 Colour2 => getColour(0.8f, 0.6f);
+        public Colour4 Colour3 => getColour(0.6f, 0.5f);
+        public Colour4 Colour4 => getColour(0.4f, 0.3f);
 
-        public Color4 Highlight1 => getColour(1, 0.7f);
-        public Color4 Content1 => getColour(0.4f, 1);
-        public Color4 Content2 => getColour(0.4f, 0.9f);
-        public Color4 Light1 => getColour(0.4f, 0.8f);
-        public Color4 Light2 => getColour(0.4f, 0.75f);
-        public Color4 Light3 => getColour(0.4f, 0.7f);
-        public Color4 Light4 => getColour(0.4f, 0.5f);
-        public Color4 Dark1 => getColour(0.2f, 0.35f);
-        public Color4 Dark2 => getColour(0.2f, 0.3f);
-        public Color4 Dark3 => getColour(0.2f, 0.25f);
-        public Color4 Dark4 => getColour(0.2f, 0.2f);
-        public Color4 Dark5 => getColour(0.2f, 0.15f);
-        public Color4 Dark6 => getColour(0.2f, 0.1f);
-        public Color4 Foreground1 => getColour(0.1f, 0.6f);
-        public Color4 Background1 => getColour(0.1f, 0.4f);
-        public Color4 Background2 => getColour(0.1f, 0.3f);
-        public Color4 Background3 => getColour(0.1f, 0.25f);
-        public Color4 Background4 => getColour(0.1f, 0.2f);
-        public Color4 Background5 => getColour(0.1f, 0.15f);
-        public Color4 Background6 => getColour(0.1f, 0.1f);
+        public Colour4 Highlight1 => getColour(1, 0.7f);
+        public Colour4 Content1 => getColour(0.4f, 1);
+        public Colour4 Content2 => getColour(0.4f, 0.9f);
+        public Colour4 Light1 => getColour(0.4f, 0.8f);
+        public Colour4 Light2 => getColour(0.4f, 0.75f);
+        public Colour4 Light3 => getColour(0.4f, 0.7f);
+        public Colour4 Light4 => getColour(0.4f, 0.5f);
+        public Colour4 Dark1 => getColour(0.2f, 0.35f);
+        public Colour4 Dark2 => getColour(0.2f, 0.3f);
+        public Colour4 Dark3 => getColour(0.2f, 0.25f);
+        public Colour4 Dark4 => getColour(0.2f, 0.2f);
+        public Colour4 Dark5 => getColour(0.2f, 0.15f);
+        public Colour4 Dark6 => getColour(0.2f, 0.1f);
+        public Colour4 Foreground1 => getColour(0.1f, 0.6f);
+        public Colour4 Background1 => getColour(0.1f, 0.4f);
+        public Colour4 Background2 => getColour(0.1f, 0.3f);
+        public Colour4 Background3 => getColour(0.1f, 0.25f);
+        public Colour4 Background4 => getColour(0.1f, 0.2f);
+        public Colour4 Background5 => getColour(0.1f, 0.15f);
+        public Colour4 Background6 => getColour(0.1f, 0.1f);
 
-        private Color4 getColour(float saturation, float lightness) => Color4.FromHsl(new Vector4(getBaseHue(colourScheme), saturation, lightness, 1));
+        private Colour4 getColour(float saturation, float lightness) => Colour4.FromHSL(new Vector4(getBaseHue(colourScheme), saturation, lightness, 1));
 
         // See https://github.com/ppy/osu-web/blob/5a536d217a21582aad999db50a981003d3ad5659/app/helpers.php#L1620-L1628
         private static float getBaseHue(OverlayColourScheme colourScheme)

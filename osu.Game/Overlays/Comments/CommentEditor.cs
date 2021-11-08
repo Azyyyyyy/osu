@@ -9,11 +9,10 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Graphics.Sprites;
-using osuTK.Graphics;
 using osu.Game.Graphics.UserInterface;
 using System.Collections.Generic;
 using System;
-using osuTK;
+using System.Numerics;
 using osu.Framework.Bindables;
 
 namespace osu.Game.Overlays.Comments
@@ -135,7 +134,7 @@ namespace osu.Game.Overlays.Comments
         {
             protected override float LeftRightPadding => side_padding;
 
-            protected override Color4 SelectionColour => Color4.Gray;
+            protected override Colour4 SelectionColour => Colour4.Gray;
 
             private OsuSpriteText placeholder;
 
@@ -208,7 +207,7 @@ namespace osu.Game.Overlays.Comments
 
             private void onBlockedStateChanged(ValueChangedEvent<bool> isBlocked)
             {
-                drawableText.FadeColour(isBlocked.NewValue ? colourProvider.Foreground1 : Color4.White, duration, Easing.OutQuint);
+                drawableText.FadeColour(isBlocked.NewValue ? colourProvider.Foreground1 : Colour4.White, duration, Easing.OutQuint);
                 background.FadeTo(isBlocked.NewValue ? 0 : 1, duration, Easing.OutQuint);
             }
 

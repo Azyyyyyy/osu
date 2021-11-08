@@ -3,6 +3,7 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using Humanizer;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
@@ -15,8 +16,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Online.API;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Profile.Header
 {
@@ -27,7 +26,7 @@ namespace osu.Game.Overlays.Profile.Header
         private LinkFlowContainer topLinkContainer;
         private LinkFlowContainer bottomLinkContainer;
 
-        private Color4 iconColour;
+        private Colour4 iconColour;
 
         [Resolved]
         private IAPIProvider api { get; set; }

@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.IEnumerableExtensions;
 using osu.Framework.Graphics;
@@ -10,7 +11,6 @@ using osu.Game.Database;
 using osu.Game.Input.Bindings;
 using osu.Game.Rulesets;
 using osu.Game.Localisation;
-using osuTK;
 
 namespace osu.Game.Overlays.Settings.Sections.Input
 {

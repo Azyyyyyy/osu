@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
@@ -23,8 +24,6 @@ using osu.Game.Input.Bindings;
 using osu.Game.Online.Rooms;
 using osu.Game.Screens.OnlinePlay.Components;
 using osu.Game.Screens.OnlinePlay.Lounge.Components;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.OnlinePlay.Lounge
 {
@@ -68,7 +67,7 @@ namespace osu.Game.Screens.OnlinePlay.Lounge
                         Masking = true,
                         CornerRadius = CORNER_RADIUS,
                         BorderThickness = selection_border_width,
-                        BorderColour = Color4.White,
+                        BorderColour = Colour4.White,
                         Child = new Box
                         {
                             RelativeSizeAxes = Axes.Both,
@@ -262,7 +261,7 @@ namespace osu.Game.Screens.OnlinePlay.Lounge
                 errorText.Text = error;
                 errorText
                     .FadeIn()
-                    .FlashColour(Color4.White, 200)
+                    .FlashColour(Colour4.White, 200)
                     .Delay(1000)
                     .FadeOutFromOne(1000, Easing.In);
 

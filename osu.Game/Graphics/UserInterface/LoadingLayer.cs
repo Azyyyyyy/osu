@@ -2,12 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Input.Events;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -39,7 +38,7 @@ namespace osu.Game.Graphics.UserInterface
                 AddInternal(BackgroundDimLayer = new Box
                 {
                     Depth = float.MaxValue,
-                    Colour = Color4.Black,
+                    Colour = Colour4.Black,
                     Alpha = 0,
                     RelativeSizeAxes = Axes.Both,
                 });

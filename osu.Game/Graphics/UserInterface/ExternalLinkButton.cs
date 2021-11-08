@@ -1,6 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -9,8 +10,6 @@ using osu.Framework.Graphics.Sprites;
 using osu.Framework.Input.Events;
 using osu.Framework.Localisation;
 using osu.Framework.Platform;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -18,7 +17,7 @@ namespace osu.Game.Graphics.UserInterface
     {
         public string Link { get; set; }
 
-        private Color4 hoverColour;
+        private Colour4 hoverColour;
 
         [Resolved]
         private GameHost host { get; set; }
@@ -54,7 +53,7 @@ namespace osu.Game.Graphics.UserInterface
 
         protected override void OnHoverLost(HoverLostEvent e)
         {
-            linkIcon.FadeColour(Color4.White, 500, Easing.OutQuint);
+            linkIcon.FadeColour(Colour4.White, 500, Easing.OutQuint);
             base.OnHoverLost(e);
         }
 

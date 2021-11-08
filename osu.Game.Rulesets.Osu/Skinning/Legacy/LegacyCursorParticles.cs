@@ -3,6 +3,7 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -18,8 +19,6 @@ using osu.Game.Rulesets.Osu.Objects.Drawables;
 using osu.Game.Rulesets.Osu.UI;
 using osu.Game.Screens.Play;
 using osu.Game.Skinning;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 {
@@ -43,7 +42,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
         private void load(ISkinSource skin, OsuColour colours)
         {
             var texture = skin.GetTexture("star2");
-            var starBreakAdditive = skin.GetConfig<OsuSkinColour, Color4>(OsuSkinColour.StarBreakAdditive)?.Value ?? new Color4(255, 182, 193, 255);
+            var starBreakAdditive = skin.GetConfig<OsuSkinColour, Colour4>(OsuSkinColour.StarBreakAdditive)?.Value ?? new Colour4(255, 182, 193, 255);
 
             if (texture != null)
             {

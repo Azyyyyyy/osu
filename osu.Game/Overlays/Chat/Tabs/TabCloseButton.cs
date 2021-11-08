@@ -1,12 +1,11 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Input.Events;
 using osu.Game.Graphics.Containers;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Chat.Tabs
 {
@@ -42,13 +41,13 @@ namespace osu.Game.Overlays.Chat.Tabs
 
         protected override bool OnHover(HoverEvent e)
         {
-            icon.FadeColour(Color4.Red, 200, Easing.OutQuint);
+            icon.FadeColour(Colour4.Red, 200, Easing.OutQuint);
             return base.OnHover(e);
         }
 
         protected override void OnHoverLost(HoverLostEvent e)
         {
-            icon.FadeColour(Color4.White, 200, Easing.OutQuint);
+            icon.FadeColour(Colour4.White, 200, Easing.OutQuint);
             base.OnHoverLost(e);
         }
     }

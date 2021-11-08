@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -10,9 +11,7 @@ using osu.Framework.Input.Events;
 using osu.Framework.Threading;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterface;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Screens.Edit.Compose.Components.Timeline
 {
@@ -51,7 +50,7 @@ namespace osu.Game.Screens.Edit.Compose.Components.Timeline
                 Anchor = Anchor.Centre;
                 Origin = Anchor.Centre;
                 IconColour = OsuColour.Gray(0.35f);
-                IconHoverColour = Color4.White;
+                IconHoverColour = Colour4.White;
                 HoverColour = OsuColour.Gray(0.25f);
                 FlashColour = OsuColour.Gray(0.5f);
             }

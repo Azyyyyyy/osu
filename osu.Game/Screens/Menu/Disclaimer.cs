@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Extensions.IEnumerableExtensions;
@@ -15,15 +16,13 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Online.API;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Menu
 {
     public class Disclaimer : StartupScreen
     {
         private SpriteIcon icon;
-        private Color4 iconColour;
+        private Colour4 iconColour;
         private LinkFlowContainer textFlow;
         private LinkFlowContainer supportFlow;
 
@@ -188,7 +187,7 @@ namespace osu.Game.Screens.Menu
                     .RotateTo(-360, 520, Easing.OutQuint)
                     .Then()
                     .MoveToY(icon_y, 160, Easing.InQuart)
-                    .FadeColour(Color4.White, 160);
+                    .FadeColour(Colour4.White, 160);
 
                 using (BeginDelayedSequence(520 + 160))
                 {
@@ -247,7 +246,7 @@ namespace osu.Game.Screens.Menu
 
         private void animateHeart()
         {
-            heart.FlashColour(Color4.White, 750, Easing.OutQuint).Loop();
+            heart.FlashColour(Colour4.White, 750, Easing.OutQuint).Loop();
         }
     }
 }

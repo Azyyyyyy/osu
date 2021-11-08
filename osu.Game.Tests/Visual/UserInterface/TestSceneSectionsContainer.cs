@@ -8,7 +8,6 @@ using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Testing;
 using osu.Game.Graphics.Containers;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.UserInterface
 {
@@ -31,7 +30,7 @@ namespace osu.Game.Tests.Visual.UserInterface
                     Alpha = 0.5f,
                     Width = 300,
                     Height = header_height,
-                    Colour = Color4.Red
+                    Colour = Colour4.Red
                 }
             };
             container.SelectedSection.ValueChanged += section =>
@@ -101,8 +100,8 @@ namespace osu.Game.Tests.Visual.UserInterface
             AddUntilStep("correct section selected", () => container.SelectedSection.Value == container.Children[sections_count - 1]);
         }
 
-        private static readonly ColourInfo selected_colour = ColourInfo.GradientVertical(Color4.Yellow, Color4.Gold);
-        private static readonly ColourInfo default_colour = ColourInfo.GradientVertical(Color4.White, Color4.DarkGray);
+        private static readonly ColourInfo selected_colour = ColourInfo.GradientVertical(Colour4.Yellow, Colour4.Gold);
+        private static readonly ColourInfo default_colour = ColourInfo.GradientVertical(Colour4.White, Colour4.DarkGray);
 
         private void append(float multiplier)
         {

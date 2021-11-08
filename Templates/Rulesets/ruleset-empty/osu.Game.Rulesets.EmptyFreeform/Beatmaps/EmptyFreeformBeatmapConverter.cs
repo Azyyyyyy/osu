@@ -2,12 +2,12 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
+using System.Numerics;
 using System.Threading;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.EmptyFreeform.Objects;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Objects.Types;
-using osuTK;
 
 namespace osu.Game.Rulesets.EmptyFreeform.Beatmaps
 {

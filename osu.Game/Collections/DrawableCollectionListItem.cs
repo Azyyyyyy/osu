@@ -2,9 +2,9 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -14,8 +14,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Overlays;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Collections
 {
@@ -221,7 +219,7 @@ namespace osu.Game.Collections
 
             protected override bool OnClick(ClickEvent e)
             {
-                background.FlashColour(Color4.White, 150);
+                background.FlashColour(Colour4.White, 150);
 
                 if (collection.Beatmaps.Count == 0)
                     deleteCollection();

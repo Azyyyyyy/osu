@@ -1,19 +1,18 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osuTK;
 using osu.Framework.Graphics.Shapes;
-using osuTK.Graphics;
 using osu.Framework.Graphics.Colour;
 
 namespace osu.Game.Graphics.UserInterface
 {
     public abstract class GradientLineTabControl<TModel> : PageTabControl<TModel>
     {
-        protected Color4 LineColour
+        protected Colour4 LineColour
         {
             get => line.Colour;
             set => line.Colour = value;
@@ -58,12 +57,12 @@ namespace osu.Game.Graphics.UserInterface
                         new Box
                         {
                             RelativeSizeAxes = Axes.Both,
-                            Colour = ColourInfo.GradientHorizontal(Color4.Transparent, Colour)
+                            Colour = ColourInfo.GradientHorizontal(Colour4.Transparent, Colour)
                         },
                         new Box
                         {
                             RelativeSizeAxes = Axes.Both,
-                            Colour = ColourInfo.GradientHorizontal(Colour, Color4.Transparent)
+                            Colour = ColourInfo.GradientHorizontal(Colour, Colour4.Transparent)
                         },
                     }
                 };

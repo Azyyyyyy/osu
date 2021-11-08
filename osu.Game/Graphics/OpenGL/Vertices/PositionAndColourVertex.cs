@@ -2,11 +2,11 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using System.Runtime.InteropServices;
+using osu.Framework.Graphics;
 using osu.Framework.Graphics.OpenGL.Vertices;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Graphics.ES30;
+using Silk.NET.OpenGL;
 
 namespace osu.Game.Graphics.OpenGL.Vertices
 {
@@ -17,7 +17,7 @@ namespace osu.Game.Graphics.OpenGL.Vertices
         public Vector2 Position;
 
         [VertexMember(4, VertexAttribPointerType.Float)]
-        public Color4 Colour;
+        public Colour4 Colour;
 
         public bool Equals(PositionAndColourVertex other)
             => Position.Equals(other.Position)

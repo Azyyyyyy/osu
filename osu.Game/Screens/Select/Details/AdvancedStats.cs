@@ -1,9 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osuTK.Graphics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Graphics;
@@ -201,7 +199,7 @@ namespace osu.Game.Screens.Select.Details
                     ModBar.Length = (value.adjustedValue ?? 0) / maxValue;
 
                     if (Precision.AlmostEquals(value.baseValue, value.adjustedValue ?? value.baseValue, 0.05f))
-                        ModBar.AccentColour = valueText.Colour = Color4.White;
+                        ModBar.AccentColour = valueText.Colour = Colour4.White;
                     else if (value.adjustedValue > value.baseValue)
                         ModBar.AccentColour = valueText.Colour = colours.Red;
                     else if (value.adjustedValue < value.baseValue)
@@ -209,7 +207,7 @@ namespace osu.Game.Screens.Select.Details
                 }
             }
 
-            public Color4 AccentColour
+            public Colour4 AccentColour
             {
                 get => bar.AccentColour;
                 set => bar.AccentColour = value;
@@ -242,7 +240,7 @@ namespace osu.Game.Screens.Select.Details
                         Anchor = Anchor.CentreLeft,
                         RelativeSizeAxes = Axes.X,
                         Height = 5,
-                        BackgroundColour = Color4.White.Opacity(0.5f),
+                        BackgroundColour = Colour4.White.Opacity(0.5f),
                         Padding = new MarginPadding { Left = name_width + 10, Right = value_width + 10 },
                     },
                     ModBar = new Bar

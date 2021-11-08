@@ -3,6 +3,7 @@
 
 using System.Collections.Specialized;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
@@ -15,7 +16,6 @@ using osu.Game.Online.Spectator;
 using osu.Game.Screens.OnlinePlay.Match.Components;
 using osu.Game.Screens.Play;
 using osu.Game.Users;
-using osuTK;
 
 namespace osu.Game.Overlays.Dashboard
 {

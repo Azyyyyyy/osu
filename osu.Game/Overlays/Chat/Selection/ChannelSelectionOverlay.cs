@@ -3,10 +3,9 @@
 
 using System;
 using System.Collections.Generic;
-using osuTK;
-using osuTK.Graphics;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -41,10 +40,10 @@ namespace osu.Game.Overlays.Chat.Selection
         {
             RelativeSizeAxes = Axes.X;
 
-            Waves.FirstWaveColour = Color4Extensions.FromHex("353535");
-            Waves.SecondWaveColour = Color4Extensions.FromHex("434343");
-            Waves.ThirdWaveColour = Color4Extensions.FromHex("515151");
-            Waves.FourthWaveColour = Color4Extensions.FromHex("595959");
+            Waves.FirstWaveColour = Colour4Extensions.FromHex("353535");
+            Waves.SecondWaveColour = Colour4Extensions.FromHex("434343");
+            Waves.ThirdWaveColour = Colour4Extensions.FromHex("515151");
+            Waves.FourthWaveColour = Colour4Extensions.FromHex("595959");
 
             Children = new Drawable[]
             {
@@ -150,7 +149,7 @@ namespace osu.Game.Overlays.Chat.Selection
         {
             bg.Colour = colours.Gray3;
             triangles.ColourDark = colours.Gray3;
-            triangles.ColourLight = Color4Extensions.FromHex(@"353535");
+            triangles.ColourLight = Colour4Extensions.FromHex(@"353535");
 
             headerBg.Colour = colours.Gray2.Opacity(0.75f);
         }
@@ -186,8 +185,8 @@ namespace osu.Game.Overlays.Chat.Selection
             [BackgroundDependencyLoader]
             private void load()
             {
-                BackgroundFocused = Color4.Black.Opacity(0.2f);
-                BackgroundUnfocused = Color4.Black.Opacity(0.2f);
+                BackgroundFocused = Colour4.Black.Opacity(0.2f);
+                BackgroundUnfocused = Colour4.Black.Opacity(0.2f);
             }
         }
     }

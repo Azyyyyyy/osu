@@ -2,13 +2,13 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Diagnostics.CodeAnalysis;
-using osu.Framework.Extensions.Color4Extensions;
+using System.Numerics;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
-using osuTK;
 
 namespace osu.Game.Screens.Ranking.Statistics
 {
@@ -74,7 +74,7 @@ namespace osu.Game.Screens.Ranking.Statistics
                         Origin = Anchor.CentreLeft,
                         Height = 9,
                         Width = 4,
-                        Colour = Color4Extensions.FromHex("#00FFAA")
+                        Colour = Colour4Extensions.FromHex("#00FFAA")
                     },
                     new OsuSpriteText
                     {

@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using NUnit.Framework;
 using osu.Framework.Allocation;
@@ -24,8 +25,6 @@ using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Objects.Legacy;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Rulesets.UI;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.Gameplay
 {
@@ -288,7 +287,7 @@ namespace osu.Game.Tests.Visual.Gameplay
 
                 Size = new Vector2(50, 50);
 
-                Colour = new Color4(RNG.NextSingle(), RNG.NextSingle(), RNG.NextSingle(), 1f);
+                Colour = new Colour4(RNG.NextSingle(), RNG.NextSingle(), RNG.NextSingle(), 1f);
             }
 
             [BackgroundDependencyLoader]

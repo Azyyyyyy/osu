@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -9,8 +10,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Localisation;
 using osu.Game.Graphics;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Mods
 {
@@ -40,7 +39,7 @@ namespace osu.Game.Overlays.Mods
                     Anchor = Anchor.Centre,
                     Size = new Vector2(0.6f),
                     Icon = FontAwesome.Solid.Slash,
-                    Colour = Color4.White,
+                    Colour = Colour4.White,
                     Shadow = true,
                 }
             };
@@ -49,7 +48,7 @@ namespace osu.Game.Overlays.Mods
         protected override void PopIn()
         {
             this.FadeIn(200, Easing.OutQuint);
-            circle.FlashColour(Color4.Red, 500, Easing.OutQuint);
+            circle.FlashColour(Colour4.Red, 500, Easing.OutQuint);
             this.ScaleTo(1.8f).Then().ScaleTo(1, 500, Easing.OutQuint);
         }
 

@@ -3,10 +3,10 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Bindables;
 using osu.Game.Beatmaps;
 using osu.Game.Rulesets.Objects;
-using osuTK;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Rulesets.Osu.Scoring;

@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
@@ -11,8 +12,6 @@ using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Osu.Beatmaps;
 using osu.Game.Screens.Edit;
 using osu.Game.Screens.Edit.Compose.Components;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual.Editing
 {
@@ -41,7 +40,7 @@ namespace osu.Game.Tests.Visual.Editing
                 new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.SlateGray
+                    Colour = Colour4.SlateGray
                 },
                 new TestDistanceSnapGrid()
             };
@@ -70,7 +69,7 @@ namespace osu.Game.Tests.Visual.Editing
                     new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.SlateGray
+                        Colour = Colour4.SlateGray
                     },
                     new TestDistanceSnapGrid(100)
                 };

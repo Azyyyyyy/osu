@@ -4,10 +4,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Graphics;
 using osu.Game.Storyboards.Drawables;
-using osuTK;
 
 namespace osu.Game.Storyboards
 {

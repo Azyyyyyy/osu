@@ -2,14 +2,14 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Graphics;
 using osu.Framework.Testing;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Screens.Edit.Compose.Components.Timeline;
-using osuTK;
-using osuTK.Input;
+using Silk.NET.Input;
 using static osu.Game.Screens.Edit.Compose.Components.Timeline.TimelineHitObjectBlueprint;
 
 namespace osu.Game.Tests.Visual.Editing

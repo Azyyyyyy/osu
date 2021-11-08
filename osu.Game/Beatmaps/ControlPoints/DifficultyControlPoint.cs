@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Bindables;
+using osu.Framework.Graphics;
 using osu.Game.Graphics;
-using osuTK.Graphics;
 
 namespace osu.Game.Beatmaps.ControlPoints
 {
@@ -28,7 +28,7 @@ namespace osu.Game.Beatmaps.ControlPoints
             MaxValue = 10
         };
 
-        public override Color4 GetRepresentingColour(OsuColour colours) => colours.Lime1;
+        public override Colour4 GetRepresentingColour(OsuColour colours) => colours.Lime1;
 
         /// <summary>
         /// The slider velocity at this control point.

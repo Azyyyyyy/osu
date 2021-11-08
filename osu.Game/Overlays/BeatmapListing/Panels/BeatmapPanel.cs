@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Cursor;
@@ -24,8 +24,6 @@ using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Online.API.Requests.Responses;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.BeatmapListing.Panels
 {
@@ -63,7 +61,7 @@ namespace osu.Game.Overlays.BeatmapListing.Panels
             Type = EdgeEffectType.Shadow,
             Offset = new Vector2(0f, 1f),
             Radius = 2f,
-            Colour = Color4.Black.Opacity(0.25f),
+            Colour = Colour4.Black.Opacity(0.25f),
         };
 
         private readonly EdgeEffectParameters edgeEffectHovered = new EdgeEffectParameters
@@ -71,7 +69,7 @@ namespace osu.Game.Overlays.BeatmapListing.Panels
             Type = EdgeEffectType.Shadow,
             Offset = new Vector2(0f, 5f),
             Radius = 10f,
-            Colour = Color4.Black.Opacity(0.3f),
+            Colour = Colour4.Black.Opacity(0.3f),
         };
 
         [BackgroundDependencyLoader(permitNulls: true)]
@@ -150,7 +148,7 @@ namespace osu.Game.Overlays.BeatmapListing.Panels
             if (SetInfo.Beatmaps.Length > maximum_difficulty_icons)
             {
                 foreach (var ruleset in SetInfo.Beatmaps.Select(b => b.Ruleset).Distinct())
-                    icons.Add(new GroupedDifficultyIcon(SetInfo.Beatmaps.Where(b => b.RulesetID == ruleset.OnlineID).ToList(), ruleset, this is ListBeatmapPanel ? Color4.White : colours.Gray5));
+                    icons.Add(new GroupedDifficultyIcon(SetInfo.Beatmaps.Where(b => b.RulesetID == ruleset.OnlineID).ToList(), ruleset, this is ListBeatmapPanel ? Colour4.White : colours.Gray5));
             }
             else
             {

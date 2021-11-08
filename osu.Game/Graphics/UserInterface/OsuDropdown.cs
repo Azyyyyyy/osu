@@ -4,10 +4,10 @@
 #nullable enable
 
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
@@ -16,8 +16,6 @@ using osu.Framework.Localisation;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Overlays;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Graphics.UserInterface
 {
@@ -53,7 +51,7 @@ namespace osu.Game.Graphics.UserInterface
             [BackgroundDependencyLoader(true)]
             private void load(OverlayColourProvider? colourProvider, OsuColour colours, AudioManager audio)
             {
-                BackgroundColour = colourProvider?.Background5 ?? Color4.Black.Opacity(0.5f);
+                BackgroundColour = colourProvider?.Background5 ?? Colour4.Black.Opacity(0.5f);
                 HoverColour = colourProvider?.Light4 ?? colours.PinkDarker;
                 SelectionColour = colourProvider?.Background3 ?? colours.PinkDarker.Opacity(0.5f);
 
@@ -96,9 +94,9 @@ namespace osu.Game.Graphics.UserInterface
                 }
             }
 
-            private Color4 hoverColour;
+            private Colour4 hoverColour;
 
-            public Color4 HoverColour
+            public Colour4 HoverColour
             {
                 get => hoverColour;
                 set
@@ -109,9 +107,9 @@ namespace osu.Game.Graphics.UserInterface
                 }
             }
 
-            private Color4 selectionColour;
+            private Colour4 selectionColour;
 
-            public Color4 SelectionColour
+            public Colour4 SelectionColour
             {
                 get => selectionColour;
                 set
@@ -139,7 +137,7 @@ namespace osu.Game.Graphics.UserInterface
                 // IsHovered is used
                 public override bool HandlePositionalInput => true;
 
-                public new Color4 BackgroundColourHover
+                public new Colour4 BackgroundColourHover
                 {
                     get => base.BackgroundColourHover;
                     set
@@ -149,7 +147,7 @@ namespace osu.Game.Graphics.UserInterface
                     }
                 }
 
-                public new Color4 BackgroundColourSelected
+                public new Colour4 BackgroundColourSelected
                 {
                     get => base.BackgroundColourSelected;
                     set
@@ -246,7 +244,7 @@ namespace osu.Game.Graphics.UserInterface
                     [BackgroundDependencyLoader(true)]
                     private void load(OverlayColourProvider? colourProvider)
                     {
-                        Chevron.Colour = colourProvider?.Background5 ?? Color4.Black;
+                        Chevron.Colour = colourProvider?.Background5 ?? Colour4.Black;
                     }
 
                     private bool hovering;
@@ -343,7 +341,7 @@ namespace osu.Game.Graphics.UserInterface
             [BackgroundDependencyLoader(true)]
             private void load(OverlayColourProvider? colourProvider, OsuColour colours)
             {
-                BackgroundColour = colourProvider?.Background5 ?? Color4.Black.Opacity(0.5f);
+                BackgroundColour = colourProvider?.Background5 ?? Colour4.Black.Opacity(0.5f);
                 BackgroundColourHover = colourProvider?.Light4 ?? colours.PinkDarker;
             }
         }

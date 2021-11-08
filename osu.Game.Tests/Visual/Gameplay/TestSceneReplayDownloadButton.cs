@@ -15,8 +15,8 @@ using osu.Game.Graphics.UserInterface;
 using osu.Game.Rulesets;
 using osu.Game.Rulesets.Osu;
 using osu.Game.Screens.Ranking;
-using osuTK.Input;
 using APIUser = osu.Game.Online.API.Requests.Responses.APIUser;
+using Silk.NET.Input;
 
 namespace osu.Game.Tests.Visual.Gameplay
 {

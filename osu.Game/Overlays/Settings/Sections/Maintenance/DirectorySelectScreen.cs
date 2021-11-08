@@ -3,11 +3,11 @@
 
 using osu.Framework.Graphics;
 using System.IO;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.UserInterfaceV2;
 using osu.Game.Screens;
-using osuTK;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Localisation;

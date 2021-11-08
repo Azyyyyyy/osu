@@ -2,10 +2,9 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
-using osuTK;
-using osuTK.Graphics;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -66,7 +65,7 @@ namespace osu.Game.Screens.Menu
                             Anchor = Anchor.Centre,
                             Position = new Vector2(-line_offset, -line_offset),
                             Rotation = 45,
-                            Colour = Color4.White.Opacity(180),
+                            Colour = Colour4.White.Opacity(180),
                         },
                         lineTopRight = new Box
                         {
@@ -74,7 +73,7 @@ namespace osu.Game.Screens.Menu
                             Anchor = Anchor.Centre,
                             Position = new Vector2(line_offset, -line_offset),
                             Rotation = -45,
-                            Colour = Color4.White.Opacity(80),
+                            Colour = Colour4.White.Opacity(80),
                         },
                         lineBottomLeft = new Box
                         {
@@ -82,7 +81,7 @@ namespace osu.Game.Screens.Menu
                             Anchor = Anchor.Centre,
                             Position = new Vector2(-line_offset, line_offset),
                             Rotation = -45,
-                            Colour = Color4.White.Opacity(230),
+                            Colour = Colour4.White.Opacity(230),
                         },
                         lineBottomRight = new Box
                         {
@@ -90,13 +89,13 @@ namespace osu.Game.Screens.Menu
                             Anchor = Anchor.Centre,
                             Position = new Vector2(line_offset, line_offset),
                             Rotation = 45,
-                            Colour = Color4.White.Opacity(130),
+                            Colour = Colour4.White.Opacity(130),
                         },
                     }
                 },
-                bigRing = new Ring(Color4Extensions.FromHex(@"B6C5E9"), 0.85f),
-                mediumRing = new Ring(Color4.White.Opacity(130), 0.7f),
-                smallRing = new Ring(Color4.White, 0.6f),
+                bigRing = new Ring(Colour4Extensions.FromHex(@"B6C5E9"), 0.85f),
+                mediumRing = new Ring(Colour4.White.Opacity(130), 0.7f),
+                smallRing = new Ring(Colour4.White, 0.6f),
                 welcomeText = new OsuSpriteText
                 {
                     Anchor = Anchor.Centre,
@@ -121,7 +120,7 @@ namespace osu.Game.Screens.Menu
                             Origin = Anchor.Centre,
                             RelativeSizeAxes = Axes.Both,
                             Height = 0,
-                            Colour = Color4Extensions.FromHex(@"C6D8FF").Opacity(160),
+                            Colour = Colour4Extensions.FromHex(@"C6D8FF").Opacity(160),
                         },
                         foregroundFill = new Box
                         {
@@ -130,7 +129,7 @@ namespace osu.Game.Screens.Menu
                             Size = Vector2.Zero,
                             RelativeSizeAxes = Axes.Both,
                             Width = 0,
-                            Colour = Color4.White,
+                            Colour = Colour4.White,
                         },
                     }
                 },
@@ -139,28 +138,28 @@ namespace osu.Game.Screens.Menu
                     Anchor = Anchor.Centre,
                     Origin = Anchor.TopCentre,
                     Position = new Vector2(0, circle_offset),
-                    Colour = Color4Extensions.FromHex(@"AA92FF"),
+                    Colour = Colour4Extensions.FromHex(@"AA92FF"),
                 },
                 blueCircle = new Circle
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.CentreRight,
                     Position = new Vector2(-circle_offset, 0),
-                    Colour = Color4Extensions.FromHex(@"8FE5FE"),
+                    Colour = Colour4Extensions.FromHex(@"8FE5FE"),
                 },
                 yellowCircle = new Circle
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.BottomCentre,
                     Position = new Vector2(0, -circle_offset),
-                    Colour = Color4Extensions.FromHex(@"FFD64C"),
+                    Colour = Colour4Extensions.FromHex(@"FFD64C"),
                 },
                 pinkCircle = new Circle
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.CentreLeft,
                     Position = new Vector2(circle_offset, 0),
-                    Colour = Color4Extensions.FromHex(@"e967a1"),
+                    Colour = Colour4Extensions.FromHex(@"e967a1"),
                 },
             };
 
@@ -205,7 +204,7 @@ namespace osu.Game.Screens.Menu
                 const int line_end_offset = 120;
 
                 smallRing.Foreground.ResizeTo(1, line_duration, Easing.OutQuint);
-                smallRing.Delay(400).FadeColour(Color4.Black, 300);
+                smallRing.Delay(400).FadeColour(Colour4.Black, 300);
 
                 lineTopLeft.MoveTo(new Vector2(-line_end_offset, -line_end_offset), line_duration, Easing.OutQuint);
                 lineTopRight.MoveTo(new Vector2(line_end_offset, -line_end_offset), line_duration, Easing.OutQuint);
@@ -268,7 +267,7 @@ namespace osu.Game.Screens.Menu
         {
             public readonly Circle Foreground;
 
-            public Ring(Color4 ringColour, float foregroundSize)
+            public Ring(Colour4 ringColour, float foregroundSize)
             {
                 Anchor = Anchor.Centre;
                 Origin = Anchor.Centre;
@@ -288,7 +287,7 @@ namespace osu.Game.Screens.Menu
                         Anchor = Anchor.Centre,
                         Origin = Anchor.Centre,
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.Black,
+                        Colour = Colour4.Black,
                     }
                 };
             }

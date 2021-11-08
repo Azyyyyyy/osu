@@ -1,8 +1,6 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Batches;
 using osu.Framework.Graphics.Colour;
@@ -13,13 +11,16 @@ using osu.Framework.Graphics.Textures;
 using osu.Game.Beatmaps;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Track;
 using osu.Framework.Bindables;
 using osu.Framework.Utils;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.MatrixExtensions;
+using osu.Framework.Extensions;
+using Vector2Extensions = osu.Framework.Graphics.Vector2Extensions;
 
 namespace osu.Game.Screens.Menu
 {
@@ -174,7 +175,7 @@ namespace osu.Game.Screens.Menu
             // Assuming the logo is a circle, we don't need a second dimension.
             private float size;
 
-            private static readonly Color4 transparent_white = Color4.White.Opacity(0.2f);
+            private static readonly Colour4 transparent_white = Colour4.White.Opacity(0.2f);
 
             private float[] audioData;
 
@@ -201,7 +202,7 @@ namespace osu.Game.Screens.Menu
 
                 shader.Bind();
 
-                Vector2 inflation = DrawInfo.MatrixInverse.ExtractScale().Xy;
+                Vector2 inflation = DrawInfo.MatrixInverse.ExtractScale().XY();
 
                 ColourInfo colourInfo = DrawColourInfo.Colour;
                 colourInfo.ApplyChild(transparent_white);
@@ -241,7 +242,7 @@ namespace osu.Game.Screens.Menu
                                 null,
                                 vertexBatch.AddAction,
                                 // barSize by itself will make it smooth more in the X axis than in the Y axis, this reverts that.
-                                Vector2.Divide(inflation, barSize.Yx));
+                                Vector2.Divide(inflation, barSize));
                         }
                     }
                 }

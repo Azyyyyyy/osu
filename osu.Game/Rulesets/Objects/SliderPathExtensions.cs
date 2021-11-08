@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using osu.Game.Rulesets.Objects.Types;
-using osuTK;
 
 #nullable enable
 

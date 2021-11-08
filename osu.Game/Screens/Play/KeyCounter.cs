@@ -1,6 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -8,8 +9,6 @@ using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play
 {
@@ -68,8 +67,8 @@ namespace osu.Game.Screens.Play
         }
 
         //further: change default values here and in KeyCounterCollection if needed, instead of passing them in every constructor
-        public Color4 KeyDownTextColor { get; set; } = Color4.DarkGray;
-        public Color4 KeyUpTextColor { get; set; } = Color4.White;
+        public Colour4 KeyDownTextColor { get; set; } = Colour4.DarkGray;
+        public Colour4 KeyUpTextColor { get; set; } = Colour4.White;
         public double FadeTime { get; set; }
 
         protected KeyCounter(string name)

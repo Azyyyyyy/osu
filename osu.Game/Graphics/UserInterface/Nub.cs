@@ -2,12 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using JetBrains.Annotations;
-using osuTK;
-using osuTK.Graphics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -39,7 +37,7 @@ namespace osu.Game.Graphics.UserInterface
             {
                 main = new CircularContainer
                 {
-                    BorderColour = Color4.White,
+                    BorderColour = Colour4.White,
                     BorderThickness = border_width,
                     Masking = true,
                     RelativeSizeAxes = Axes.Both,
@@ -118,9 +116,9 @@ namespace osu.Game.Graphics.UserInterface
             }
         }
 
-        private Color4 accentColour;
+        private Colour4 accentColour;
 
-        public Color4 AccentColour
+        public Colour4 AccentColour
         {
             get => accentColour;
             set
@@ -131,9 +129,9 @@ namespace osu.Game.Graphics.UserInterface
             }
         }
 
-        private Color4 glowingAccentColour;
+        private Colour4 glowingAccentColour;
 
-        public Color4 GlowingAccentColour
+        public Colour4 GlowingAccentColour
         {
             get => glowingAccentColour;
             set
@@ -144,9 +142,9 @@ namespace osu.Game.Graphics.UserInterface
             }
         }
 
-        private Color4 glowColour;
+        private Colour4 glowColour;
 
-        public Color4 GlowColour
+        public Colour4 GlowColour
         {
             get => glowColour;
             set

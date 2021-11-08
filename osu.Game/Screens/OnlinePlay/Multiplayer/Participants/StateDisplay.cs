@@ -3,8 +3,9 @@
 
 using System;
 using System.Diagnostics;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
@@ -14,8 +15,6 @@ using osu.Game.Graphics.UserInterface;
 using osu.Game.Online;
 using osu.Game.Online.Multiplayer;
 using osu.Game.Online.Rooms;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.OnlinePlay.Multiplayer.Participants
 {
@@ -66,7 +65,7 @@ namespace osu.Game.Screens.OnlinePlay.Multiplayer.Participants
                                 RelativeSizeAxes = Axes.Both,
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
-                                BackgroundColour = Color4.Black.Opacity(0.4f),
+                                BackgroundColour = Colour4.Black.Opacity(0.4f),
                                 FillColour = colours.Blue,
                                 Alpha = 0f,
                             },
@@ -76,7 +75,7 @@ namespace osu.Game.Screens.OnlinePlay.Multiplayer.Participants
                                 Anchor = Anchor.CentreRight,
                                 Origin = Anchor.CentreRight,
                                 Font = OsuFont.GetFont(weight: FontWeight.Regular, size: 12),
-                                Colour = Color4Extensions.FromHex("#DDFFFF")
+                                Colour = Colour4Extensions.FromHex("#DDFFFF")
                             },
                         }
                     },
@@ -102,7 +101,7 @@ namespace osu.Game.Screens.OnlinePlay.Multiplayer.Participants
                 case MultiplayerUserState.Ready:
                     text.Text = "ready";
                     icon.Icon = FontAwesome.Solid.CheckCircle;
-                    icon.Colour = Color4Extensions.FromHex("#AADD00");
+                    icon.Colour = Colour4Extensions.FromHex("#AADD00");
                     break;
 
                 case MultiplayerUserState.WaitingForLoad:

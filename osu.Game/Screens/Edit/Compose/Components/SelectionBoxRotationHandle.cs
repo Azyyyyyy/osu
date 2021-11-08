@@ -1,12 +1,11 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.EnumExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Compose.Components
 {
@@ -36,7 +35,7 @@ namespace osu.Game.Screens.Edit.Compose.Components
         protected override void UpdateHoverState()
         {
             base.UpdateHoverState();
-            icon.FadeColour(!IsHeld && IsHovered ? Color4.White : Color4.Black, TRANSFORM_DURATION, Easing.OutQuint);
+            icon.FadeColour(!IsHeld && IsHovered ? Colour4.White : Colour4.Black, TRANSFORM_DURATION, Easing.OutQuint);
         }
     }
 }

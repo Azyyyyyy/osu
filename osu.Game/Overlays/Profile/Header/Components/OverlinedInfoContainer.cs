@@ -7,7 +7,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Localisation;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Profile.Header.Components
 {
@@ -27,7 +26,7 @@ namespace osu.Game.Overlays.Profile.Header.Components
             set => content.Text = value;
         }
 
-        public Color4 LineColour
+        public Colour4 LineColour
         {
             set => line.Colour = value;
         }

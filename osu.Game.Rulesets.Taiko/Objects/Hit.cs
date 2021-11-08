@@ -3,10 +3,10 @@
 
 using System.Linq;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
+using osu.Framework.Graphics;
 using osu.Game.Audio;
 using osu.Game.Rulesets.Objects.Types;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Taiko.Objects
 {
@@ -14,7 +14,7 @@ namespace osu.Game.Rulesets.Taiko.Objects
     {
         public readonly Bindable<HitType> TypeBindable = new Bindable<HitType>();
 
-        public Bindable<Color4> DisplayColour { get; } = new Bindable<Color4>(COLOUR_CENTRE);
+        public Bindable<Colour4> DisplayColour { get; } = new Bindable<Colour4>(COLOUR_CENTRE);
 
         /// <summary>
         /// The <see cref="HitType"/> that actuates this <see cref="Hit"/>.
@@ -25,8 +25,8 @@ namespace osu.Game.Rulesets.Taiko.Objects
             set => TypeBindable.Value = value;
         }
 
-        public static readonly Color4 COLOUR_CENTRE = Color4Extensions.FromHex(@"bb1177");
-        public static readonly Color4 COLOUR_RIM = Color4Extensions.FromHex(@"2299bb");
+        public static readonly Colour4 COLOUR_CENTRE = Colour4Extensions.FromHex(@"bb1177");
+        public static readonly Colour4 COLOUR_RIM = Colour4Extensions.FromHex(@"2299bb");
 
         public Hit()
         {

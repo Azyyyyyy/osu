@@ -9,7 +9,6 @@ using osu.Game.Graphics.Sprites;
 using osu.Game.Overlays;
 using osu.Game.Screens;
 using osu.Game.Screens.Play;
-using osuTK.Graphics;
 
 namespace osu.Game.Tests.Visual
 {
@@ -103,7 +102,7 @@ namespace osu.Game.Tests.Visual
                 AddInternal(new OsuSpriteText
                 {
                     Text = screenText,
-                    Colour = Color4.White,
+                    Colour = Colour4.White,
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
                 });

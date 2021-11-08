@@ -4,7 +4,6 @@
 using osu.Game.Screens.Select.Leaderboards;
 using osu.Game.Graphics.UserInterface;
 using osu.Framework.Allocation;
-using osuTK.Graphics;
 using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Input.Events;
 using osu.Framework.Graphics;
@@ -49,7 +48,7 @@ namespace osu.Game.Overlays.BeatmapSet
             {
                 base.OnHoverLost(e);
 
-                Text.FadeColour(Color4.White);
+                Text.FadeColour(Colour4.White);
             }
         }
     }

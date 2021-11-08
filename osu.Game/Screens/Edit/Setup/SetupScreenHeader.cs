@@ -8,7 +8,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.UserInterface;
 using osu.Game.Graphics.Containers;
 using osu.Game.Overlays;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Setup
 {
@@ -85,7 +84,7 @@ namespace osu.Game.Screens.Edit.Setup
         {
             private readonly Box background;
 
-            public Color4 BackgroundColour
+            public Colour4 BackgroundColour
             {
                 get => background.Colour;
                 set => background.Colour = value;

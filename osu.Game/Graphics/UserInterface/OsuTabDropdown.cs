@@ -1,9 +1,7 @@
 ﻿// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
-using osuTK;
-using osuTK.Graphics;
-using osu.Framework.Extensions.Color4Extensions;
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.UserInterface;
@@ -13,9 +11,9 @@ namespace osu.Game.Graphics.UserInterface
 {
     public class OsuTabDropdown<T> : OsuDropdown<T>, IHasAccentColour
     {
-        private Color4 accentColour;
+        private Colour4 accentColour;
 
-        public Color4 AccentColour
+        public Colour4 AccentColour
         {
             get => accentColour;
             set
@@ -65,7 +63,7 @@ namespace osu.Game.Graphics.UserInterface
                 Anchor = Anchor.TopRight;
                 Origin = Anchor.TopRight;
 
-                BackgroundColour = Color4.Black.Opacity(0.7f);
+                BackgroundColour = Colour4.Black.Opacity(0.7f);
                 MaxHeight = 400;
             }
 
@@ -76,16 +74,16 @@ namespace osu.Game.Graphics.UserInterface
                 public DrawableOsuTabDropdownMenuItem(MenuItem item)
                     : base(item)
                 {
-                    ForegroundColourHover = Color4.Black;
+                    ForegroundColourHover = Colour4.Black;
                 }
             }
         }
 
         protected class OsuTabDropdownHeader : OsuDropdownHeader, IHasAccentColour
         {
-            private Color4 accentColour;
+            private Colour4 accentColour;
 
-            public Color4 AccentColour
+            public Colour4 AccentColour
             {
                 get => accentColour;
                 set
@@ -101,7 +99,7 @@ namespace osu.Game.Graphics.UserInterface
                 RelativeSizeAxes = Axes.None;
                 AutoSizeAxes = Axes.X;
 
-                BackgroundColour = Color4.Black.Opacity(0.5f);
+                BackgroundColour = Colour4.Black.Opacity(0.5f);
 
                 Background.Height = 0.5f;
                 Background.CornerRadius = 5;

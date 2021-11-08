@@ -3,12 +3,12 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Beatmaps;
 using osu.Game.Graphics.Containers;
-using osuTK;
 
 namespace osu.Game.Overlays.Music
 {

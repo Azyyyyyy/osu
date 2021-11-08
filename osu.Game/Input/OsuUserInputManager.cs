@@ -2,7 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using osu.Framework.Input;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Input
 {

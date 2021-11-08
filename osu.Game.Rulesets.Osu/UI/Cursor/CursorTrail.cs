@@ -3,22 +3,23 @@
 
 using System;
 using System.Diagnostics;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using osu.Framework.Allocation;
+using osu.Framework.Extensions;
 using osu.Framework.Extensions.EnumExtensions;
+using osu.Framework.Extensions.MatrixExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Batches;
 using osu.Framework.Graphics.OpenGL.Vertices;
 using osu.Framework.Graphics.Primitives;
 using osu.Framework.Graphics.Shaders;
-using osu.Framework.Graphics.Textures;
 using osu.Framework.Input;
 using osu.Framework.Input.Events;
 using osu.Framework.Layout;
 using osu.Framework.Timing;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Graphics.ES30;
+using Silk.NET.OpenGL;
+using Texture = osu.Framework.Graphics.Textures.Texture;
 
 namespace osu.Game.Rulesets.Osu.UI.Cursor
 {
@@ -96,7 +97,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
 
         private Vector2 partSize => partSizeCache.IsValid
             ? partSizeCache.Value
-            : (partSizeCache.Value = new Vector2(Texture.DisplayWidth, Texture.DisplayHeight) * DrawInfo.Matrix.ExtractScale().Xy);
+            : (partSizeCache.Value = new Vector2(Texture.DisplayWidth, Texture.DisplayHeight) * DrawInfo.Matrix.ExtractScale().XY());
 
         /// <summary>
         /// The amount of time to fade the cursor trail pieces.
@@ -168,7 +169,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
 
                     Vector2 pos1 = lastPosition.Value;
                     Vector2 diff = pos2 - pos1;
-                    float distance = diff.Length;
+                    float distance = diff.Length();
                     Vector2 direction = diff / distance;
 
                     float interval = partSize.X / 2.5f * IntervalMultiplier;
@@ -328,7 +329,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
             public Vector2 Position;
 
             [VertexMember(4, VertexAttribPointerType.Float)]
-            public Color4 Colour;
+            public Colour4 Colour;
 
             [VertexMember(2, VertexAttribPointerType.Float)]
             public Vector2 TexturePosition;

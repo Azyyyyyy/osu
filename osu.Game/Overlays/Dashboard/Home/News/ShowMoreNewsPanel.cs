@@ -6,7 +6,6 @@ using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Dashboard.Home.News
 {
@@ -40,7 +39,7 @@ namespace osu.Game.Overlays.Dashboard.Home.News
             };
 
             IdleColour = colourProvider.Light1;
-            HoverColour = Color4.White;
+            HoverColour = Colour4.White;
 
             Action = () =>
             {

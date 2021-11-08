@@ -1,16 +1,14 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Extensions;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Online.Chat;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.BeatmapSet
 {
@@ -77,7 +75,7 @@ namespace osu.Game.Overlays.BeatmapSet
             {
                 RelativeSizeAxes = Axes.X,
                 AutoSizeAxes = Axes.Y,
-                Colour = Color4.White.Opacity(0.75f),
+                Colour = Colour4.White.Opacity(0.75f),
             }, loaded =>
             {
                 textFlow?.Expire();

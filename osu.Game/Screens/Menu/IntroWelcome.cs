@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using JetBrains.Annotations;
-using osuTK;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
@@ -14,7 +14,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
 using osu.Game.Screens.Backgrounds;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Menu
 {
@@ -125,7 +124,7 @@ namespace osu.Game.Screens.Menu
                                 RelativeSizeAxes = Axes.Both,
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
-                                Colour = Color4.DarkBlue,
+                                Colour = Colour4.DarkBlue,
                                 Size = new Vector2(0.96f)
                             },
                             new Circle
@@ -133,7 +132,7 @@ namespace osu.Game.Screens.Menu
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre,
                                 Size = new Vector2(480),
-                                Colour = Color4.Black
+                                Colour = Colour4.Black
                             },
                             welcomeText = new Sprite
                             {

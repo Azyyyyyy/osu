@@ -9,7 +9,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Online.Rooms;
 using osu.Game.Online.Rooms.RoomStatuses;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.OnlinePlay.Lounge.Components
 {
@@ -39,7 +38,7 @@ namespace osu.Game.Screens.OnlinePlay.Lounge.Components
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
                     Font = OsuFont.GetFont(weight: FontWeight.SemiBold, size: 12),
-                    Colour = Color4.Black
+                    Colour = Colour4.Black
                 }
             };
         }

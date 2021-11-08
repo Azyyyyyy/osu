@@ -4,12 +4,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -23,9 +24,7 @@ using osu.Game.Input.Bindings;
 using osu.Game.Rulesets.Mods;
 using osu.Game.Screens;
 using osu.Game.Utils;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
+using Silk.NET.Input;
 
 namespace osu.Game.Overlays.Mods
 {
@@ -79,8 +78,8 @@ namespace osu.Game.Overlays.Mods
 
         private Bindable<Dictionary<ModType, IReadOnlyList<Mod>>> availableMods;
 
-        protected Color4 LowMultiplierColour;
-        protected Color4 HighMultiplierColour;
+        protected Colour4 LowMultiplierColour;
+        protected Colour4 HighMultiplierColour;
 
         private const float content_width = 0.8f;
         private const float footer_button_spacing = 20;
@@ -89,10 +88,10 @@ namespace osu.Game.Overlays.Mods
 
         protected ModSelectOverlay()
         {
-            Waves.FirstWaveColour = Color4Extensions.FromHex(@"19b0e2");
-            Waves.SecondWaveColour = Color4Extensions.FromHex(@"2280a2");
-            Waves.ThirdWaveColour = Color4Extensions.FromHex(@"005774");
-            Waves.FourthWaveColour = Color4Extensions.FromHex(@"003a4e");
+            Waves.FirstWaveColour = Colour4Extensions.FromHex(@"19b0e2");
+            Waves.SecondWaveColour = Colour4Extensions.FromHex(@"2280a2");
+            Waves.ThirdWaveColour = Colour4Extensions.FromHex(@"005774");
+            Waves.FourthWaveColour = Colour4Extensions.FromHex(@"003a4e");
 
             RelativeSizeAxes = Axes.X;
             Height = HEIGHT;
@@ -110,14 +109,14 @@ namespace osu.Game.Overlays.Mods
                         new Box
                         {
                             RelativeSizeAxes = Axes.Both,
-                            Colour = new Color4(36, 50, 68, 255)
+                            Colour = new Colour4(36, 50, 68, 255)
                         },
                         new Triangles
                         {
                             TriangleScale = 5,
                             RelativeSizeAxes = Axes.Both,
-                            ColourLight = new Color4(53, 66, 82, 255),
-                            ColourDark = new Color4(41, 54, 70, 255),
+                            ColourLight = new Colour4(53, 66, 82, 255),
+                            ColourDark = new Colour4(41, 54, 70, 255),
                         },
                     },
                 },
@@ -277,7 +276,7 @@ namespace osu.Game.Overlays.Mods
                                     new Box
                                     {
                                         RelativeSizeAxes = Axes.Both,
-                                        Colour = new Color4(172, 20, 116, 255),
+                                        Colour = new Colour4(172, 20, 116, 255),
                                         Alpha = 0.5f,
                                     },
                                     FooterContainer = new FillFlowContainer

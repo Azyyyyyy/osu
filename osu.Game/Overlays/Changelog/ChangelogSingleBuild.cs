@@ -3,9 +3,9 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -18,7 +18,6 @@ using osu.Game.Online.API;
 using osu.Game.Online.API.Requests;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Overlays.Comments;
-using osuTK;
 
 namespace osu.Game.Overlays.Changelog
 {

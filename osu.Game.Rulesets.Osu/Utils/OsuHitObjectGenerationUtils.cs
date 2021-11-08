@@ -3,11 +3,11 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Extensions.IEnumerableExtensions;
 using osu.Game.Rulesets.Osu.UI;
 using osu.Game.Rulesets.Objects;
 using osu.Game.Rulesets.Osu.Objects;
-using osuTK;
 
 namespace osu.Game.Rulesets.Osu.Utils
 {
@@ -100,8 +100,8 @@ namespace osu.Game.Rulesets.Osu.Utils
             float finalAngleRad = initialAngleRad + rotationRatio * diff;
 
             return new Vector2(
-                initial.Length * MathF.Cos(finalAngleRad),
-                initial.Length * MathF.Sin(finalAngleRad)
+                initial.Length() * MathF.Cos(finalAngleRad),
+                initial.Length() * MathF.Sin(finalAngleRad)
             );
         }
 

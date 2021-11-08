@@ -22,9 +22,6 @@ using osu.Game.Rulesets.Mods;
 using osu.Game.Screens.Edit;
 using osu.Game.Screens.Menu;
 using osu.Game.Screens.Select.Options;
-using osuTK;
-using osuTK.Graphics;
-using osuTK.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,8 +32,10 @@ using osu.Framework.Input.Bindings;
 using osu.Game.Collections;
 using osu.Game.Graphics.UserInterface;
 using System.Diagnostics;
+using System.Numerics;
 using osu.Game.Screens.Play;
 using osu.Game.Database;
+using Silk.NET.Input;
 
 namespace osu.Game.Screens.Select
 {
@@ -699,7 +698,7 @@ namespace osu.Game.Screens.Select
             {
                 backgroundModeBeatmap.Beatmap = beatmap;
                 backgroundModeBeatmap.BlurAmount.Value = BACKGROUND_BLUR;
-                backgroundModeBeatmap.FadeColour(Color4.White, 250);
+                backgroundModeBeatmap.FadeColour(Colour4.White, 250);
             });
 
             beatmapInfoWedge.Beatmap = beatmap;

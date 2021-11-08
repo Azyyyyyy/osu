@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using JetBrains.Annotations;
 using osu.Framework.Audio.Sample;
 using osu.Framework.Bindables;
@@ -16,8 +17,6 @@ using osu.Game.IO;
 using osu.Game.Screens.Play;
 using osu.Game.Screens.Play.HUD;
 using osu.Game.Screens.Play.HUD.HitErrorMeters;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Skinning
 {
@@ -153,19 +152,19 @@ namespace osu.Game.Skinning
                     switch (global)
                     {
                         case GlobalSkinColours.ComboColours:
-                            return SkinUtils.As<TValue>(new Bindable<IReadOnlyList<Color4>>(Configuration.ComboColours));
+                            return SkinUtils.As<TValue>(new Bindable<IReadOnlyList<Colour4>>(Configuration.ComboColours));
                     }
 
                     break;
 
                 case SkinComboColourLookup comboColour:
-                    return SkinUtils.As<TValue>(new Bindable<Color4>(getComboColour(Configuration, comboColour.ColourIndex)));
+                    return SkinUtils.As<TValue>(new Bindable<Colour4>(getComboColour(Configuration, comboColour.ColourIndex)));
             }
 
             return null;
         }
 
-        private static Color4 getComboColour(IHasComboColours source, int colourIndex)
+        private static Colour4 getComboColour(IHasComboColours source, int colourIndex)
             => source.ComboColours[colourIndex % source.ComboColours.Count];
     }
 }

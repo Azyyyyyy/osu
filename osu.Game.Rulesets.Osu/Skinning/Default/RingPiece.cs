@@ -1,12 +1,11 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Game.Rulesets.Osu.Objects;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Skinning.Default
 {
@@ -21,7 +20,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Default
 
             Masking = true;
             BorderThickness = 9; // roughly matches slider borders and makes stacked circles distinctly visible from each other.
-            BorderColour = Color4.White;
+            BorderColour = Colour4.White;
 
             Child = new Box
             {

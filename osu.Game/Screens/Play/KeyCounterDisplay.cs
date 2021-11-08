@@ -3,14 +3,13 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Input.Events;
 using osu.Game.Configuration;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Play
 {
@@ -89,9 +88,9 @@ namespace osu.Game.Screens.Play
             }
         }
 
-        private Color4 keyDownTextColor = Color4.DarkGray;
+        private Colour4 keyDownTextColor = Colour4.DarkGray;
 
-        public Color4 KeyDownTextColor
+        public Colour4 KeyDownTextColor
         {
             get => keyDownTextColor;
             set
@@ -105,9 +104,9 @@ namespace osu.Game.Screens.Play
             }
         }
 
-        private Color4 keyUpTextColor = Color4.White;
+        private Colour4 keyUpTextColor = Colour4.White;
 
-        public Color4 KeyUpTextColor
+        public Colour4 KeyUpTextColor
         {
             get => keyUpTextColor;
             set

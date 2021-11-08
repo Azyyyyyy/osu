@@ -3,15 +3,15 @@
 
 using System;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
 using osu.Game.Graphics;
 using osu.Game.Online.Chat;
 using osu.Game.Users.Drawables;
-using osuTK;
 
 namespace osu.Game.Overlays.Chat.Tabs
 {
@@ -88,7 +88,7 @@ namespace osu.Game.Overlays.Chat.Tabs
         {
             var user = Value.Users.First();
 
-            BackgroundActive = user.Colour != null ? Color4Extensions.FromHex(user.Colour) : colours.BlueDark;
+            BackgroundActive = user.Colour != null ? Colour4Extensions.FromHex(user.Colour) : colours.BlueDark;
             BackgroundInactive = BackgroundActive.Darken(0.5f);
         }
     }

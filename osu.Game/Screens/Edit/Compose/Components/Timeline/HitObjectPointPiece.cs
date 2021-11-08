@@ -8,7 +8,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Game.Beatmaps.ControlPoints;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
-using osuTK.Graphics;
 
 namespace osu.Game.Screens.Edit.Compose.Components.Timeline
 {
@@ -28,7 +27,7 @@ namespace osu.Game.Screens.Edit.Compose.Components.Timeline
         {
             AutoSizeAxes = Axes.Both;
 
-            Color4 colour = point.GetRepresentingColour(colours);
+            Colour4 colour = point.GetRepresentingColour(colours);
 
             InternalChildren = new Drawable[]
             {

@@ -2,8 +2,8 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Collections.Generic;
+using System.Numerics;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -13,8 +13,6 @@ using osu.Framework.Input.Events;
 using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.UserInterface;
 using osu.Game.Resources.Localisation.Web;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays
 {
@@ -82,7 +80,7 @@ namespace osu.Game.Overlays
 
             protected override IEnumerable<Drawable> EffectTargets => new[] { background };
 
-            private Color4 flashColour;
+            private Colour4 flashColour;
 
             private readonly Container content;
             private readonly Box background;
@@ -103,7 +101,7 @@ namespace osu.Game.Overlays
                         Type = EdgeEffectType.Shadow,
                         Offset = new Vector2(0f, 1f),
                         Radius = 3f,
-                        Colour = Color4.Black.Opacity(0.25f),
+                        Colour = Colour4.Black.Opacity(0.25f),
                     },
                     Children = new Drawable[]
                     {

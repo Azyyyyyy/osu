@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -13,8 +14,6 @@ using osu.Game.Graphics.Containers;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Overlays.News;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays.Dashboard.Home.News
 {
@@ -136,7 +135,7 @@ namespace osu.Game.Overlays.Dashboard.Home.News
                 TooltipText = "view in browser";
                 Action = () => host.OpenUrlExternally("https://osu.ppy.sh/home/news/" + post.Slug);
 
-                HoverColour = Color4.White;
+                HoverColour = Colour4.White;
             }
         }
 

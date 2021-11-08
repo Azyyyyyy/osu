@@ -3,6 +3,7 @@
 
 using System.Collections.Specialized;
 using System.Linq;
+using System.Numerics;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
 using osu.Framework.Extensions.IEnumerableExtensions;
@@ -14,7 +15,6 @@ using osu.Game.Graphics;
 using osu.Game.Graphics.Containers;
 using osu.Game.Overlays.Settings;
 using osu.Game.Tournament.Components;
-using osuTK;
 
 namespace osu.Game.Tournament.Screens.Editors
 {

@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using System.Collections.Generic;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
@@ -19,10 +20,8 @@ using osu.Game.Graphics.UserInterface;
 using osu.Game.Online.API.Requests.Responses;
 using osu.Game.Overlays;
 using osu.Game.Overlays.BeatmapSet;
-using osuTK;
 using osu.Game.Overlays.BeatmapListing.Panels;
 using osu.Game.Resources.Localisation.Web;
-using osuTK.Graphics;
 using DownloadButton = osu.Game.Beatmaps.Drawables.Cards.Buttons.DownloadButton;
 
 namespace osu.Game.Beatmaps.Drawables.Cards
@@ -332,7 +331,7 @@ namespace osu.Game.Beatmaps.Drawables.Cards
             mainContent.ResizeWidthTo(targetWidth, TRANSITION_DURATION, Easing.OutQuint);
             mainContentBackground.Dimmed.Value = IsHovered;
 
-            leftCover.FadeColour(IsHovered ? OsuColour.Gray(0.2f) : Color4.White, TRANSITION_DURATION, Easing.OutQuint);
+            leftCover.FadeColour(IsHovered ? OsuColour.Gray(0.2f) : Colour4.White, TRANSITION_DURATION, Easing.OutQuint);
             statisticsContainer.FadeTo(IsHovered ? 1 : 0, TRANSITION_DURATION, Easing.OutQuint);
             rightButtonArea.FadeTo(IsHovered ? 1 : 0, TRANSITION_DURATION, Easing.OutQuint);
         }

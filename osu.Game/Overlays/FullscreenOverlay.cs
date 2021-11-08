@@ -3,7 +3,6 @@
 
 using JetBrains.Annotations;
 using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
@@ -11,7 +10,6 @@ using osu.Framework.Graphics.Shapes;
 using osu.Framework.Localisation;
 using osu.Game.Graphics.Containers;
 using osu.Game.Online.API;
-using osuTK.Graphics;
 
 namespace osu.Game.Overlays
 {
@@ -24,7 +22,7 @@ namespace osu.Game.Overlays
 
         public T Header { get; }
 
-        protected virtual Color4 BackgroundColour => ColourProvider.Background5;
+        protected virtual Colour4 BackgroundColour => ColourProvider.Background5;
 
         [Resolved]
         protected IAPIProvider API { get; private set; }
@@ -52,7 +50,7 @@ namespace osu.Game.Overlays
 
             EdgeEffect = new EdgeEffectParameters
             {
-                Colour = Color4.Black.Opacity(0),
+                Colour = Colour4.Black.Opacity(0),
                 Type = EdgeEffectType.Shadow,
                 Radius = 10
             };
