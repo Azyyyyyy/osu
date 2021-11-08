@@ -11,12 +11,12 @@ using osu.Framework.Graphics.Primitives;
 using osu.Framework.Allocation;
 using System.Collections.Generic;
 using System.Numerics;
+using osu.Framework.Extensions;
 using osu.Framework.Extensions.MatrixExtensions;
 using osu.Framework.Graphics.Batches;
 using osu.Framework.Graphics.OpenGL.Buffers;
 using osu.Framework.Graphics.OpenGL.Vertices;
 using osu.Framework.Lists;
-using osu.Framework.Extensions;
 using Vector2Extensions = osu.Framework.Graphics.Vector2Extensions;
 
 namespace osu.Game.Graphics.Backgrounds
@@ -282,7 +282,7 @@ namespace osu.Game.Graphics.Backgrounds
 
                 shader.Bind();
 
-                Vector2 localInflationAmount = edge_smoothness * DrawInfo.MatrixInverse.ExtractScale().XY();
+                Vector2 localInflationAmount = edge_smoothness * DrawInfo.MatrixInverse.ExtractScale().Xy();
 
                 foreach (TriangleParticle particle in parts)
                 {

@@ -14,7 +14,6 @@ using osu.Game.Rulesets.Mods;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.UI.Scrolling;
 using osu.Game.Tests.Visual;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.Tests.Editor
 {
@@ -36,7 +35,7 @@ namespace osu.Game.Rulesets.Mania.Tests.Editor
             {
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre,
-                AccentColour = Color4.OrangeRed,
+                AccentColour = Colour4.OrangeRed,
                 Clock = new FramedClock(new StopwatchClock()), // No scroll
             });
         }

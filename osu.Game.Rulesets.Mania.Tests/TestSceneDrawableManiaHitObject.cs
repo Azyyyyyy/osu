@@ -12,7 +12,6 @@ using osu.Game.Rulesets.Mania.Objects.Drawables;
 using osu.Game.Rulesets.Mania.UI;
 using osu.Game.Rulesets.UI.Scrolling;
 using osu.Game.Tests.Visual;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.Tests
 {
@@ -37,7 +36,7 @@ namespace osu.Game.Rulesets.Mania.Tests
                 {
                     Action = { Value = ManiaAction.Key1 },
                     Height = 0.85f,
-                    AccentColour = Color4.Gray
+                    AccentColour = Colour4.Gray
                 },
             };
         });

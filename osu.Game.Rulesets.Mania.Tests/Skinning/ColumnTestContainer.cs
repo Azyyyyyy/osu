@@ -6,7 +6,6 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Game.Rulesets.Mania.Beatmaps;
 using osu.Game.Rulesets.Mania.UI;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.Tests.Skinning
 {
@@ -29,7 +28,7 @@ namespace osu.Game.Rulesets.Mania.Tests.Skinning
                 this.column = new Column(column)
                 {
                     Action = { Value = action },
-                    AccentColour = Color4.Orange,
+                    AccentColour = Colour4.Orange,
                     ColumnType = column % 2 == 0 ? ColumnType.Even : ColumnType.Odd,
                     Alpha = showColumn ? 1 : 0
                 },

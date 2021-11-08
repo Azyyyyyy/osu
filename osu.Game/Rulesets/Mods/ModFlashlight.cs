@@ -196,7 +196,7 @@ namespace osu.Game.Rulesets.Mods
                     shader = Source.shader;
                     screenSpaceDrawQuad = Source.ScreenSpaceDrawQuad;
                     flashlightPosition = Vector2Extensions.Transform(Source.FlashlightPosition, DrawInfo.Matrix);
-                    flashlightSize = Source.FlashlightSize * Framework.Extensions.Vector2Extensions.XY(DrawInfo.Matrix.ExtractScale());
+                    flashlightSize = Source.FlashlightSize * Framework.Extensions.Vector2Extensions.Xy(DrawInfo.Matrix.ExtractScale());
                     flashlightDim = Source.FlashlightDim;
                 }
 

@@ -17,9 +17,9 @@ using osu.Framework.Allocation;
 using osu.Framework.Audio;
 using osu.Framework.Audio.Track;
 using osu.Framework.Bindables;
+using osu.Framework.Extensions;
 using osu.Framework.Utils;
 using osu.Framework.Extensions.MatrixExtensions;
-using osu.Framework.Extensions;
 using Vector2Extensions = osu.Framework.Graphics.Vector2Extensions;
 
 namespace osu.Game.Screens.Menu
@@ -202,7 +202,7 @@ namespace osu.Game.Screens.Menu
 
                 shader.Bind();
 
-                Vector2 inflation = DrawInfo.MatrixInverse.ExtractScale().XY();
+                Vector2 inflation = DrawInfo.MatrixInverse.ExtractScale().Xy();
 
                 ColourInfo colourInfo = DrawColourInfo.Colour;
                 colourInfo.ApplyChild(transparent_white);

@@ -2,6 +2,7 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Graphics;
 using osu.Framework.Utils;
@@ -10,8 +11,6 @@ using osu.Game.Rulesets.Catch.Objects.Drawables;
 using osu.Game.Rulesets.Catch.UI;
 using osu.Game.Rulesets.Judgements;
 using osu.Game.Rulesets.Scoring;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Catch.Tests
 {
@@ -19,7 +18,7 @@ namespace osu.Game.Rulesets.Catch.Tests
     {
         private ScoreProcessor scoreProcessor;
 
-        private Color4 judgedObjectColour = Color4.White;
+        private Colour4 judgedObjectColour = Colour4.White;
 
         [SetUp]
         public void SetUp() => Schedule(() =>
@@ -42,7 +41,7 @@ namespace osu.Game.Rulesets.Catch.Tests
 
             AddStep("randomize judged object colour", () =>
             {
-                judgedObjectColour = new Color4(
+                judgedObjectColour = new Colour4(
                     RNG.NextSingle(1f),
                     RNG.NextSingle(1f),
                     RNG.NextSingle(1f),

@@ -1,8 +1,9 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using System.Numerics;
 using NUnit.Framework;
-using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Extensions.Colour4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
@@ -13,8 +14,6 @@ using osu.Game.Rulesets.Osu.Statistics;
 using osu.Game.Scoring;
 using osu.Game.Tests.Beatmaps;
 using osu.Game.Tests.Visual;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Osu.Tests
 {
@@ -37,12 +36,12 @@ namespace osu.Game.Rulesets.Osu.Tests
                 background = new Box
                 {
                     RelativeSizeAxes = Axes.Both,
-                    Colour = Color4Extensions.FromHex("#333"),
+                    Colour = Colour4Extensions.FromHex("#333"),
                 },
                 object1 = new BorderCircle
                 {
                     Position = new Vector2(256, 192),
-                    Colour = Color4.Yellow,
+                    Colour = Colour4.Yellow,
                 },
                 object2 = new BorderCircle
                 {
@@ -109,7 +108,7 @@ namespace osu.Game.Rulesets.Osu.Tests
 
                 Masking = true;
                 BorderThickness = 2;
-                BorderColour = Color4.White;
+                BorderColour = Colour4.White;
 
                 InternalChildren = new Drawable[]
                 {

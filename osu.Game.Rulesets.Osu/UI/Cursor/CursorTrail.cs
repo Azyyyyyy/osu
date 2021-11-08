@@ -97,7 +97,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
 
         private Vector2 partSize => partSizeCache.IsValid
             ? partSizeCache.Value
-            : (partSizeCache.Value = new Vector2(Texture.DisplayWidth, Texture.DisplayHeight) * DrawInfo.Matrix.ExtractScale().XY());
+            : (partSizeCache.Value = new Vector2(Texture.DisplayWidth, Texture.DisplayHeight) * DrawInfo.Matrix.ExtractScale().Xy());
 
         /// <summary>
         /// The amount of time to fade the cursor trail pieces.

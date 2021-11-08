@@ -2,10 +2,10 @@
 // See the LICENCE file in the repository root for full licence text.
 
 using System.Linq;
+using System.Numerics;
 using NUnit.Framework;
 using osu.Framework.Allocation;
 using osu.Framework.Bindables;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Extensions.EnumExtensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
@@ -21,8 +21,6 @@ using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Objects.Types;
 using osu.Game.Rulesets.UI.Scrolling;
 using osu.Game.Tests.Visual;
-using osuTK;
-using osuTK.Graphics;
 
 namespace osu.Game.Rulesets.Mania.Tests
 {
@@ -73,7 +71,7 @@ namespace osu.Game.Rulesets.Mania.Tests
                 AutoSizeAxes = Axes.Both,
                 Child = new NoteContainer(direction, $"note {identifier}, scrolling {direction.ToString().ToLowerInvariant()}")
                 {
-                    Child = hitObject = new DrawableNote(note) { AccentColour = { Value = Color4.OrangeRed } }
+                    Child = hitObject = new DrawableNote(note) { AccentColour = { Value = Colour4.OrangeRed } }
                 }
             };
         }
@@ -91,7 +89,7 @@ namespace osu.Game.Rulesets.Mania.Tests
                     Child = hitObject = new DrawableHoldNote(note)
                     {
                         RelativeSizeAxes = Axes.Both,
-                        AccentColour = { Value = Color4.OrangeRed },
+                        AccentColour = { Value = Colour4.OrangeRed },
                     }
                 }
             };
@@ -136,7 +134,7 @@ namespace osu.Game.Rulesets.Mania.Tests
                                     Origin = Anchor.TopCentre,
                                     RelativeSizeAxes = Axes.Both,
                                     Width = 1.25f,
-                                    Colour = Color4.Green.Opacity(0.5f)
+                                    Colour = Colour4.Green.Opacity(0.5f)
                                 },
                                 content = new Container { RelativeSizeAxes = Axes.Both }
                             }
